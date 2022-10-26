@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portal</title>
+    <%=favicon_link_tag 'logo.png', type: 'image/png'%>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body  class=" border-top-wide border-primary d-flex flex-column">
+    <div class="page page-center">
+      <div class="container-tight py-4">
+        <% if notice %>
+          <p class="alert alert-success alert-dismissible"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+        <% end %>
+        <div class="text-center mb-4">
+          <a href="/" class="navbar-brand navbar-brand-autodark"><%= image_tag "logo.svg", height: '36' %></a>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

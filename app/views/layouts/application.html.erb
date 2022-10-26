@@ -2,14 +2,13 @@
 <html>
   <head>
     <title>Portal</title>
+    <%=favicon_link_tag 'logo.png', type: 'image/png'%>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
     <%= render 'layouts/header/header' %>
     <%= yield %>

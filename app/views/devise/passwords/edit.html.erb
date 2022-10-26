@@ -1,0 +1,28 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "card card-md" }, data: { turbo: false }) do |f| %>
+  <div class="card-body">
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
+    <h2 class="card-title text-center mb-4">Change your password</h2>
+    <div class="mb-3">
+      <label class="form-label">New password</label>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <div class="input-group input-group-flat">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Confirm new password</label>
+      <div class="input-group input-group-flat">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class="form-footer">
+      <%= f.submit "Change my password", class: "btn btn-primary w-100" %>
+    </div>
+  </div>
+<% end %>
+<div class="text-center text-muted mt-3">
+  Already have account? <%= link_to "Log in", new_session_path(resource_name) %>
+</div>

@@ -1,0 +1,27 @@
+<%- if controller_name != 'sessions' %>
+  <div class="text-center text-muted mt-3">
+    Already have account? <%= link_to "Log in", new_session_path(resource_name) %>
+  </div>
+<% end %>
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <div class="text-center text-muted mt-3">
+    Don't have account yet? <%= link_to "Sign up", new_registration_path(resource_name) %>
+  </div>
+<% end %>
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <div class="text-center text-muted mt-3">
+    <%= link_to "Didn't receive confirmation email?", new_confirmation_path(resource_name) %>
+  </div>
+<% end %>
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <div class="text-center text-muted mt-3">
+    <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %>
+  </div>
+<% end %>
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <div class="text-center text-muted mt-3">
+      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %>
+    </div>
+  <% end %>
+<% end %>
