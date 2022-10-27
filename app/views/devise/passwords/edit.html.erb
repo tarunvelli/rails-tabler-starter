@@ -23,6 +23,4 @@
     </div>
   </div>
 <% end %>
-<div class="text-center text-muted mt-3">
-  Already have account? <%= link_to "Log in", new_session_path(resource_name) %>
-</div>
+<%= render "devise/shared/links" %>

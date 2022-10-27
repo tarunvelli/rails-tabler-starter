@@ -9,7 +9,7 @@
       </a>
     </h1>
     <div class="navbar-nav flex-row order-md-last">
-    <!--
+      <!--
       <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip"
         data-bs-placement="bottom">
 
@@ -66,7 +66,7 @@
           <a href="#" class="dropdown-item">Feedback</a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">Settings</a>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %>
+          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, :class => 'dropdown-item'  %>
         </div>
       </div>
     </div>
