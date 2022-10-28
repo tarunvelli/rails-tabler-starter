@@ -5,7 +5,7 @@
     </button>
     <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
       <a href=".">
-        <img src="./static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+        <%= image_tag "logo.svg", width: "110", height: "32", alt: "Portal", class: "navbar-brand-image" %>
       </a>
     </h1>
     <div class="navbar-nav flex-row order-md-last">
@@ -56,17 +56,14 @@
         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
           <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
           <div class="d-none d-xl-block ps-2">
-            <div>Paweł Kuna</div>
-            <div class="mt-1 small text-muted">UI Designer</div>
+            <div><%= user_name(current_user.name) %></div>
+            <div class="mt-1 small text-muted"><%= current_user.status %></div>
           </div>
         </a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-          <a href="#" class="dropdown-item">Set status</a>
-          <a href="#" class="dropdown-item">Profile & account</a>
-          <a href="#" class="dropdown-item">Feedback</a>
+          <%= link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">Settings</a>
-          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, :class => 'dropdown-item'  %>
+          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: 'dropdown-item'  %>
         </div>
       </div>
     </div>
