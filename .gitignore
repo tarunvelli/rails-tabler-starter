@@ -36,3 +36,7 @@
 /node_modules
 
 .byebug_history
+
+# Ignore Mac os storage files
+
+*/.DS_Store

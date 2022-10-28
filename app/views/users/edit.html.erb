@@ -14,12 +14,7 @@
   <div class="container-xl">
     <div class="row row-cards">
       <%= render "form", user: @user %>
-      <div>
-        <%= link_to "Show this user", @user, class: "btn btn-primary" %>
-      </div>
-      <div>
-        <%= link_to "Back to users", users_path, class: "btn btn-primary" %>
-      </div>
+      <%= button_to "Delete", user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
     </div>
   </div>
 </div>

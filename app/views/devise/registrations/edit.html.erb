@@ -1,43 +1,39 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, class: "card card-md" }, data: { turbo: false }) do |f| %>
   <div class="card-body">
     <%= render "devise/shared/error_messages", resource: resource %>
-    <h2 class="card-title text-center mb-4">Edit <%= resource_name.to_s.humanize %></h2>
+    <h2 class="card-title text-center mb-4">Change password</h2>
     <div class="mb-3">
       <label class="form-label">Email address</label>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <em>Currently waiting confirmation for: <%= resource.unconfirmed_email %></em>
       <% end %>
       <div class="input-group input-group-flat">
-        <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Password</label>
-      <em>(leave blank if you don't want to change it)</em> <br />
-      <div class="input-group input-group-flat">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
-      </div>
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Confirm password</label>
-      <div class="input-group input-group-flat">
-        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+        <%= f.email_field :email, class: "form-control", placeholder: "Enter email", disabled: true %>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Current password</label>
       <div class="input-group input-group-flat">
-        <%= f.password_field :current_password, class: "form-control", placeholder: "Password", autocomplete: "current-password" %>
+        <%= f.password_field :current_password, class: "form-control", placeholder: "Password", autofocus: true, autocomplete: "current-password" %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">New password</label>
+      <div class="input-group input-group-flat">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Confirm new password</label>
+      <div class="input-group input-group-flat">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password", autocomplete: "new-password" %>
       </div>
     </div>
     <div class="form-footer">
       <%= f.submit "Update", class: "btn btn-primary w-100" %>
     </div>
+    <div class="text-center text-muted mt-3">
+      <%= link_to "Back", :back, class: "btn btn-primary w-100" %>
+    </div>
   </div>
 <% end %>
-<div class="text-center text-muted mt-3">
-  <%= link_to "Back", :back, class: "btn btn-primary w-100" %>
-</div>
-<div class="text-center text-muted mt-3">
-  <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger w-100" %>
-</div>

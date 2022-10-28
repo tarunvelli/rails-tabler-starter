@@ -4,6 +4,6 @@ module UsersHelper
   end
 
   def abbrev_name(name)
-    name.split(' ').map(&:first).join('.')
+    name.blank? ? 'X' : name.split(' ').map(&:first).join('.')
   end
 end
