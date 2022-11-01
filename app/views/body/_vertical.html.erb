@@ -1,4 +1,4 @@
-<body>
+<body class="<%= interface_theme %>">
   <div class="page">
     <aside class="navbar navbar-vertical navbar-expand-lg navbar-transparent">
       <div class="container-fluid">
@@ -11,14 +11,32 @@
           </a>
         </h1>
         <div class="navbar-nav flex-row d-lg-none">
-          <%= render 'header/profile_dropdown' %>
+          <%= render 'common/profile_dropdown' %>
         </div>
         <!-- Navbar -->
         <%= render 'navbar/vertical' %>
       </div>
     </aside>
     <div class="page-wrapper">
-      <%= render 'header/section_with_profile' %>
+      <div class="container-xl">
+        <div class="flex-row mb-4">
+          <!-- Page title -->
+          <div class="page-header d-print-none">
+            <div class="row align-items-center">
+              <%= render 'common/section_title' %>
+              <div class="d-none d-lg-flex col flex-row-reverse">
+                <%= render 'common/profile_dropdown' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% if notice %>
+          <p class="alert alert-success alert-dismissible"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+        <% end %>
+      </div>
       <div class="page-body">
         <div class="container-xl">
           <%= yield %>

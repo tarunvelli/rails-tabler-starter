@@ -18,7 +18,23 @@ module ApplicationHelper
     name.blank? ? 'X' : name.split(' ').map(&:first).join('.')
   end
 
-  def vertical_layout?
-    Rails.application.config.interface_layout == 'VERTICAL'
+  def interface_layout
+    case @layout || Rails.application.config.interface_layout
+    when 'VERTICAL'
+      'body/vertical'
+    when 'OVERLAP'
+      'body/overlap'
+    else
+      'body/horizontal'
+    end
+  end
+
+  def interface_theme
+    case @theme || Rails.application.config.interface_theme
+    when 'DARK'
+      'theme-dark'
+    else
+      'theme-light'
+    end
   end
 end

@@ -9,9 +9,5 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <% if vertical_layout? %>
-    <%= render 'body/vertical' %>
-  <% else %>
-    <%= render 'body/horizontal' %>
-  <% end %>
+  <%= render interface_layout %>
 </html>

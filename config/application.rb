@@ -19,6 +19,9 @@ module Portal
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.interface_layout = 'VERTICAL'
+    # layout ["VERTICAL", "HORIZONTAL", "OVERLAP"]
+    config.interface_layout = 'HORIZONTAL'
+    # theme [LIGHT", "DARK"]
+    config.interface_theme = 'LIGHT'
   end
 end
