@@ -9,4 +9,8 @@ module ApplicationHelper
       link_to path, class: 'nav-link', &block
     end
   end
+
+  def user_spaces
+    @user_spaces ||= current_user.spaces
+  end
 end

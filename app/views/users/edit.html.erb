@@ -1,20 +1,10 @@
-<div class="container-xl">
-  <!-- Page title -->
-  <div class="page-header d-print-none">
-    <div class="row align-items-center">
-      <div class="col">
-        <h2 class="page-title">
-          Editing user
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="page-body">
-  <div class="container-xl">
-    <div class="row row-cards">
-      <%= render "form", user: @user %>
-      <%= button_to "Delete", user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
-    </div>
-  </div>
+<% content_for :page_pretitle do %>
+  Edit
+<% end %>
+<% content_for :page_title do %>
+  User
+<% end %>
+<div class="row row-cards">
+  <%= render "form", user: @user %>
+  <%= button_to "Delete", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
 </div>

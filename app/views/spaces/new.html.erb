@@ -2,8 +2,10 @@
   New
 <% end %>
 <% content_for :page_title do %>
-  User
+  Space
 <% end %>
-<div class="row row-cards">
-  <%= render "form", user: @user %>
+<%= render "form", space: @space %>
+<br>
+<div>
+  <%= link_to "Back to spaces", spaces_path %>
 </div>

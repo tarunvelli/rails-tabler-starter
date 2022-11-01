@@ -1,0 +1,12 @@
+<% content_for :page_pretitle do %>
+  Edit
+<% end %>
+<% content_for :page_title do %>
+  Space
+<% end %>
+<%= render "form", space: @space %>
+<br>
+<div>
+  <%= link_to "Show this space", @space %> |
+  <%= link_to "Back to spaces", spaces_path %>
+</div>

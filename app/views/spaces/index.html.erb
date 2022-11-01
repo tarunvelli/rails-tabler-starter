@@ -1,0 +1,15 @@
+<% content_for :page_pretitle do %>
+  Show
+<% end %>
+<% content_for :page_title do %>
+  Spaces
+<% end %>
+<div id="spaces">
+  <% @spaces.each do |space| %>
+    <%= render space %>
+    <p>
+      <%= link_to "Show this space", space %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New space", new_space_path %>

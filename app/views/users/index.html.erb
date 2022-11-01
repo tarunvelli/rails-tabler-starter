@@ -1,52 +1,63 @@
-<div class="container-xl">
-  <!-- Page title -->
-  <div class="page-header d-print-none">
-    <div class="row align-items-center">
-      <div class="col">
-        <p style="color: green"><%= notice %></p>
-        <h2 class="page-title">
-          Users
-        </h2>
-        <div class="text-muted mt-1">1-18 of 413 people</div>
+<% content_for :page_pretitle do %>
+  Show
+<% end %>
+<% content_for :page_title do %>
+  Users
+<% end %>
+<div class="row row-cards">
+  <div class="col-12">
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table table-vcenter table-mobile-md card-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Created at</th>
+              <th>Role</th>
+              <th class="w-1"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td data-label="Name" >
+                  <div class="d-flex py-1 align-items-center">
+                    <span class="avatar me-2"><%= abbrev_name(user.name) %></span>
+                    <div class="flex-fill">
+                      <div class="font-weight-medium"><%= link_to user.name, user %></div>
+                      <div class="text-muted"><%= user.email %></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-muted" data-label="Created at" >
+                  <%= user.created_at %>
+                </td>
+                <td class="text-muted" data-label="Status" >
+                  <%= user.status.capitalize %>
+                </td>
+                <td>
+                  <div class="btn-list flex-nowrap">
+                    <%=link_to "Edit", edit_user_path(user), class: "btn" %>
+                    <div class="dropdown">
+                      <button class="btn dropdown-toggle align-text-top" data-bs-toggle="dropdown">
+                        Actions
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="#">
+                          Action
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          Another action
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
-      <!-- Page title actions -->
-      <div class="col-auto ms-auto d-print-none">
-        <div class="d-flex">
-          <input type="search" class="form-control d-inline-block w-9 me-3" placeholder="Search user…"/>
-          <%=link_to(new_user_path, html_options = { class: "btn btn-primary" }) do %>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-            New user
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="page-body">
-  <div class="container-xl">
-    <div class="row row-cards">
-      <% @users.each do |user| %>
-        <div class="col-md-6 col-lg-3">
-          <div class="card">
-            <div class="card-body p-4 text-center">
-              <span class="avatar avatar-xl mb-3 avatar-rounded"><%= abbrev_name(user.name) %></span>
-              <h3 class="m-0 mb-1"><%= link_to user_name(user.name), user %></h3>
-              <div class="text-muted"><%= user.id %></div>
-              <div class="text-muted">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2 text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="5" width="18" height="14" rx="2" /><polyline points="3 7 12 13 21 7" /></svg>
-                <%= user.email %>
-              </div>
-              <div class="text-muted">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon me-2 text-muted" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
-                <%= user.phone %>
-              </div>
-              <div class="mt-3">
-                <span class="badge bg-green-lt"><%= user.status %></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>
