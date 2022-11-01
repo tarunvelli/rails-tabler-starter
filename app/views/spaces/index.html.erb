@@ -4,12 +4,63 @@
 <% content_for :page_title do %>
   Spaces
 <% end %>
-<div id="spaces">
-  <% @spaces.each do |space| %>
-    <%= render space %>
-    <p>
-      <%= link_to "Show this space", space %>
-    </p>
-  <% end %>
+<div class="row row-cards">
+  <div class="col-12">
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table table-vcenter table-mobile-md card-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Created at</th>
+              <th>Status</th>
+              <th class="w-1"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @spaces.each do |space| %>
+              <tr>
+                <td data-label="Name" >
+                  <div class="d-flex py-1 align-items-center">
+                    <span class="avatar me-2"><%= abbrev_name(space.name) %></span>
+                    <div class="flex-fill">
+                      <div class="font-weight-medium"><%= link_to space.name, space %></div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-muted" data-label="Contact" >
+                  <%= space.email %>
+                </td>
+                <td class="text-muted" data-label="Created at" >
+                  <%= space.created_at %>
+                </td>
+                <td class="text-muted" data-label="Status" >
+                  <%= space.status&.capitalize %>
+                </td>
+                <td>
+                  <div class="btn-list flex-nowrap">
+                    <%=link_to "Edit", edit_space_path(space), class: "btn" %>
+                    <div class="dropdown">
+                      <button class="btn dropdown-toggle align-text-top" data-bs-toggle="dropdown">
+                        Actions
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="#">
+                          Action
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          Another action
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<%= link_to "New space", new_space_path %>

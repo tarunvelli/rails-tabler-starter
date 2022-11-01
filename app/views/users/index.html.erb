@@ -1,8 +1,8 @@
 <% content_for :page_pretitle do %>
-  Show
+  Space / Users
 <% end %>
 <% content_for :page_title do %>
-  Users
+  <%= @space.name %>
 <% end %>
 <div class="row row-cards">
   <div class="col-12">
@@ -13,7 +13,7 @@
             <tr>
               <th>Name</th>
               <th>Created at</th>
-              <th>Role</th>
+              <th>Status</th>
               <th class="w-1"></th>
             </tr>
           </thead>

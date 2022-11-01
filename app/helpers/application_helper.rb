@@ -11,6 +11,14 @@ module ApplicationHelper
   end
 
   def user_spaces
-    @user_spaces ||= current_user.spaces
+    @user_spaces ||= current_user.spaces.order(:name)
+  end
+
+  def abbrev_name(name)
+    name.blank? ? 'X' : name.split(' ').map(&:first).join('.')
+  end
+
+  def vertical_layout?
+    Rails.application.config.interface_layout == 'VERTICAL'
   end
 end

@@ -1,0 +1,30 @@
+<body>
+  <div class="page">
+    <aside class="navbar navbar-vertical navbar-expand-lg navbar-transparent">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand navbar-brand-autodark">
+          <a href="/">
+            <%= image_tag "logo.svg", width: "110", height: "32", alt: "Portal", class: "navbar-brand-image" %>
+          </a>
+        </h1>
+        <div class="navbar-nav flex-row d-lg-none">
+          <%= render 'header/profile_dropdown' %>
+        </div>
+        <!-- Navbar -->
+        <%= render 'navbar/vertical' %>
+      </div>
+    </aside>
+    <div class="page-wrapper">
+      <%= render 'header/section_with_profile' %>
+      <div class="page-body">
+        <div class="container-xl">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render 'footer/footer' %>
+    </div>
+  </div>
+</body>

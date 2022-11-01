@@ -1,0 +1,27 @@
+<div class="container-xl">
+  <div class="flex-row mb-4">
+    <!-- Page title -->
+    <div class="page-header d-print-none">
+      <div class="row align-items-center">
+        <div class="col">
+          <!-- Page pre-title -->
+          <div class="page-pretitle">
+            <%= yield :page_pretitle  %>
+          </div>
+          <h2 class="page-title">
+            <%= yield :page_title  %>
+          </h2>
+        </div>
+        <div class="d-none d-lg-flex col flex-row-reverse">
+          <%= render 'header/profile_dropdown' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if notice %>
+    <p class="alert alert-success alert-dismissible"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+  <% end %>
+</div>

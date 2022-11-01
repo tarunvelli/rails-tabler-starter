@@ -9,28 +9,38 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group mb-3 row">
+    <%= form.label :name, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :name, class:"form-control", ariaDescribedby:"nameHelp", placeholder: "Enter name" %>
+    </div>
   </div>
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <div class="form-group mb-3 row">
+    <%= form.label :phone, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :phone, class:"form-control", ariaDescribedby:"phoneHelp", placeholder: "Enter phone" %>
+    </div>
   </div>
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="form-group mb-3 row">
+    <%= form.label :email, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :email, class:"form-control", ariaDescribedby:"emailHelp", placeholder: "Enter email" %>
+    </div>
   </div>
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.select :status, Space.statuses.keys.map { |key| [key.humanize, key] }, {}, {} %>
+  <div class="form-group mb-3 row">
+    <%= form.label :status, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.select :status, Space.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
+    </div>
   </div>
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_area :address %>
+  <div class="form-group mb-3 row">
+    <%= form.label :address, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_area :address, class:"form-control", ariaDescribedby:"addressHelp", placeholder: "Enter address" %>
+    </div>
   </div>
   <%= hidden_field(:space, :user_ids, :value => [current_user.id]) %>
-  <div>
-    <%= form.submit %>
+  <div class="form-footer">
+    <%= form.submit "Save", class:"btn btn-primary" %>
   </div>
 <% end %>

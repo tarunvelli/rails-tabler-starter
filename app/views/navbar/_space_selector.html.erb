@@ -1,0 +1,41 @@
+<%= nav_bar do %>
+  <li class="nav-item dropdown m-2">
+    <a class="btn btn-white dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" role="button" aria-expanded="false">
+      <span class="nav-link-icon d-md-none d-lg-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-store" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <desc>Download more icon variants from https://tabler-icons.io/i/building-store</desc>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <line x1="3" y1="21" x2="21" y2="21"></line>
+          <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4"></path>
+          <line x1="5" y1="21" x2="5" y2="10.85"></line>
+          <line x1="19" y1="21" x2="19" y2="10.85"></line>
+          <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4"></path>
+        </svg>
+      </span>
+      <span class="nav-link-title">
+        <% if @space&.id.present? %>
+          <%= @space.name %>
+        <% else %>
+          Select
+        <% end %>
+      </span>
+    </a>
+    <div class="dropdown-menu">
+      <% user_spaces.each do |user_space| %>
+        <%= link_to user_space.name, user_space, class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </li>
+  <li class="nav-item  m-2">
+    <%= link_to new_space_path, class: "btn btn-primary"  do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <line x1="12" y1="5" x2="12" y2="19" />
+        <line x1="5" y1="12" x2="19" y2="12" />
+      </svg>
+      Create new space
+    <% end %>
+  </li>
+<% end %>

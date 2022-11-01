@@ -1,10 +1,59 @@
 <% content_for :page_pretitle do %>
-  Edit
+  User / settings
 <% end %>
 <% content_for :page_title do %>
-  User
+  <%= @user.name %>
 <% end %>
-<div class="row row-cards">
-  <%= render "form", user: @user %>
-  <%= button_to "Delete", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
+<div class="row">
+  <div class="col-12 col-md-4 px-4">
+    <div class="list-group list-group-transparent mb-3 ml-3">
+      <a class="list-group-item list-group-item-action d-flex align-items-center active"
+					href="#">
+        Details
+        <small class="text-muted ms-auto">24</small>
+      </a>
+      <a class="list-group-item list-group-item-action d-flex align-items-center"
+					href="#">
+        Preferences
+        <small class="text-muted ms-auto">149</small>
+      </a>
+      <a class="list-group-item list-group-item-action d-flex align-items-center"
+					href="#">
+        Privacy Settings
+        <small class="text-muted ms-auto">88</small>
+      </a>
+      <a class="list-group-item list-group-item-action d-flex align-items-center"
+					href="#">
+        Theme
+        <small class="text-muted ms-auto">54</small>
+      </a>
+      <a class="list-group-item list-group-item-action d-flex align-items-center"
+					href="#">
+        Audience and visibility
+        <small class="text-muted ms-auto">106</small>
+      </a>
+      <a class="list-group-item list-group-item-action d-flex align-items-center"
+					href="#">
+        App Development
+        <small class="text-muted ms-auto">40</small>
+      </a>
+    </div>
+  </div>
+  <div class="col-12 col-md-8">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Details</h3>
+          </div>
+          <div class="card-body">
+            <%= render "form", user: @user %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<!--
+  <%= button_to "Delete", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
+-->

@@ -9,21 +9,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body class="d-flex flex-column min-vh-100">
-    <%= render 'header/application_header' %>
-    <div class="wrapper flex-grow-1">
-      <%- if @space&.id.present? %>
-        <%= render 'navbar/navbar' %>
-      <% end %>
-      <div class="page-wrapper">
-        <%= render 'header/space_header' %>
-        <div class="page-body">
-          <div class="container-xl">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%= render 'footer/footer' %>
-  </body>
+  <% if vertical_layout? %>
+    <%= render 'body/vertical' %>
+  <% else %>
+    <%= render 'body/horizontal' %>
+  <% end %>
 </html>

@@ -1,0 +1,15 @@
+<body class="d-flex flex-column min-vh-100">
+  <%= render 'header/horizontal' %>
+  <div class="wrapper flex-grow-1">
+    <%= render 'navbar/horizontal' %>
+    <div class="page-wrapper">
+      <%= render 'header/section_without_profile' %>
+      <div class="page-body">
+        <div class="container-xl">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'footer/footer' %>
+</body>

@@ -1,54 +1,45 @@
-<div class="col-md-6">
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">User Details</h3>
-    </div>
-    <div class="card-body">
-      <%= form_with(model: user) do |form| %>
-        <% if user.errors.any? %>
-          <div style="color: red">
-            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-            <ul>
-              <% user.errors.each do |error| %>
-                <li><%= error.full_message %></li>
-              <% end %>
-            </ul>
-          </div>
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
         <% end %>
-        <div class="form-group mb-3 row">
-          <label class="form-label col-3 col-form-label">First name</label>
-          <div class="col">
-            <%= form.text_field :first_name, class: "form-control", placeholder: "Enter first name" %>
-            <small class="form-hint">Enter your first name</small>
-          </div>
-        </div>
-        <div class="form-group mb-3 row">
-          <label class="form-label col-3 col-form-label">Last name</label>
-          <div class="col">
-            <%= form.text_field :last_name, class: "form-control", placeholder: "Enter last name" %>
-            <small class="form-hint">Enter your last name</small>
-          </div>
-        </div>
-        <div class="form-group mb-3 row">
-          <label class="form-label col-3 col-form-label">Phone</label>
-          <div class="col">
-            <%= form.text_field :phone, class: "form-control", placeholder: "Enter phone number" %>
-            <small class="form-hint">
-              Enter your phone number with country code
-            </small>
-          </div>
-        </div>
-        <div class="form-group mb-3 row">
-          <label class="form-label col-3 col-form-label">Status</label>
-          <div class="col">
-            <%= form.select :status, User.statuses.keys.map { |key| [key.humanize, key] }, {}, { class: "form-select" } %>
-          </div>
-        </div>
-        <div class="form-footer">
-          <button type="submit" class="btn btn-primary">Save</button>
-          <%= link_to 'Back', :back, class: "btn btn-primary" %>
-        </div>
-      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group mb-3 row">
+    <%= form.label :first_name, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :first_name, class:"form-control", ariaDescribedby:"firstNameHelp", placeholder: "Enter first name" %>
     </div>
   </div>
-</div>
+  <div class="form-group mb-3 row">
+    <%= form.label :last_name, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :last_name, class:"form-control", ariaDescribedby:"lastNameHelp", placeholder: "Enter last name" %>
+    </div>
+  </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :email, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :email, class:"form-control", ariaDescribedby:"emailHelp", placeholder: "Enter email", disabled: true %>
+    </div>
+  </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :phone, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :phone, class:"form-control", ariaDescribedby:"phoneHelp", placeholder: "Enter phone" %>
+    </div>
+  </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :status, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.select :status, User.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
+    </div>
+  </div>
+  <div class="form-footer">
+    <%= form.submit "Save", class:"btn btn-primary" %>
+  </div>
+<% end %>
