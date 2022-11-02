@@ -1,0 +1,20 @@
+<h2 class="mb-4">Theme</h2>
+<%= form_with(model: space) do |form| %>
+  <% if space.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(space.errors.count, "error") %> prohibited this space from being saved:</h2>
+      <ul>
+        <% space.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--
+  <%= hidden_field(:space, :user_ids, :value => [current_user.id]) %>
+  <div class="form-footer">
+    <%= form.submit "Save", class:"btn btn-primary" %>
+  </div>
+  -->
+<% end %>

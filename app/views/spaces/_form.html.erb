@@ -1,46 +1,55 @@
-<%= form_with(model: space) do |form| %>
-  <% if space.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(space.errors.count, "error") %> prohibited this space from being saved:</h2>
-      <ul>
-        <% space.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-space-settings" id="space-settings-tab" role="tablist" aria-orientation="vertical">
+          <button
+            class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+            id="space-details-tab" data-bs-toggle="tab" data-bs-target="#space-details" type="button" role="tab" aria-controls="space-details" aria-selected="true"
+          >
+            Details
+            <small class="text-muted ms-auto">24</small>
+          </button>
+          <button
+            class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+            id="space-roles-tab" data-bs-toggle="tab" data-bs-target="#space-roles" type="button" role="tab" aria-controls="space-roles" aria-selected="false"
+          >
+            Roles
+            <small class="text-muted ms-auto">149</small>
+          </button>
+          <button
+            class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+            id="space-theme-tab" data-bs-toggle="tab" data-bs-target="#space-theme" type="button" role="tab" aria-controls="space-theme" aria-selected="false"
+          >
+            Theme
+            <small class="text-muted ms-auto">149</small>
+          </button>
+          <button
+            class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+            id="space-notifications-tab" data-bs-toggle="tab" data-bs-target="#space-notifications" type="button" role="tab" aria-controls="space-notifications" aria-selected="false"
+          >
+            Notifications
+            <small class="text-muted ms-auto">149</small>
+          </button>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <div class="form-group mb-3 row">
-    <%= form.label :name, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :name, class:"form-control", ariaDescribedby:"nameHelp", placeholder: "Enter name" %>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="space-settings-tabContent">
+        <div class="tab-pane show active" id="space-details" role="tabpanel" aria-labelledby="space-details-tab" tabindex="0">
+          <%= render "details", space: @space %>
+        </div>
+        <div class="tab-pane" id="space-roles" role="tabpanel" aria-labelledby="space-roles-tab" tabindex="0">
+          <%= render "roles", space: @space %>
+        </div>
+        <div class="tab-pane" id="space-theme" role="tabpanel" aria-labelledby="space-theme-tab" tabindex="0">
+          <%= render "theme", space: @space %>
+        </div>
+        <div class="tab-pane" id="space-notifications" role="tabpanel" aria-labelledby="space-notifications-tab" tabindex="0">
+          <%= render "notifications", space: @space %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :phone, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :phone, class:"form-control", ariaDescribedby:"phoneHelp", placeholder: "Enter phone" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :email, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :email, class:"form-control", ariaDescribedby:"emailHelp", placeholder: "Enter email" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :status, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.select :status, Space.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :address, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_area :address, class:"form-control", ariaDescribedby:"addressHelp", placeholder: "Enter address" %>
-    </div>
-  </div>
-  <%= hidden_field(:space, :user_ids, :value => [current_user.id]) %>
-  <div class="form-footer">
-    <%= form.submit "Save", class:"btn btn-primary" %>
-  </div>
-<% end %>
+</div>
