@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag interface_theme, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body  class=" border-top-wide border-primary d-flex flex-column">
+  <body  class="border-top-wide border-primary d-flex flex-column">
     <div class="page page-center">
       <div class="container-tight py-4">
         <% if notice %>

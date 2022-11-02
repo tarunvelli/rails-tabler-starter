@@ -29,12 +29,25 @@ module ApplicationHelper
     end
   end
 
-  def interface_theme
-    case @theme || Rails.application.config.interface_theme
+  def interface_mode
+    case @mode || Rails.application.config.interface_mode
     when 'DARK'
       'theme-dark'
     else
       'theme-light'
     end
+  end
+
+  def interface_theme
+    case @theme || Rails.application.config.interface_theme
+    when 'COOL'
+      'application-cool'
+    else
+      'application'
+    end
+  end
+
+  def saas_mode
+    Rails.application.config.saas_mode
   end
 end

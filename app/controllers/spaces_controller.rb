@@ -2,6 +2,7 @@
 
 class SpacesController < ApplicationController
   before_action :set_space, only: %i[show edit update destroy]
+  before_action :check_saas_mode, only: %i[new index]
 
   # GET /spaces or /spaces.json
   def index
@@ -67,5 +68,11 @@ class SpacesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def space_params
     params.require(:space).permit(:name, :phone, :email, :status, :address, :user_ids)
+  end
+
+  def check_saas_mode
+    return unless !Rails.application.config.saas_mode && Space.count.positive?
+
+    redirect_back fallback_location: root_path
   end
 end
