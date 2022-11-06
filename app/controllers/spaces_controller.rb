@@ -36,6 +36,8 @@ class SpacesController < ApplicationController
 
   # PATCH/PUT /spaces/1 or /spaces/1.json
   def update
+    authorize @space
+
     respond_to do |format|
       if @space.update(space_params)
         format.html { redirect_to edit_space_path(@space), notice: 'Space was successfully updated.' }
