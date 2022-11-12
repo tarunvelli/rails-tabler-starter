@@ -11,12 +11,20 @@ Role.create!(
     {
       name: 'Editor',
       value: 'EDITOR',
-      type: 'common'
+      type: 'common',
+      permissions: {
+        user: :w,
+        space: :w
+      }
     },
     {
       name: 'Viewer',
       value: 'VIEWER',
-      type: 'common'
+      type: 'common',
+      permissions: {
+        user: :r,
+        space: :r
+      }
     }
   ]
 )
