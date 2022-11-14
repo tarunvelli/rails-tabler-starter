@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <!--
   <%= hidden_field(:space, :user_ids, :value => [current_user.id]) %>
   <div class="form-footer">
@@ -18,3 +17,14 @@
   </div>
   -->
 <% end %>
+
+<div class="row">
+  <div class="col-3">
+    <div class="form-label">Select</div>
+    <select class="form-select">
+      <% space_roles.each do |role| %>
+        <option value=<%= role.id %>> <%= role.name %> </option>
+      <% end %>
+    </select>
+  </div>
+</div>

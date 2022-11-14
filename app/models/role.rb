@@ -1,15 +1,28 @@
 class Role < ApplicationRecord
   self.store_full_sti_class = false
 
-  AVAILABLE_PERMISSIONS = %w[user space].freeze
+  COMMON_TYPE = 'common'.freeze
+  CUSTOM_TYPE = 'custom'.freeze
+  AVAILABLE_TYPES = [COMMON_TYPE, CUSTOM_TYPE].freeze
+
   WRITE = 'w'.freeze
   READ = 'r'.freeze
   AVAILABLE_VALUES = [WRITE, READ].freeze
+  AVAILABLE_PERMISSIONS = %w[user space].freeze
 
+  validates_inclusion_of :type, in: AVAILABLE_TYPES
   validate :check_permissions
 
   def self.find_sti_class(type_name)
     super("Roles::#{type_name.classify}")
+  end
+
+  def common?
+    type == COMMON_TYPE
+  end
+
+  def custom?
+    type == CUSTOM_TYPE
   end
 
   def can_write?(object)

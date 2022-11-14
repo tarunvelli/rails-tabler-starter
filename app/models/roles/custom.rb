@@ -3,7 +3,7 @@ module Roles
     belongs_to :space
 
     def self.sti_name
-      'custom'
+      CUSTOM_TYPE
     end
   end
 end
