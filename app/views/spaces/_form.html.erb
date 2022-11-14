@@ -20,17 +20,10 @@
           </button>
           <button
             class="list-group-item list-group-item-action d-flex align-items-center nav-link"
-            id="space-theme-tab" data-bs-toggle="tab" data-bs-target="#space-theme" type="button" role="tab" aria-controls="space-theme" aria-selected="false"
+            id="space-appearance-tab" data-bs-toggle="tab" data-bs-target="#space-appearance" type="button" role="tab" aria-controls="space-appearance" aria-selected="false"
           >
-            Theme
+            Appearance
             <small class="text-muted ms-auto">3</small>
-          </button>
-          <button
-            class="list-group-item list-group-item-action d-flex align-items-center nav-link"
-            id="space-notifications-tab" data-bs-toggle="tab" data-bs-target="#space-notifications" type="button" role="tab" aria-controls="space-notifications" aria-selected="false"
-          >
-            Notifications
-            <!-- <small class="text-muted ms-auto">149</small> -->
           </button>
         </div>
       </div>
@@ -43,11 +36,8 @@
         <div class="tab-pane" id="space-roles" role="tabpanel" aria-labelledby="space-roles-tab" tabindex="0">
           <%= render "roles", space: @space %>
         </div>
-        <div class="tab-pane" id="space-theme" role="tabpanel" aria-labelledby="space-theme-tab" tabindex="0">
-          <%= render "theme", space: @space %>
-        </div>
-        <div class="tab-pane" id="space-notifications" role="tabpanel" aria-labelledby="space-notifications-tab" tabindex="0">
-          <%= render "notifications", space: @space %>
+        <div class="tab-pane" id="space-appearance" role="tabpanel" aria-labelledby="space-appearance-tab" tabindex="0">
+          <%= render "appearance", space: @space %>
         </div>
       </div>
     </div>

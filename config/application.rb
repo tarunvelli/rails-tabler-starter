@@ -22,9 +22,9 @@ module Portal
     # layout ["VERTICAL", "HORIZONTAL", "OVERLAP"]
     config.interface_layout = 'HORIZONTAL'
     # mode ["LIGHT", "DARK"]
-    config.interface_mode = 'LIGHT'
+    config.interface_mode = 'DARK'
     # theme ["DEFAULT", "COOL"]
-    config.interface_theme = 'DEFAULT'
+    config.interface_theme = 'COOL'
 
     # saas mode [true, false]
     # when true allows multiple spaces to be created
