@@ -1,45 +1,42 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-user-settings" id="user-settings-tab" role="tablist" aria-orientation="vertical">
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+					id="user-details-tab" data-bs-toggle="tab" data-bs-target="#user-details" type="button" role="tab" aria-controls="user-details" aria-selected="true">
+            Details
+            <small class="text-muted ms-auto">24</small>
+          </button>
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+					id="user-notifications-tab" data-bs-toggle="tab" data-bs-target="#user-notifications" type="button" role="tab" aria-controls="user-notifications" aria-selected="false">
+            Notifications
+            <small class="text-muted ms-auto">24</small>
+          </button>
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+					id="user-access-tab" data-bs-toggle="tab" data-bs-target="#user-access" type="button" role="tab" aria-controls="user-access" aria-selected="false">
+            Access
+            <small class="text-muted ms-auto">24</small>
+          </button>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <div class="form-group mb-3 row">
-    <%= form.label :first_name, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :first_name, class:"form-control", ariaDescribedby:"firstNameHelp", placeholder: "Enter first name" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :last_name, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :last_name, class:"form-control", ariaDescribedby:"lastNameHelp", placeholder: "Enter last name" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :email, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :email, class:"form-control", ariaDescribedby:"emailHelp", placeholder: "Enter email", disabled: true %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :phone, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :phone, class:"form-control", ariaDescribedby:"phoneHelp", placeholder: "Enter phone" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :status, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.select :status, User.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="user-settings-tabContent">
+        <div class="tab-pane show active" id="user-details" role="tabpanel" aria-labelledby="user-details-tab" tabindex="0">
+          <%= render "details", user: @user %>
+        </div>
+        <div class="tab-pane" id="user-notifications" role="tabpanel" aria-labelledby="user-notifications-tab" tabindex="0">
+          <%= render "notifications", user: @user %>
+        </div>
+        <div class="tab-pane" id="user-access" role="tabpanel" aria-labelledby="user-access-tab" tabindex="0">
+          <%= render "access", user: @user %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="form-footer">
-    <%= form.submit "Save", class:"btn btn-primary" %>
-  </div>
-<% end %>
+</div>
+<!--
+  <%= button_to "Delete", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
+-->
