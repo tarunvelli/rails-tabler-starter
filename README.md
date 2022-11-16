@@ -1,4 +1,18 @@
-# README
+# Rails-tabler Boilerplate
+
+Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
+
+## Goals
+
+* No DSL
+
+* Avoid complex frontend functionality
+
+* Simplicity over efficiency
+
+* Avoid magic methods / meta programming
+
+# Readme
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
