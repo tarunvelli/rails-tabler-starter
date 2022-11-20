@@ -14,7 +14,12 @@
           <%= render 'common/profile_dropdown' %>
         </div>
         <!-- Navbar -->
-        <%= render 'navbar/vertical' %>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <%= render 'common/nav_items' %>
+          <div class="my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-first">
+            <%= render 'common/space_selector' %>
+          </div>
+        </div>
       </div>
     </aside>
     <div class="page-wrapper">
@@ -42,7 +47,7 @@
           <%= yield %>
         </div>
       </div>
-      <%= render 'footer/footer' %>
+      <%= render 'common/footer' %>
     </div>
   </div>
 </body>
