@@ -68,7 +68,7 @@ class SpacesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def space_params
-    params.require(:space).permit(:name, :phone, :email, :status, :address, :user_ids)
+    params.require(:space).permit(:name, :phone, :email, :status, :address)
   end
 
   def check_saas_mode
@@ -79,6 +79,7 @@ class SpacesController < ApplicationController
 
   def set_space_and_user_roles
     @space = Space.new(space_params)
+    @space.users.push(current_user)
     @space.user_roles.each { |user_role| user_role.role = Role.first }
   end
 end

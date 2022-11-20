@@ -40,7 +40,6 @@
       <%= form.text_area :address, class:"form-control", ariaDescribedby:"addressHelp", placeholder: "Enter address" %>
     </div>
   </div>
-  <%= hidden_field(:space, :user_ids, :value => [current_user.id]) %>
   <div class="form-footer">
     <%= form.submit "Save", class:"btn btn-primary" %>
   </div>

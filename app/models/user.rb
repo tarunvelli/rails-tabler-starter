@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def invalidate_all_sessions!
     update_attribute(:session_token, SecureRandom.hex)
   end
+
+  def get_role_in_space(space)
+    user_roles.find_by(space: space).role
+  end
 end
