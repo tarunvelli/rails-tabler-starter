@@ -7,17 +7,12 @@
           <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
 					id="user-details-tab" data-bs-toggle="tab" data-bs-target="#user-details" type="button" role="tab" aria-controls="user-details" aria-selected="true">
             Details
-            <small class="text-muted ms-auto">24</small>
+            <small class="text-muted ms-auto">5</small>
           </button>
           <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
-					id="user-notifications-tab" data-bs-toggle="tab" data-bs-target="#user-notifications" type="button" role="tab" aria-controls="user-notifications" aria-selected="false">
-            Notifications
-            <small class="text-muted ms-auto">24</small>
-          </button>
-          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
-					id="user-access-tab" data-bs-toggle="tab" data-bs-target="#user-access" type="button" role="tab" aria-controls="user-access" aria-selected="false">
-            Access
-            <small class="text-muted ms-auto">24</small>
+					id="user-appearance-tab" data-bs-toggle="tab" data-bs-target="#user-appearance" type="button" role="tab" aria-controls="user-appearance" aria-selected="false">
+            Appearance
+            <small class="text-muted ms-auto">3</small>
           </button>
         </div>
       </div>
@@ -27,11 +22,8 @@
         <div class="tab-pane show active" id="user-details" role="tabpanel" aria-labelledby="user-details-tab" tabindex="0">
           <%= render "details", user: @user %>
         </div>
-        <div class="tab-pane" id="user-notifications" role="tabpanel" aria-labelledby="user-notifications-tab" tabindex="0">
-          <%= render "notifications", user: @user %>
-        </div>
-        <div class="tab-pane" id="user-access" role="tabpanel" aria-labelledby="user-access-tab" tabindex="0">
-          <%= render "access", user: @user %>
+        <div class="tab-pane" id="user-appearance" role="tabpanel" aria-labelledby="user-appearance-tab" tabindex="0">
+          <%= render "appearance", user: @user %>
         </div>
       </div>
     </div>

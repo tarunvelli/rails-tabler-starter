@@ -13,8 +13,8 @@ Role.create!(
       value: 'EDITOR',
       type: 'common',
       permissions: {
-        user: :w,
-        space: :w
+        user: 'write',
+        space: 'write'
       }
     },
     {
@@ -22,8 +22,8 @@ Role.create!(
       value: 'VIEWER',
       type: 'common',
       permissions: {
-        user: :r,
-        space: :r
+        user: 'read',
+        space: 'read'
       }
     }
   ]

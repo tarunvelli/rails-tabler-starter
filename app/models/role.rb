@@ -5,9 +5,9 @@ class Role < ApplicationRecord
   CUSTOM_TYPE = 'custom'.freeze
   AVAILABLE_TYPES = [COMMON_TYPE, CUSTOM_TYPE].freeze
 
-  READ = 'r'.freeze
-  WRITE = 'w'.freeze
-  NONE = 'n'.freeze
+  READ = 'read'.freeze
+  WRITE = 'write'.freeze
+  NONE = 'none'.freeze
 
   AVAILABLE_VALUES = [READ, WRITE, NONE].freeze
   AVAILABLE_PERMISSIONS = %w[user space].freeze

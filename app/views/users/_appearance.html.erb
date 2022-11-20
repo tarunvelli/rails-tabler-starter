@@ -1,10 +1,10 @@
 <h2 class="mb-4">Appearance</h2>
-<%= form_with(model: space) do |form| %>
-  <% if space.errors.any? %>
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(space.errors.count, "error") %> prohibited this space from being saved:</h2>
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
       <ul>
-        <% space.errors.each do |error| %>
+        <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
