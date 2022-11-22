@@ -1,0 +1,7 @@
+<% content_for :page_pretitle do %>
+  Space / roles / new
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+<%= render "form", role: @role %>

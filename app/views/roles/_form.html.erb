@@ -1,0 +1,39 @@
+<div class="card border">
+  <div class="card-body row g-0">
+    <h2 class="mb-4">Details</h2>
+    <%= form_with model: [@space, role.becomes(Role)] do |form| %>
+      <% form.object = role.becomes(role.class) %>
+      <% if role.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
+          <ul>
+            <% role.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group mb-3 row">
+        <%= form.label :name, class: "form-label" %>
+        <div class="col-3">
+          <%= form.text_field :name, class:"form-control", ariaDescribedby:"NameHelp", placeholder: "Enter name" %>
+        </div>
+      </div>
+      <div class="form-group mb-3 row">
+        <%= form.label :value, class: "form-label" %>
+        <div class="col-3">
+          <%= form.text_field :value, class:"form-control", ariaDescribedby:"valueHelp", placeholder: "Enter value", disabled:"" %>
+        </div>
+      </div>
+      <div class="form-group mb-3 row">
+        <%= form.label :type, class: "form-label" %>
+        <div class="col-3">
+          <%= form.text_field :type, class:"form-control", ariaDescribedby:"typeHelp", placeholder: "Enter type", disabled:"" %>
+        </div>
+      </div>
+      <div class="form-footer">
+        <%= form.submit "Save", class:"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

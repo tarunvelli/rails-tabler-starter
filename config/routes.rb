@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show edit update destroy]
   resources :spaces do
     resources :users, only: [:index]
+    resources :roles
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

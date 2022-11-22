@@ -11,13 +11,6 @@
             Details
             <small class="text-muted ms-auto">6</small>
           </button>
-          <button
-            class="list-group-item list-group-item-action d-flex align-items-center nav-link"
-            id="space-roles-tab" data-bs-toggle="tab" data-bs-target="#space-roles" type="button" role="tab" aria-controls="space-roles" aria-selected="false"
-          >
-            Roles
-            <small class="text-muted ms-auto"><%= space_roles.count %></small>
-          </button>
         </div>
       </div>
     </div>
@@ -25,9 +18,6 @@
       <div class="card-body tab-content" id="space-settings-tabContent">
         <div class="tab-pane show active" id="space-details" role="tabpanel" aria-labelledby="space-details-tab" tabindex="0">
           <%= render "details", space: @space %>
-        </div>
-        <div class="tab-pane" id="space-roles" role="tabpanel" aria-labelledby="space-roles-tab" tabindex="0">
-          <%= render "roles", space: @space %>
         </div>
       </div>
     </div>

@@ -30,36 +30,6 @@
         Users
       </span>
     <% end %>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown"
-                data-bs-auto-close="outside" role="button" aria-expanded="false">
-        <span class="nav-link-icon d-md-none d-lg-inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-analytics" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <desc>Download more icon variants from https://tabler-icons.io/i/report-analytics</desc>
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2"></path>
-            <rect x="9" y="3" width="6" height="4" rx="2"></rect>
-            <path d="M9 17v-5"></path>
-            <path d="M12 17v-1"></path>
-            <path d="M15 17v-3"></path>
-          </svg>
-        </span>
-        <span class="nav-link-title">
-          Reports
-        </span>
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">
-          Activity
-        </a>
-        <a class="dropdown-item" href="#">
-          Subscriptions
-        </a>
-        <a class="dropdown-item" href="#">
-          Invoices
-        </a>
-      </div>
-    </li>
     <%= nav_link edit_space_path(@space) do %>
       <span class="nav-link-icon d-md-none d-lg-inline-block">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -73,6 +43,28 @@
         Settings
       </span>
     <% end %>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown"
+                data-bs-auto-close="outside" role="button" aria-expanded="false">
+        <span class="nav-link-icon d-md-none d-lg-inline-block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-fingerprint" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+             <path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3"></path>
+             <path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6"></path>
+             <path d="M12 11v2a14 14 0 0 0 2.5 8"></path>
+             <path d="M8 15a18 18 0 0 0 1.8 6"></path>
+             <path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95"></path>
+          </svg>
+        </span>
+        <span class="nav-link-title">
+          Roles
+        </span>
+      </a>
+      <div class="dropdown-menu">
+        <%= link_to "All", space_roles_path(@space), class: "dropdown-item" %>
+        <%= link_to "New", new_space_role_path(@space), class: "dropdown-item" %>
+      </div>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="https://preview.tabler.io/docs/index.html" target="_blank" >
         <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/file-text -->

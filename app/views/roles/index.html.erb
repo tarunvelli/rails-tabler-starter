@@ -1,0 +1,45 @@
+<% content_for :page_pretitle do %>
+  Space / roles
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+
+<div class="row row-cards">
+  <div class="col-12">
+    <div class="card">
+      <div class="table-responsive">
+        <table class="table table-vcenter table-mobile-md card-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+              <th>Type</th>
+              <th class="w-1"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @space_roles.each do |role| %>
+              <tr>
+                <td class="text-muted" data-label="Name" >
+                  <%= role.name %>
+                </td>
+                <td class="text-muted" data-label="Value" >
+                  <%= role.value %>
+                </td>
+                <td class="text-muted" data-label="Type" >
+                  <%= role.type.capitalize %>
+                </td>
+                <td>
+                  <div class="btn-list flex-nowrap">
+                    <%=link_to "Edit", edit_space_role_path(@space, role), class: "btn #{"disabled" if role.common?}" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
