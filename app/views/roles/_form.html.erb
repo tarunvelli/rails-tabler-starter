@@ -1,39 +1,25 @@
 <div class="card border">
-  <div class="card-body row g-0">
-    <h2 class="mb-4">Details</h2>
-    <%= form_with model: [@space, role.becomes(Role)] do |form| %>
-      <% form.object = role.becomes(role.class) %>
-      <% if role.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
-          <ul>
-            <% role.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="form-group mb-3 row">
-        <%= form.label :name, class: "form-label" %>
-        <div class="col-3">
-          <%= form.text_field :name, class:"form-control", ariaDescribedby:"NameHelp", placeholder: "Enter name" %>
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-role-settings" id="role-settings-tab" role="tablist" aria-orientation="vertical">
+          <button
+            class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+            id="role-details-tab" data-bs-toggle="tab" data-bs-target="#role-details" type="button" role="tab" aria-controls="role-details" aria-selected="true"
+          >
+            Details
+            <small class="text-muted ms-auto">3</small>
+          </button>
         </div>
       </div>
-      <div class="form-group mb-3 row">
-        <%= form.label :value, class: "form-label" %>
-        <div class="col-3">
-          <%= form.text_field :value, class:"form-control", ariaDescribedby:"valueHelp", placeholder: "Enter value", disabled:"" %>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="role-settings-tabContent">
+        <div class="tab-pane show active" id="role-details" role="tabpanel" aria-labelledby="role-details-tab" tabindex="0">
+          <%= render "details", role: @role %>
         </div>
       </div>
-      <div class="form-group mb-3 row">
-        <%= form.label :type, class: "form-label" %>
-        <div class="col-3">
-          <%= form.text_field :type, class:"form-control", ariaDescribedby:"typeHelp", placeholder: "Enter type", disabled:"" %>
-        </div>
-      </div>
-      <div class="form-footer">
-        <%= form.submit "Save", class:"btn btn-primary" %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>

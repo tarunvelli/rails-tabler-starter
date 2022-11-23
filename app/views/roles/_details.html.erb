@@ -1,0 +1,90 @@
+<h2 class="mb-4">Details</h2>
+<%= form_with model: [@space, role.becomes(Role)] do |form| %>
+  <% form.object = role.becomes(role.class) %>
+  <% if role.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(role.errors.count, "error") %> prohibited this role from being saved:</h2>
+      <ul>
+        <% role.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group mb-3 row">
+    <%= form.label :name, class: "form-label col-3 col-form-label" %>
+    <div class="col-3">
+      <%= form.text_field :name, class:"form-control", ariaDescribedby:"NameHelp", placeholder: "Enter name" %>
+    </div>
+  </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :value, class: "form-label col-3 col-form-label" %>
+    <div class="col-3">
+      <%= form.text_field :value, class:"form-control", ariaDescribedby:"valueHelp", placeholder: "Enter value", disabled:"" %>
+    </div>
+  </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :type, class: "form-label col-3 col-form-label" %>
+    <div class="col-3">
+      <%= form.text_field :type, class:"form-control", ariaDescribedby:"typeHelp", placeholder: "Enter type", disabled:"" %>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Permissions</h3>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-vcenter card-table table-striped">
+          <tbody>
+            <tr>
+              <td>Users</td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                  <span class="form-check-label">None</span>
+                </label>
+              </td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                  <span class="form-check-label">Read</span>
+                </label>
+              </td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                  <span class="form-check-label">Write</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>Spaces</td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <span class="form-check-label">None</span>
+                </label>
+              </td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <span class="form-check-label">Read</span>
+                </label>
+              </td>
+              <td class="text-muted">
+                <label class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <span class="form-check-label">Write</span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="form-footer">
+    <%= form.submit "Save", class:"btn btn-primary" %>
+  </div>
+<% end %>
