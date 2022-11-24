@@ -1,8 +1,10 @@
 # Rails-tabler Boilerplate
 
-Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
+Like wordpress but worse; and not like wordpress
 
 ## Goals
+
+Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
 
 * No DSL
 
@@ -12,27 +14,24 @@ Users familiar with rails should be able to build with this boilerplate without 
 
 * Avoid magic methods / meta programming
 
-# Readme
+## Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Versions
 
 * System dependencies
 
-* Configuration
+    * Rails
 
-* Database creation
+    * Devise
 
-* Database initialization
+    * Pundit
 
-* How to run the test suite
+    * Tabler
 
-* Services (job queues, cache servers, search engines, etc.)
+* Setup
 
-* Deployment instructions
+* Testing
 
-* ...
+* Deployment
+
+* Contribution
