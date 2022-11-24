@@ -69,7 +69,7 @@ class RolesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def role_params
-    params.require(:role).permit(:name, :value, :permissions)
+    params.require(:role).permit(:name, :value, permissions: [:user, :space])
   end
 
   # Use callbacks to share common setup or constraints between actions.

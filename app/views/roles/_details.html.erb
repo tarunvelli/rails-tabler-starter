@@ -38,43 +38,43 @@
         <table class="table table-vcenter card-table table-striped">
           <tbody>
             <tr>
-              <td>Users</td>
+              <td>User</td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                  <%= form.radio_button 'permissions[user]', "none", class: "form-check-input", checked: has_access?('user', 'none') %>
                   <span class="form-check-label">None</span>
                 </label>
               </td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                 <%= form.radio_button 'permissions[user]', "read", class: "form-check-input", checked: has_access?('user', 'read') %>
                   <span class="form-check-label">Read</span>
                 </label>
               </td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="user_permission" checked="">
+                  <%= form.radio_button 'permissions[user]', "write", class: "form-check-input", checked: has_access?('user', 'write') %>
                   <span class="form-check-label">Write</span>
                 </label>
               </td>
             </tr>
             <tr>
-              <td>Spaces</td>
+              <td>Space</td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <%= form.radio_button 'permissions[space]', "none", class: "form-check-input", checked: has_access?('space', 'none') %>
                   <span class="form-check-label">None</span>
                 </label>
               </td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <%= form.radio_button 'permissions[space]', "read", class: "form-check-input", checked: has_access?('space', 'read') %>
                   <span class="form-check-label">Read</span>
                 </label>
               </td>
               <td class="text-muted">
                 <label class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="space_permission" checked="">
+                  <%= form.radio_button 'permissions[space]', "write", class: "form-check-input", checked: has_access?('space', 'write') %>
                   <span class="form-check-label">Write</span>
                 </label>
               </td>
