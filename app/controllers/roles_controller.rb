@@ -2,7 +2,7 @@
 
 class RolesController < ApplicationController
   before_action :set_role, only: %i[show edit update destroy]
-  before_action :set_space, only: %i[index edit update new]
+  before_action :set_space, only: %i[index edit update new create]
 
   # GET /roles or /roles.json
   def index
@@ -24,11 +24,12 @@ class RolesController < ApplicationController
 
   # POST /roles or /roles.json
   def create
-    @role = role.new(role_params)
+    @role = Roles::Custom.new(create_role_params)
+    @role.space = @space
 
     respond_to do |format|
       if @role.save
-        format.html { redirect_to role_url(@role), notice: 'role was successfully created.' }
+        format.html { redirect_to edit_space_role_path(@space, @role), notice: 'role was successfully created.' }
         format.json { render :show, status: :created, location: @role }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +41,7 @@ class RolesController < ApplicationController
   # PATCH/PUT /roles/1 or /roles/1.json
   def update
     respond_to do |format|
-      if @role.update(role_params)
+      if @role.update(update_role_params)
         format.html { redirect_to edit_space_role_path(@space, @role), notice: 'role was successfully updated.' }
         format.json { render :show, status: :ok, location: @role }
       else
@@ -68,8 +69,13 @@ class RolesController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def role_params
-    params.require(:role).permit(:name, :value, permissions: [:user, :space])
+  def create_role_params
+    params.require(:role).permit(:name, :value, permissions: %i[user space])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def update_role_params
+    params.require(:role).permit(:name, permissions: %i[user space])
   end
 
   # Use callbacks to share common setup or constraints between actions.
