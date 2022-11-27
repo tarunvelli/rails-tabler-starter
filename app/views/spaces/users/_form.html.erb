@@ -1,0 +1,26 @@
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-user-settings" id="user-settings-tab" role="tablist" aria-orientation="vertical">
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+					id="user-role-tab" data-bs-toggle="tab" data-bs-target="#user-role" type="button" role="tab" aria-controls="user-role" aria-selected="true">
+            Role
+            <small class="text-muted ms-auto">1</small>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="user-settings-tabContent">
+        <div class="tab-pane show active" id="user-role" role="tabpanel" aria-labelledby="user-role-tab" tabindex="0">
+          <%= render "user_role" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+  <%= button_to "Delete", @user, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-danger" %>
+-->

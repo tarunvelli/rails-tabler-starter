@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: %i[new create show edit update destroy]
   resources :spaces do
-    resources :users, only: %i[index], controller: 'spaces/users'
+    resources :users, only: %i[index edit], controller: 'spaces/users' do
+      member do
+        post :user_role, as: 'role'
+      end
+    end
     resources :roles
   end
 
