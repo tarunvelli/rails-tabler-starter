@@ -5,9 +5,7 @@ class UsersController < ApplicationController
   before_action :set_space, only: %i[index]
 
   # GET /users or /users.json
-  def index
-    @users = @space.users
-  end
+  def index; end
 
   # GET /users/1 or /users/1.json
   def show; end
