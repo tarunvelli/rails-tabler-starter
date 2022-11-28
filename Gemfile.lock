@@ -99,6 +99,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.6)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     digest (3.1.0)
     erubi (1.10.0)
     globalid (1.0.0)
@@ -271,12 +274,12 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  devise_invitable (~> 2.0.0)
   htmlbeautifier
   jbuilder
   jsbundling-rails
   letter_opener
   pg (~> 1.1)
-  pry
   pry-byebug (~> 3.10.1)
   pry-rails (~> 0.3.9)
   pry-rescue (~> 1.5.2)

@@ -1,0 +1,15 @@
+<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post, class: "card card-md" }, data: { turbo: false }) do |f| %>
+  <div class="card-body">
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <h2 class="card-title text-center mb-4"><%= t "devise.invitations.new.header" %></h2>
+    <% resource.class.invite_key_fields.each do |field| -%>
+      <div class="mb-3">
+        <%= f.label field, class: "form-label" %><br />
+        <%= f.text_field field, class: "form-control" %>
+      </div>
+    <% end -%>
+    <div class="form-footer">
+      <%= f.submit t("devise.invitations.new.submit_button"), class: "btn btn-primary w-100" %>
+    </div>
+  </div>
+<% end %>

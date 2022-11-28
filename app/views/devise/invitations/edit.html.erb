@@ -1,0 +1,23 @@
+<%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put, class: "card card-md" }, data: { turbo: false }) do |f| %>
+  <div class="card-body">
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <h2 class="card-title text-center mb-4"><%= t "devise.invitations.edit.header" %></h2>
+  <%= f.hidden_field :invitation_token, readonly: true %>
+
+  <% if f.object.class.require_password_on_accepting %>
+    <div class="mb-3">
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :password_confirmation, class: "form-label" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+  <% end %>
+
+  <div class="form-footer">
+    <%= f.submit t("devise.invitations.edit.submit_button"), class: "btn btn-primary w-100" %>
+  </div>
+  </div>
+<% end %>
