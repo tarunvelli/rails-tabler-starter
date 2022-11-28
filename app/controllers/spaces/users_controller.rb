@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Spaces::UsersController < ApplicationController
-  before_action :set_space, only: %i[index edit user_role]
+  before_action :set_space, only: %i[index edit new user_role]
   before_action :set_user, only: %i[edit user_role]
   before_action :set_user_role, only: %i[edit user_role]
 
@@ -9,6 +9,8 @@ class Spaces::UsersController < ApplicationController
   def index
     @users = @space.users
   end
+
+  def new; end
 
   def edit; end
 
