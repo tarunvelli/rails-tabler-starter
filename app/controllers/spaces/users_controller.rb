@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Spaces::UsersController < ApplicationController
-  before_action :set_space, only: %i[index edit new user_role]
+  before_action :set_space, only: %i[index new create edit user_role]
   before_action :set_user, only: %i[edit user_role]
   before_action :set_user_role, only: %i[edit user_role]
 
@@ -11,6 +11,21 @@ class Spaces::UsersController < ApplicationController
   end
 
   def new; end
+
+  def create
+    user = User.find_by(email: params[:email]) || User.invite!(email: params[:email])
+    user_role = UserRole.find_by(space: @space, user: user)
+
+    respond_to do |format|
+      if !user_role.present? && UserRole.create(user_id: user.id, space_id: params[:space_id], role_id: params[:role_id])
+        format.html { redirect_to space_users_path(@space), notice: 'User was successfully invited.' }
+        format.json { render :index, status: :ok }
+      else
+        format.html { redirect_to space_users_path(@space) }
+        format.json { render json: ['Failed to invite user'], status: :unprocessable_entity }
+      end
+    end
+  end
 
   def edit; end
 

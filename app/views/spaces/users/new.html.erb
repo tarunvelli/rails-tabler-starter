@@ -1,1 +1,7 @@
-yo
+<% content_for :page_pretitle do %>
+  Space / User / new
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+<%= render "new_form" %>
