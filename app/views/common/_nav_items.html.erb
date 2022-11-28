@@ -43,28 +43,19 @@
         Settings
       </span>
     <% end %>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#navbar-extra" data-bs-toggle="dropdown"
-                data-bs-auto-close="outside" role="button" aria-expanded="false">
-        <span class="nav-link-icon d-md-none d-lg-inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-fingerprint" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-             <path d="M18.9 7a8 8 0 0 1 1.1 5v1a6 6 0 0 0 .8 3"></path>
-             <path d="M8 11a4 4 0 0 1 8 0v1a10 10 0 0 0 2 6"></path>
-             <path d="M12 11v2a14 14 0 0 0 2.5 8"></path>
-             <path d="M8 15a18 18 0 0 0 1.8 6"></path>
-             <path d="M4.9 19a22 22 0 0 1 -.9 -7v-1a8 8 0 0 1 12 -6.95"></path>
-          </svg>
-        </span>
-        <span class="nav-link-title">
-          Roles
-        </span>
-      </a>
-      <div class="dropdown-menu">
-        <%= link_to "All", space_roles_path(@space), class: "dropdown-item" %>
-        <%= link_to "New", new_space_role_path(@space), class: "dropdown-item" %>
-      </div>
-    </li>
+    <%= nav_link space_roles_path(@space) do %>
+      <span class="nav-link-icon d-md-none d-lg-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <desc>Download more icon variants from https://tabler-icons.io/i/settings</desc>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </span>
+      <span class="nav-link-title">
+        Roles
+      </span>
+    <% end %>
     <li class="nav-item">
       <a class="nav-link" href="https://preview.tabler.io/docs/index.html" target="_blank" >
         <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/file-text -->
