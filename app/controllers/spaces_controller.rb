@@ -2,7 +2,7 @@
 
 class SpacesController < ApplicationController
   before_action :set_space, only: %i[show edit update destroy]
-  before_action :check_saas_mode, only: %i[new index]
+  before_action :check_multi_tenant_mode, only: %i[new index]
   before_action :set_space_and_user_roles, only: %i[create]
 
   # GET /spaces or /spaces.json
@@ -71,8 +71,8 @@ class SpacesController < ApplicationController
     params.require(:space).permit(:name, :phone, :email, :status, :address)
   end
 
-  def check_saas_mode
-    return unless !Rails.application.config.saas_mode && Space.count.positive?
+  def check_multi_tenant_mode
+    return unless !Rails.application.config.multi_tenant_mode && Space.count.positive?
 
     redirect_back fallback_location: root_path
   end

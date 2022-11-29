@@ -8,17 +8,15 @@ class ApplicationController < ActionController::Base
   before_action :set_mode
   before_action :set_theme
 
+  private
+
   def set_layout
     @layout = params[:layout]
   end
 
   def set_mode
     @mode = params[:mode] || case current_user&.pallete
-                             when 'light'
-                               'LIGHT'
-                             when 'dark'
-                               'DARK'
-                             when 'cool'
+                             when 'cool', 'dark'
                                'DARK'
                              else
                                'LIGHT'
@@ -27,10 +25,6 @@ class ApplicationController < ActionController::Base
 
   def set_theme
     @theme = params[:theme] || case current_user&.pallete
-                               when 'light'
-                                 'DEFAULT'
-                               when 'dark'
-                                 'DEFAULT'
                                when 'cool'
                                  'COOL'
                                else

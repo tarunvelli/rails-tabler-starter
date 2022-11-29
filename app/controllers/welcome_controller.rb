@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
-  def show
+  def index
     @space = current_user.spaces.first
     if @space&.present?
       redirect_to @space

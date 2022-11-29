@@ -21,7 +21,7 @@
     <div class="dropdown-divider"></div>
     <%= link_to 'Change password', edit_user_registration_path, class: 'dropdown-item' %>
     <div class="dropdown-divider"></div>
-    <% if saas_mode %>
+    <% if multi_tenant_mode? %>
       <%= link_to 'Spaces', spaces_path, class: 'dropdown-item' %>
       <div class="dropdown-divider"></div>
     <% end %>

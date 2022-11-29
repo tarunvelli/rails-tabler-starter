@@ -28,6 +28,6 @@ module Portal
 
     # saas mode [true, false]
     # when true allows multiple spaces to be created
-    config.saas_mode = true
+    config.multi_tenant_mode = true
   end
 end

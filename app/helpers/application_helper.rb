@@ -47,7 +47,7 @@ module ApplicationHelper
     end
   end
 
-  def saas_mode
-    Rails.application.config.saas_mode
+  def multi_tenant_mode?
+    Rails.application.config.multi_tenant_mode
   end
 end
