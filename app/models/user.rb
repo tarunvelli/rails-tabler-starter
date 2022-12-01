@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   enum status: %i[active archived]
 
+  alias_attribute :admin?, :admin
+
   def name
     "#{first_name} #{last_name}"
   end

@@ -6,6 +6,7 @@ module.exports = {
   devtool: "source-map",
   entry: {
     application: "./app/javascript/application.js",
+    rails_admin: "./app/javascript/rails_admin.js",
     tabler: "./app/javascript/tabler.js"
   },
   output: {

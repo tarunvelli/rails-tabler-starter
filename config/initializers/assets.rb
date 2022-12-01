@@ -12,3 +12,4 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap
 # folder are already added.
 
 Rails.application.config.assets.precompile += %w[application-cool.css]
+Rails.application.config.assets.paths << Rails.root.join("node_modules/@fortawesome/fontawesome-free/webfonts")

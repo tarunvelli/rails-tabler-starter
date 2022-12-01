@@ -60,6 +60,9 @@ gem 'pundit', '~> 2.2'
 # Invitable
 gem 'devise_invitable', '~> 2.0.0'
 
+# Admin interface
+gem 'rails_admin', '~> 3.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -92,3 +95,4 @@ group :test do
   gem 'webdrivers'
 end
 
+gem "cssbundling-rails"
