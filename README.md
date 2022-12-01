@@ -1,37 +1,50 @@
 # Rails-tabler Boilerplate
 
-Like wordpress but worse; and not like wordpress
+Rails boilerplate that you can clone and build on top off
+
+* User authentication & authorization
+
+    * Authentication through [Devise](https://github.com/heartcombo/devise)
+    * Authorization thought [Pundit](https://github.com/varvet/pundit)
+
+* Role managrment
+
+    * Supports standard roles available across spaces and also custom roles per space
+
+* Multi-tenant architeture
+
+    * The `Space` model is used to represent a tenant i.e. can be a team, organization, group etc.
+
+* Pre built UI layouts
+
+    * Using the beautiful UI elements and layouts from [Tabler](https://tabler.io/)
 
 ## Goals
 
 Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
 
 * No DSL
-
 * Avoid complex frontend functionality
-
 * Simplicity over efficiency
-
 * Avoid magic methods / meta programming
+* Not to be made into a gem/engine
+* Minimum dependencies
 
-## Readme
+## Setup
 
-* Versions
+```
+git clone http:<insert url>
+cd folder
+bundle install
+yarn install
+bundle exec rails db:setup
+bin/dev
+```
 
-* System dependencies
+## Deployment
 
-    * Rails
+TODO: instructions to deploy on fly.io etc.
 
-    * Devise
+## Contribution
 
-    * Pundit
-
-    * Tabler
-
-* Setup
-
-* Testing
-
-* Deployment
-
-* Contribution
+Contribution is welcome!
