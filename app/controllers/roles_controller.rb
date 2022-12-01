@@ -6,9 +6,7 @@ class RolesController < ApplicationController
 
   # GET /roles or /roles.json
   def index
-    @common_roles = Roles::Common.all
-    @custom_roles = Roles::Custom.where(space: @space)
-    @space_roles = @common_roles + @custom_roles
+    @space_roles = @space.all_roles
   end
 
   # GET /roles/1 or /roles/1.json

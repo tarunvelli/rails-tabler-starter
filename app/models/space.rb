@@ -9,6 +9,10 @@ class Space < ApplicationRecord
 
   enum status: %i[active archived]
 
+  def all_roles
+    Role.where(space_id: [nil, id])
+  end
+
   private
 
   def check_multi_tenant_mode

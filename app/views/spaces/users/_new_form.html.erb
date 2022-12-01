@@ -26,7 +26,7 @@
             <div class="form-group mb-3 row">
               <%= form.label :role, class: "form-label col-3 col-form-label" %>
               <div class="col">
-                <%= form.select :role_id, space_roles.map { |role| [role.name, role.id] }, {}, { class:"form-control", ariaDescribedby:"roleHelp" } %>
+                <%= form.select :role_id, @space_roles.map { |role| [role.name, role.id] }, {}, { class:"form-control", ariaDescribedby:"roleHelp" } %>
               </div>
             </div>
             <div class="form-footer">

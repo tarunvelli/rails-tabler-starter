@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def abbrev_name(name)
-    name.blank? ? 'X' : name.split(' ').map(&:first).join('.')
+    name.blank? ? '?' : name.split(' ').map(&:first).join('.')
   end
 
   def interface_layout

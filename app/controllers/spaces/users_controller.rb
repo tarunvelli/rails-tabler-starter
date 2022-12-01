@@ -10,7 +10,9 @@ class Spaces::UsersController < ApplicationController
     @users = @space.users
   end
 
-  def new; end
+  def new
+    @space_roles = @space.all_roles
+  end
 
   def create
     user = User.find_by(email: params[:email]) || User.invite!(email: params[:email])
@@ -27,7 +29,9 @@ class Spaces::UsersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @space_roles = @space.all_roles
+  end
 
   def user_role
     respond_to do |format|
