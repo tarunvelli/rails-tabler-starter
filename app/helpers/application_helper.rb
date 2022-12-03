@@ -24,6 +24,8 @@ module ApplicationHelper
       'body/vertical'
     when 'OVERLAP'
       'body/overlap'
+    when 'CONDENSED'
+      'body/condensed'
     else
       'body/horizontal'
     end
