@@ -16,7 +16,7 @@
       <div class="card-body tab-content" id="user-settings-tabContent">
         <div class="tab-pane show active" id="user-role" role="tabpanel" aria-labelledby="user-role-tab" tabindex="0">
           <h2 class="mb-4">User role</h2>
-          <%= form_with(model: @user_role, url: role_space_user_url(@space, @user), method: :post) do |form| %>
+          <%= form_with(model: @user_role, url: space_user_url(@space, @user), method: :patch) do |form| %>
             <% if @user_role.errors.any? %>
               <div style="color: red">
                 <h2><%= pluralize(@user_role.errors.count, "error") %> prohibited this user role from being saved:</h2>

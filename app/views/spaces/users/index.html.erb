@@ -29,6 +29,7 @@
               <th>Created at</th>
               <th>Status</th>
               <th class="w-1"></th>
+              <th class="w-1"></th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +53,11 @@
                 <td>
                   <div class="btn-list flex-nowrap">
                     <%=link_to "Edit", edit_space_user_path(@space, user), class: "btn" %>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-list flex-nowrap">
+                    <%=button_to "Remove", space_user_path(@space, user), :method => :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
                   </div>
                 </td>
               </tr>

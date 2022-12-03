@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     @mode = params[:mode] || case current_user&.pallete
                              when 'cool', 'dark'
                                'DARK'
-                             else
+                             when 'light'
                                'LIGHT'
                              end
   end
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     @theme = params[:theme] || case current_user&.pallete
                                when 'cool'
                                  'COOL'
-                               else
+                               when 'light', 'dark'
                                  'DEFAULT'
                                end
   end

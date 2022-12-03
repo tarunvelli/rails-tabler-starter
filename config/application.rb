@@ -22,7 +22,7 @@ module Portal
     # layout ["VERTICAL", "HORIZONTAL", "OVERLAP"]
     config.interface_layout = 'HORIZONTAL'
     # mode ["LIGHT", "DARK"]
-    config.interface_mode = 'DARK'
+    config.interface_mode = 'LIGHT'
     # theme ["DEFAULT", "COOL"]
     config.interface_theme = 'COOL'
 
