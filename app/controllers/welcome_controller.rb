@@ -2,7 +2,7 @@
 
 class WelcomeController < ApplicationController
   def index
-    @space = current_user.spaces.first
+    @space = current_user.spaces.filter(&:active?).first
     if @space&.present?
       redirect_to @space
     else

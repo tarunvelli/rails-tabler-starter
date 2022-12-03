@@ -15,20 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_mode
-    @mode = params[:mode] || case current_user&.pallete
-                             when 'cool', 'dark'
-                               'DARK'
-                             when 'light'
-                               'LIGHT'
-                             end
+    @mode = params[:mode] || current_user&.pallete&.split('-')&.dig(0)
   end
 
   def set_theme
-    @theme = params[:theme] || case current_user&.pallete
-                               when 'cool'
-                                 'COOL'
-                               when 'light', 'dark'
-                                 'DEFAULT'
-                               end
+    @theme = params[:theme] || current_user&.pallete&.split('-')&.dig(1)
   end
 end

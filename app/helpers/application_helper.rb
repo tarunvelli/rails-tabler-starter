@@ -11,7 +11,7 @@ module ApplicationHelper
   end
 
   def user_spaces
-    @user_spaces ||= current_user.spaces.order(:name)
+    @user_spaces ||= current_user.spaces.order(:name).filter(&:active?)
   end
 
   def abbrev_name(name)
