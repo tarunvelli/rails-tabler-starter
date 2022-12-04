@@ -25,6 +25,8 @@ module Portal
     config.interface_mode = 'LIGHT'
     # theme ["DEFAULT", "COOL"]
     config.interface_theme = 'COOL'
+    # layout ["DEFAULT", "ILLUSTRATION", "COVER"]
+    config.login_layout = 'DEFAULT'
 
     # saas mode [true, false]
     # when true allows multiple spaces to be created

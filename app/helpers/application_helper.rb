@@ -18,6 +18,17 @@ module ApplicationHelper
     name.blank? ? '?' : name.split(' ').map(&:first).join('.')
   end
 
+  def login_layout
+    case @login || Rails.application.config.login_layout
+    when 'ILLUSTRATION'
+      'body/login_illustration'
+    when 'COVER'
+      'body/login_cover'
+    else
+      'body/login'
+    end
+  end
+
   def interface_layout
     case @layout || Rails.application.config.interface_layout
     when 'VERTICAL'

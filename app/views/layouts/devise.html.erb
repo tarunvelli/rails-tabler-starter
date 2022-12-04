@@ -9,20 +9,5 @@
     <%= stylesheet_link_tag interface_theme, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body  class="border-top-wide border-primary d-flex flex-column <%= interface_mode %>">
-    <div class="page page-center">
-      <div class="container-tight py-4">
-        <% if notice %>
-          <p class="alert alert-success alert-dismissible"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p class="alert alert-danger alert-dismissible"><%= alert %></p>
-        <% end %>
-        <div class="text-center mb-4">
-          <a href="/" class="navbar-brand navbar-brand-autodark"><%= image_tag "logo.svg", height: '36' %></a>
-        </div>
-        <%= yield %>
-      </div>
-    </div>
-  </body>
+    <%= render login_layout %>
 </html>

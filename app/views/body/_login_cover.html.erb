@@ -1,0 +1,22 @@
+<body  class=" d-flex flex-column <%= interface_mode %>">
+  <div class="row g-0 flex-fill">
+    <div class="col-12 col-lg-6 col-xl-8 d-none d-lg-block">
+      <!-- Photo -->
+      <div class="bg-cover h-100 min-vh-100" style="background-image: url(/finances-us-dollars-and-bitcoins-currency-money-2.jpg)"></div>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-4 border-top-wide border-primary d-flex flex-column justify-content-center">
+      <div class="container container-tight my-5 px-lg-5">
+        <% if notice %>
+          <p class="alert alert-success alert-dismissible"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+        <% end %>
+        <div class="text-center mb-4">
+          <a href="/" class="navbar-brand navbar-brand-autodark"><%= image_tag "logo.svg", height: '36' %></a>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>

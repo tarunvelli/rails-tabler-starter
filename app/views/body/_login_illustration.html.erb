@@ -1,0 +1,25 @@
+<body  class=" border-top-wide border-primary d-flex flex-column <%= interface_mode %>">
+  <div class="page page-center">
+    <div class="container container-normal py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg">
+          <div class="container-tight">
+            <% if notice %>
+              <p class="alert alert-success alert-dismissible"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+            <% end %>
+            <div class="text-center mb-4">
+              <a href="/" class="navbar-brand navbar-brand-autodark"><%= image_tag "logo.svg", height: '36' %></a>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+        <div class="col-lg d-none d-lg-block">
+          <img src="/undraw_secure_login_pdn4.svg" height="300" class="d-block mx-auto" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
