@@ -68,12 +68,12 @@ class RolesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def create_role_params
-    params.require(:role).permit(:name, :value, permissions: %i[user space])
+    params.require(:role).permit(:name, :value, permissions: {})
   end
 
   # Only allow a list of trusted parameters through.
   def update_role_params
-    params.require(:role).permit(:name, permissions: %i[user space])
+    params.require(:role).permit(:name, permissions: {})
   end
 
   # Use callbacks to share common setup or constraints between actions.

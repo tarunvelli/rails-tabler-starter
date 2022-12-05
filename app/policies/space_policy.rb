@@ -6,6 +6,6 @@ class SpacePolicy < ApplicationPolicy
   end
 
   def update?
-    @role.can_write?(:space)
+    @role.can_update_space?
   end
 end

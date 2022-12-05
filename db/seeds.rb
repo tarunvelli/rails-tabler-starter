@@ -13,8 +13,14 @@ Role.create!(
       value: 'EDITOR',
       type: 'common',
       permissions: {
-        user: 'write',
-        space: 'write'
+        'read_user' => 'true',
+        'read_space' => 'true',
+        'create_user' => 'true',
+        'delete_user' => 'true',
+        'update_user' => 'true',
+        'create_space' => 'true',
+        'delete_space' => 'true',
+        'update_space' => 'true'
       }
     },
     {
@@ -22,8 +28,14 @@ Role.create!(
       value: 'VIEWER',
       type: 'common',
       permissions: {
-        user: 'read',
-        space: 'read'
+        'read_user' => 'true',
+        'read_space' => 'true',
+        'create_user' => 'false',
+        'delete_user' => 'false',
+        'update_user' => 'false',
+        'create_space' => 'false',
+        'delete_space' => 'false',
+        'update_space' => 'false'
       }
     }
   ]

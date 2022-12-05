@@ -51,11 +51,16 @@ class SpacesController < ApplicationController
 
   # DELETE /spaces/1 or /spaces/1.json
   def destroy
-    @space.destroy
+    authorize @space
 
     respond_to do |format|
-      format.html { redirect_to spaces_url, notice: 'Space was successfully destroyed.' }
-      format.json { head :no_content }
+      if @space.destroy
+        format.html { redirect_to spaces_url, notice: 'Space was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { render :index, status: :unprocessable_entity }
+        format.json { render json: @space.errors, status: :unprocessable_entity }
+      end
     end
   end
 

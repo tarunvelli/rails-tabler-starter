@@ -1,5 +1,5 @@
 module RolesHelper
-  def has_access?(object, access)
-    @role.permissions[object] == access
+  def has?(permission)
+    @role.send("can_#{permission}?")
   end
 end

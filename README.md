@@ -26,7 +26,6 @@ Users familiar with rails should be able to build with this boilerplate without 
 * No DSL
 * Avoid complex frontend functionality
 * Simplicity over efficiency
-* Avoid magic methods / meta programming
 * Not to be made into a gem/engine
 * Minimum dependencies
 

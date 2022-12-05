@@ -23,59 +23,15 @@
       <%= form.text_field :value, class:"form-control", ariaDescribedby:"valueHelp", placeholder: "Enter value", disabled: role.persisted? %>
     </div>
   </div>
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Permissions</h3>
-      </div>
-      <div class="table-responsive">
-        <table class="table table-vcenter card-table table-striped">
-          <tbody>
-            <tr>
-              <td>User</td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                  <%= form.radio_button 'permissions[user]', "none", class: "form-check-input", checked: has_access?('user', 'none') %>
-                  <span class="form-check-label">None</span>
-                </label>
-              </td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                 <%= form.radio_button 'permissions[user]', "read", class: "form-check-input", checked: has_access?('user', 'read') %>
-                  <span class="form-check-label">Read</span>
-                </label>
-              </td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                  <%= form.radio_button 'permissions[user]', "write", class: "form-check-input", checked: has_access?('user', 'write') %>
-                  <span class="form-check-label">Write</span>
-                </label>
-              </td>
-            </tr>
-            <tr>
-              <td>Space</td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                  <%= form.radio_button 'permissions[space]', "none", class: "form-check-input", checked: has_access?('space', 'none') %>
-                  <span class="form-check-label">None</span>
-                </label>
-              </td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                  <%= form.radio_button 'permissions[space]', "read", class: "form-check-input", checked: has_access?('space', 'read') %>
-                  <span class="form-check-label">Read</span>
-                </label>
-              </td>
-              <td class="text-muted">
-                <label class="form-check form-check-inline">
-                  <%= form.radio_button 'permissions[space]', "write", class: "form-check-input", checked: has_access?('space', 'write') %>
-                  <span class="form-check-label">Write</span>
-                </label>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="mb-3">
+    <div class="form-label col-3 col-form-label">Permissions</div>
+    <div>
+      <% Role::AVAILABLE_PERMISSIONS.each do |permission| %>
+        <label class="form-check">
+          <%= form.check_box "permissions[#{permission}]", { class: 'form-check-input', checked: has?(permission) }, "true", "false" %>
+          <span class="form-check-label"> <%= permission %> </span>
+        </label>
+      <% end %>
     </div>
   </div>
   <div class="form-footer">
