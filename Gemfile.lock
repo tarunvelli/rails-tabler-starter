@@ -301,6 +301,7 @@ DEPENDENCIES
   htmlbeautifier
   jbuilder
   jsbundling-rails
+  kaminari
   letter_opener
   pg (~> 1.1)
   pry-byebug (~> 3.10.1)

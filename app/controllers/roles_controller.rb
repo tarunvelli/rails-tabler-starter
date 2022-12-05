@@ -6,7 +6,7 @@ class RolesController < ApplicationController
 
   # GET /roles or /roles.json
   def index
-    @space_roles = @space.all_roles
+    @space_roles = @space.all_roles.page params[:page]
   end
 
   # GET /roles/1 or /roles/1.json

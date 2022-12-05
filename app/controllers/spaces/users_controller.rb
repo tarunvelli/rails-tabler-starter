@@ -7,7 +7,7 @@ class Spaces::UsersController < ApplicationController
 
   # GET /spaces/:space_id/users
   def index
-    @users = @space.users
+    @users = @space.users.page params[:page]
   end
 
   def new

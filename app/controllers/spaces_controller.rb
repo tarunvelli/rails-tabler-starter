@@ -7,7 +7,7 @@ class SpacesController < ApplicationController
 
   # GET /spaces or /spaces.json
   def index
-    @spaces = current_user.spaces
+    @spaces = current_user.spaces.page params[:page]
   end
 
   # GET /spaces/1 or /spaces/1.json

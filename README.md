@@ -1,4 +1,4 @@
-# Rails-tabler Boilerplate
+# Rails-tabler-starter
 
 Rails boilerplate that you can clone and build on top off
 
