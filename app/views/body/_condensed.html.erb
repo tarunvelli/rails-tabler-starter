@@ -27,7 +27,7 @@
             <%= render 'common/section_title' %>
             <!-- Page title actions -->
             <div class="col-auto ms-auto d-print-none">
-                <%= render 'common/space_selector' %>
+              <%= render 'common/space_selector' %>
             </div>
           </div>
         </div>
@@ -35,6 +35,12 @@
       <!-- Page body -->
       <div class="page-body">
         <div class="container-xl">
+          <% if notice %>
+            <p class="alert alert-success alert-dismissible"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+          <% end %>
           <%= yield %>
         </div>
       </div>

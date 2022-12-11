@@ -1,4 +1,4 @@
-<h2 class="mb-4">Details</h2>
+<h2 class="mb-4">Role</h2>
 <%= form_with model: [@space, role.becomes(Role)] do |form| %>
   <% form.object = role.becomes(role.class) %>
   <% if role.errors.any? %>

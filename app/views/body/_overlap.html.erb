@@ -43,6 +43,12 @@
       </div>
       <div class="page-body">
         <div class="container-xl">
+          <% if notice %>
+            <p class="alert alert-success alert-dismissible"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+          <% end %>
           <%= yield %>
         </div>
       </div>

@@ -31,12 +31,6 @@
       <div class="container-xl">
         <!-- Page title -->
         <div class="page-header d-print-none">
-          <% if notice %>
-            <p class="alert alert-success alert-dismissible"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-            <p class="alert alert-danger alert-dismissible"><%= alert %></p>
-          <% end %>
           <div class="row align-items-center">
             <%= render 'common/section_title' %>
           </div>
@@ -44,6 +38,12 @@
       </div>
       <div class="page-body">
         <div class="container-xl">
+          <% if notice %>
+            <p class="alert alert-success alert-dismissible"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+          <% end %>
           <%= yield %>
         </div>
       </div>

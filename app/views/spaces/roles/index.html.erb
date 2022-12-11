@@ -1,0 +1,82 @@
+<% content_for :page_pretitle do %>
+  Space / roles
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-role-settings" id="role-settings-tab" role="tablist" aria-orientation="vertical">
+          <%= link_to edit_space_path(@space), class: "list-group-item list-group-item-action d-flex align-items-center nav-link", id: "space-details-tab", type: "button", role:"tab", aria: { controls: "space-details", selected: "false" } do %>
+            Details
+            <small class="text-muted ms-auto">6</small>
+          <% end %>
+          <%= link_to space_roles_path(@space), class: "list-group-item list-group-item-action d-flex align-items-center nav-link active", id: "space-roles-tab", type: "button", role:"tab", aria: { controls: "space-roles", selected: "true" } do %>
+            Roles
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="space-settings-tabContent">
+        <div class="tab-pane show active" id="space-roles" role="tabpanel" aria-labelledby="space-roles-tab" tabindex="0">
+          <div class="row">
+            <div class="col d-flex justify-content-between">
+              <h2 class="mb-4">Roles</h2>
+              <div>
+                <%= link_to new_space_role_path(@space), class: "btn btn-primary"  do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                  New role
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <table class="table table-sm table-borderless">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th class="w-1"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @space_roles.each do |role| %>
+                    <tr>
+                      <td class="text-muted" data-label="Name" >
+                        <%= role.name %>
+                      </td>
+                      <td>
+                        <div class="btn-list flex-nowrap">
+                          <%=link_to edit_space_role_path(@space, role), class: "btn w-100 btn-icon #{"disabled" if role.common?}" do %>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                              <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                              <path d="M16 5l3 3"></path>
+                            </svg>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <div class="card-footer d-flex align-items-center">
+                <p class="m-0 text-muted"><%= page_entries_info @space_roles %></p>
+                <%= paginate @space_roles %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
