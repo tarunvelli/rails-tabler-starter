@@ -16,8 +16,8 @@ class Space < ApplicationRecord
   private
 
   def check_multi_tenant_mode
-    return unless !Rails.application.config.multi_tenant_mode && Space.count.positive?
+    return if multi_tenant_mode?
 
-    errors.add(:base, "Can't create additional spaces in non-saas mode")
+    errors.add(:base, "Can't create additional spaces in single-tenant mode")
   end
 end

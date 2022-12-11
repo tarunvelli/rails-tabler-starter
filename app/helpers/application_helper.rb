@@ -74,6 +74,6 @@ module ApplicationHelper
   end
 
   def multi_tenant_mode?
-    Rails.application.config.multi_tenant_mode
+    Rails.application.config.multi_tenant_mode || current_user&.admin?
   end
 end

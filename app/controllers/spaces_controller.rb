@@ -77,7 +77,7 @@ class SpacesController < ApplicationController
   end
 
   def check_multi_tenant_mode
-    return unless !Rails.application.config.multi_tenant_mode && Space.count.positive?
+    return if multi_tenant_mode?
 
     redirect_back fallback_location: root_path
   end

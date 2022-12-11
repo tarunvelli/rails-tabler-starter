@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   def set_theme
     @theme = params[:theme] || current_user&.pallete&.split('-')&.dig(1)
   end
+
+  def multi_tenant_mode?
+    Rails.application.config.multi_tenant_mode || current_user&.admin?
+  end
 end
