@@ -15,6 +15,8 @@ class Spaces::UsersController < ApplicationController
   end
 
   def create
+    authorize @space, policy_class: UserPolicy
+
     user = User.find_by(email: params[:email]) || User.invite!(email: params[:email])
     user_role = UserRole.find_by(space: @space, user: user)
 
@@ -34,6 +36,8 @@ class Spaces::UsersController < ApplicationController
   end
 
   def update
+    authorize @space, policy_class: UserPolicy
+
     respond_to do |format|
       if @user_role.update(user_role_params)
         format.html { redirect_to edit_space_user_path(@space, @user), notice: 'User role was successfully updated.' }
@@ -46,6 +50,8 @@ class Spaces::UsersController < ApplicationController
   end
 
   def destroy
+    authorize @space, policy_class: UserPolicy
+
     respond_to do |format|
       if @user_role.delete
         format.html { redirect_to space_users_path(@space), notice: 'User role was successfully removed.' }
