@@ -27,12 +27,16 @@ module Portal
     # mode ["LIGHT", "DARK"]
     config.interface_mode = 'LIGHT'
     # theme ["DEFAULT", "COOL"]
-    config.interface_theme = 'COOL'
+    config.interface_theme = 'DEFAULT'
     # layout ["DEFAULT", "ILLUSTRATION", "COVER"]
     config.login_layout = 'DEFAULT'
 
-    # saas mode [true, false]
+    # multi tenant mode [true, false]
     # when true allows multiple spaces to be created
     config.multi_tenant_mode = true
+
+    # show landing page [true, false]
+    # when true  root shows the landing page when user is signed out
+    config.show_landing_page = true
   end
 end

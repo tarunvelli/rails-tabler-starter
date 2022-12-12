@@ -29,6 +29,6 @@
       <%= link_to 'Admin', rails_admin_path, class: 'dropdown-item' %>
       <div class="dropdown-divider"></div>
     <% end %>
-    <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: 'dropdown-item'  %>
+    <%= button_to "Logout", destroy_user_session_path, data: { turbo: false }, class: 'dropdown-item', method: :delete  %>
   </div>
 </div>
