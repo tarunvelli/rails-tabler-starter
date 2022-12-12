@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portal</title>
+    <%=favicon_link_tag 'favicon.ico', type: 'image/ico'%>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!-- local stylesheet -->
+    <%= stylesheet_link_tag interface_theme, "data-turbo-track": "reload" %>
+    <!-- local javascript -->
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <!-- TODO: move js files to vendor -->
+    <!-- apex charts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+  </head>
+  <%= yield %>
+</html>

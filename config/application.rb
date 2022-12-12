@@ -19,6 +19,9 @@ module Portal
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # use application router for error pages
+    config.exceptions_app = routes
+
     # layout ["VERTICAL", "HORIZONTAL", "OVERLAP", "CONDENSED"]
     config.interface_layout = 'CONDENSED'
     # mode ["LIGHT", "DARK"]

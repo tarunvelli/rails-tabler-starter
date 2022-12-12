@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   before_action :authenticate_user!
   before_action :set_layout
   before_action :set_mode
@@ -24,5 +26,10 @@ class ApplicationController < ActionController::Base
 
   def multi_tenant_mode?
     Rails.application.config.multi_tenant_mode || current_user&.admin?
+  end
+
+  def user_not_authorized
+    flash[:alert] = 'You are not authorized to perform this action.'
+    redirect_back(fallback_location: root_path)
   end
 end
