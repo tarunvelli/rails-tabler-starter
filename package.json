@@ -9,7 +9,8 @@
     "rails_admin": "3.1.0",
     "sass": "^1.56.1",
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "terser": ">=5.14.2"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
