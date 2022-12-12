@@ -40,3 +40,6 @@
 # Ignore Mac os storage files
 
 */.DS_Store
+
+# Ignore redis file
+dump.rdb

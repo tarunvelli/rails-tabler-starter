@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def get_role_in_space(space)
     user_roles.find_by(space: space).role
   end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end

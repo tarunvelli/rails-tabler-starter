@@ -22,6 +22,9 @@ module Portal
     # use application router for error pages
     config.exceptions_app = routes
 
+    # use sidekiq as background worker
+    config.active_job.queue_adapter = :sidekiq
+
     # layout ["VERTICAL", "HORIZONTAL", "OVERLAP", "CONDENSED"]
     config.interface_layout = 'CONDENSED'
     # mode ["LIGHT", "DARK"]

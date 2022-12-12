@@ -1,6 +1,15 @@
+# frozen_string_literal: true
+
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: %i[edit update destroy]
