@@ -25,10 +25,10 @@ module Portal
     # use sidekiq as background worker
     config.active_job.queue_adapter = :sidekiq
 
-    # layout ["VERTICAL", "HORIZONTAL", "OVERLAP", "CONDENSED"]
-    config.interface_layout = 'CONDENSED'
-    # mode ["LIGHT", "DARK"]
-    config.interface_mode = 'LIGHT'
+    # layout ["VERTICAL", "VERTICAL-TRANSPARENT", "HORIZONTAL", "OVERLAP", "CONDENSED"]
+    config.interface_layout = 'OVERLAP'
+    # mode ["LIGHT", "DARK", "SYSTEM"]
+    config.interface_mode = 'SYSTEM'
     # theme ["DEFAULT", "COOL"]
     config.interface_theme = 'DEFAULT'
     # layout ["DEFAULT", "ILLUSTRATION", "COVER"]

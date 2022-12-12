@@ -7,4 +7,3 @@ db/schema.rb linguist-generated
 vendor/* linguist-vendored
 
 app/assets/**/** linguist-vendored
-public/* linguist-vendored

@@ -51,10 +51,32 @@
         <label class="form-imagecheck mb-2">
           <%=  form.radio_button :pallete, 'DARK-COOL', class: "form-imagecheck-input" %>
           <span class="form-imagecheck-figure">
-            <img src="/dark-cool.png" alt="Cool" class="form-imagecheck-image">
+            <img src="/dark-cool.png" alt="Dark Cool" class="form-imagecheck-image">
           </span>
           <br/>
           Dark Cool
+        </label>
+      </div>
+      <label class="form-label">System preference</label>
+      <br/>
+      <div class="col-6 col-sm-4">
+        <label class="form-imagecheck mb-2">
+          <%=  form.radio_button :pallete, 'SYSTEM-DEFAULT', class: "form-imagecheck-input" %>
+          <span class="form-imagecheck-figure">
+            <img src="/dark-default.png" alt="System" class="form-imagecheck-image">
+          </span>
+          <br/>
+          System
+        </label>
+      </div>
+      <div class="col-6 col-sm-4">
+        <label class="form-imagecheck mb-2">
+          <%=  form.radio_button :pallete, 'SYSTEM-COOL', class: "form-imagecheck-input" %>
+          <span class="form-imagecheck-figure">
+            <img src="/dark-cool.png" alt="System Cool" class="form-imagecheck-image">
+          </span>
+          <br/>
+          System Cool
         </label>
       </div>
     </div>

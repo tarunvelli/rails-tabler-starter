@@ -1,6 +1,6 @@
 # rails-tabler-starter
 
-Rails starter boilerplate that you can clone and build on top off
+Rails starter boilerplate that you can clone and build on top of
 
 * User authentication & authorization
 
@@ -10,18 +10,18 @@ Rails starter boilerplate that you can clone and build on top off
 
 * Background worker & scheduler
 
-    * Through sidekiq and sidekiq-scheduler
+    * Using sidekiq and sidekiq-scheduler
 
 * Role management
 
-    * Supports standard roles available across spaces and also custom roles per space
-    * Supports fine grained permission setup
+    * Supports standard roles available across spaces and also creating custom roles per space
+    * Supports fine grained permissions per role
 
 * Multi-tenant architeture
 
     * The `Space` model is used to represent a tenant i.e. can be a team, organization, group etc.
-    * Example use case for turning on multi-tenant mode is a saas applications
-    * Example use case for turning off multi-tenant mode is a internal org tools
+    * Example use case for turning on multi-tenant mode is a saas application
+    * Example use case for turning off multi-tenant mode is an internal org tool
 
 * Pre built UI layouts
 
@@ -36,6 +36,14 @@ Users familiar with rails should be able to build with this boilerplate without 
 * Simplicity over efficiency
 
 ## Setup
+
+requires postgres and redis to run on local
+
+```
+brew install postgresql@12 redis
+```
+
+clone and run the app
 
 ```
 git clone https://github.com/tarunvelli/rails-tabler-starter.git
@@ -54,7 +62,8 @@ bin/dev
 
 * `config.interface_mode`
     * Sets the default mode of app
-    * Values ["LIGHT", "DARK"]
+    * "SYSTEM" picks the mode from system preferences
+    * Values ["LIGHT", "DARK", "SYSTEM"]
 
 * `config.interface_theme`
     * Sets the default color theme of app

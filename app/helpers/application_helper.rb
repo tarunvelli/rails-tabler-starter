@@ -46,6 +46,8 @@ module ApplicationHelper
     case @layout || Rails.application.config.interface_layout
     when 'VERTICAL'
       'body/vertical'
+    when 'VERTICAL-TRANSPARENT'
+      'body/vertical_transparent'
     when 'OVERLAP'
       'body/overlap'
     when 'CONDENSED'
@@ -59,8 +61,10 @@ module ApplicationHelper
     case @mode || Rails.application.config.interface_mode
     when 'DARK'
       'theme-dark'
-    else
+    when 'LIGHT'
       'theme-light'
+    else
+      'theme-dark-auto'
     end
   end
 
