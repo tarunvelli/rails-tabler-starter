@@ -21,7 +21,7 @@ class Spaces::UsersController < ApplicationController
     respond_to do |format|
       if !user_role.present? && UserRole.create(user_id: user.id, space_id: params[:space_id], role_id: params[:role_id])
         format.html { redirect_to space_users_path(@space), notice: 'User was successfully invited.' }
-        format.json { render :index, status: :ok }
+        format.json { render :show, status: :ok }
       else
         format.html { redirect_to space_users_path(@space) }
         format.json { render json: ['Failed to invite user'], status: :unprocessable_entity }

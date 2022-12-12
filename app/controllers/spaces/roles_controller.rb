@@ -9,15 +9,15 @@ class Spaces::RolesController < ApplicationController
     @space_roles = @space.all_roles.page params[:page]
   end
 
-  # GET /roles/1 or /roles/1.json
+  # GET /spaces/:space_id/roles1 or /spaces/:space_id/roles1.json
   def show; end
 
-  # GET /roles/new
+  # GET /spaces/:space_id/rolesnew
   def new
     @role = Role.new
   end
 
-  # GET /roles/1/edit
+  # GET /spaces/:space_id/roles1/edit
   def edit; end
 
   # POST /roles or /roles.json
@@ -36,7 +36,7 @@ class Spaces::RolesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /roles/1 or /roles/1.json
+  # PATCH/PUT /spaces/:space_id/roles1 or /spaces/:space_id/roles1.json
   def update
     respond_to do |format|
       if @role.update(update_role_params)
@@ -49,7 +49,7 @@ class Spaces::RolesController < ApplicationController
     end
   end
 
-  # DELETE /roles/1 or /roles/1.json
+  # DELETE /spaces/:space_id/roles1 or /spaces/:space_id/roles1.json
   def destroy
     @role.destroy
 
