@@ -1,5 +1,6 @@
-# spec/mailers/previews/devise_mailer_preview.rb
+# frozen_string_literal: true
 
+# visit http://localhost:3000/rails/mailers/
 class DeviseMailerPreview < ActionMailer::Preview
   def confirmation_instructions
     Devise::Mailer.confirmation_instructions(User.first, 'faketoken')
