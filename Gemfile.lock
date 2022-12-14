@@ -112,6 +112,10 @@ GEM
     devise_invitable (2.0.6)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.11.0)
     et-orbi (1.2.7)
       tzinfo
@@ -320,6 +324,7 @@ DEPENDENCIES
   debug
   devise
   devise_invitable (~> 2.0.0)
+  dotenv-rails
   htmlbeautifier
   jbuilder
   jsbundling-rails

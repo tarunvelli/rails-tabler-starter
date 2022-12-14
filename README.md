@@ -27,6 +27,13 @@ Rails starter boilerplate that you can clone and build on top of
 
     * High quality UI elements and layouts from [Tabler](https://tabler.io/)
 
+* Development focussed
+
+    * [Annotate](https://github.com/ctran/annotate_models) - Annotate Rails classes with schema and routes info
+    * [Brakeman](https://github.com/presidentbeef/brakeman) - A static analysis security vulnerability scanner
+    * [Byebug](https://github.com/deivid-rodriguez/byebug) - Simple debugger
+    * [Dotenv](https://github.com/bkeepers/dotenv) - Load environment variables from `.env`
+
 ## Goals
 
 Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
