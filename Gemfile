@@ -83,6 +83,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
+  gem 'brakeman'
   gem 'byebug'
   gem 'htmlbeautifier'
   gem 'letter_opener'
