@@ -1,3 +1,18 @@
+# frozen_string_literal: true
+
+# == Schema Information
+#
+# Table name: roles
+#
+#  id          :bigint           not null, primary key
+#  name        :string
+#  permissions :jsonb            not null
+#  type        :string
+#  value       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  space_id    :bigint
+#
 class Role < ApplicationRecord
   self.store_full_sti_class = false
 

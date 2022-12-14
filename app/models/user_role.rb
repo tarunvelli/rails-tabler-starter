@@ -1,3 +1,14 @@
+# frozen_string_literal: true
+
+# == Schema Information
+#
+# Table name: user_roles
+#
+#  id       :bigint           not null, primary key
+#  role_id  :bigint           not null
+#  space_id :bigint           not null
+#  user_id  :bigint           not null
+#
 class UserRole < ApplicationRecord
   belongs_to :user
   belongs_to :space
