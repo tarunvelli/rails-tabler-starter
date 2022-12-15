@@ -5,7 +5,9 @@ require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
@@ -25,4 +27,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'welcome#index'
+  get '/about', to: 'welcome#about', as: 'about'
+
 end

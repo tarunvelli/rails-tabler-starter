@@ -26,7 +26,7 @@ module Portal
     config.active_job.queue_adapter = :sidekiq
 
     # layout ["VERTICAL", "VERTICAL-TRANSPARENT", "HORIZONTAL", "OVERLAP", "CONDENSED"]
-    config.interface_layout = 'OVERLAP'
+    config.interface_layout = 'HORIZONTAL'
     # mode ["LIGHT", "DARK", "SYSTEM"]
     config.interface_mode = 'SYSTEM'
     # theme ["DEFAULT", "COOL"]
