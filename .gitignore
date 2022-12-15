@@ -43,3 +43,5 @@
 
 # Ignore redis file
 dump.rdb
+
+.env
