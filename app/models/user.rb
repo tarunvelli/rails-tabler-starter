@@ -27,7 +27,6 @@
 #  reset_password_token   :string
 #  session_token          :string
 #  status                 :integer          default("active")
-#  test                   :boolean          default(FALSE)
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null

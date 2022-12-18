@@ -1,0 +1,8 @@
+<%% <%= "content_for :page_pretitle" %> do %>
+  <%= "#{singular_table_name.humanize} / settings" %>
+<%% end %>
+<%% <%= "content_for :page_title" %> do %>
+  <%%= @<%= singular_table_name %>&.name || @<%= singular_table_name %>&.id || "Edit" %>
+<%% end %>
+
+<%%= render "form", <%= singular_table_name %>: @<%= singular_table_name %> %>

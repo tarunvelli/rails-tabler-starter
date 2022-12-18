@@ -1,0 +1,72 @@
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-<%= singular_table_name %>-settings" id="<%= singular_table_name %>-settings-tab" role="tablist" aria-orientation="vertical">
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+					id="<%= singular_table_name %>-details-tab" data-bs-toggle="tab" data-bs-target="#<%= singular_table_name %>-details" type="button" role="tab" aria-controls="<%= singular_table_name %>-details" aria-selected="true">
+            Details
+            <small class="text-muted ms-auto"><%= attributes.count %></small>
+          </button>
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+					id="<%= singular_table_name %>-restricted-tab" data-bs-toggle="tab" data-bs-target="#<%= singular_table_name %>-restricted" type="button" role="tab" aria-controls="<%= singular_table_name %>-restricted" aria-selected="false">
+            Restricted
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="<%= singular_table_name %>-settings-tabContent">
+        <div class="tab-pane show active" id="<%= singular_table_name %>-details" role="tabpanel" aria-labelledby="<%= singular_table_name %>-details-tab" tabindex="0">
+          <h2 class="mb-4">Details</h2>
+          <%%= form_with(model: <%= model_resource_name %>) do |form| %>
+            <%% if <%= singular_table_name %>.errors.any? %>
+              <div style="color: red">
+                <h2><%%= pluralize(<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+                <ul>
+                  <%% <%= singular_table_name %>.errors.each do |error| %>
+                  <li><%%= error.full_message %></li>
+                  <%% end %>
+                </ul>
+              </div>
+            <%% end %>
+            <% attributes.each do |attribute| -%>
+            <div class="form-group mb-3 row">
+            <% if attribute.password_digest? -%>
+              <%%= form.label :password, class: "form-label col-3 col-form-label" %>
+              <div class="col">
+                <%%= form.password_field :password, class:"form-control" %>
+              </div>
+            </div>
+            <div class="form-group mb-3 row">
+              <%%= form.label :password_confirmation, class: "form-label col-3 col-form-label" %>
+              <div class="col">
+                <%%= form.password_field :password_confirmation, class:"form-control" %>
+              </div>
+            <% elsif attribute.attachments? -%>
+              <%%= form.label :<%= attribute.column_name %>, class: "form-label col-3 col-form-label" %>
+              <div class="col">
+                <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true, class:"form-control" %>
+              </div>
+            <% else -%>
+              <%%= form.label :<%= attribute.column_name %>, class: "form-label col-3 col-form-label" %>
+              <div class="col">
+                <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, class:"form-control" %>
+              </div>
+            <% end %>
+            </div>
+            <% end %>
+            <div class="form-footer">
+              <%%= form.submit "Save", class:"btn btn-primary" %>
+            </div>
+          <%% end %>
+        </div>
+        <div class="tab-pane" id="<%= singular_table_name %>-restricted" role="tabpanel" aria-labelledby="<%= singular_table_name %>-restricted-tab" tabindex="0">
+          <h2 class="mb-4">Restricted</h2>
+            <%%= button_to "Destroy this <%= human_name.downcase %>", <%= model_resource_name(prefix: "@") %>, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
