@@ -1,0 +1,31 @@
+$gray-50:  #f1f2f3 !default;
+$gray-100: #adbac7 !default;
+$gray-200: #909dab !default;
+$gray-300: #768390 !default;
+$gray-400: #636e7b !default;
+$gray-500: #545d68 !default;
+$gray-600: #444c56 !default;
+$gray-700: #373e47 !default;
+$gray-800: #2d333b !default;
+$gray-900: #22272e !default;
+
+$black: #15161a !default;
+$white: #f8f8f9 !default;
+
+$blue: #316dca !default;
+$azure: #4299e1 !default;
+$indigo: #5e81ac !default;
+$purple: #8256d0 !default;
+$pink: #ae4c82 !default;
+$red: #c93c37 !default;
+$orange: #ae5622 !default;
+$yellow: #966600 !default;
+$lime: #74b816 !default;
+$green: #347d39 !default;
+$teal: #8fbcbb !default;
+$cyan: #88c0d0 !default;
+
+$body-bg: $gray-50 !default;
+
+@import '@tabler/core/src/scss/tabler';
+@import '@tabler/core/dist/css/tabler-vendors';
