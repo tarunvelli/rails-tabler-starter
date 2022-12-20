@@ -6,14 +6,12 @@
     "@hotwired/turbo-rails": "^7.1.1",
     "@popperjs/core": "^2.11.5",
     "@tabler/core": "^1.0.0-beta16",
+    "esbuild": "^0.16.10",
     "rails_admin": "3.1.0",
-    "sass": "^1.56.1",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "terser": ">=5.14.2"
+    "sass": "^1.56.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
     "build:css": "sass ./app/assets/stylesheets/application-cool.sass.scss:./app/assets/builds/application-cool.css ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css ./app/assets/stylesheets/rails_admin.scss:./app/assets/builds/rails_admin.css --no-source-map --load-path=node_modules"
   }
 }
