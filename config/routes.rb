@@ -27,6 +27,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'welcome#index'
-  get '/about', to: 'welcome#about', as: 'about'
-
+  get '/about', to: 'welcome#about', as: 'about', constraints: AboutRouteConstraint.new
 end
