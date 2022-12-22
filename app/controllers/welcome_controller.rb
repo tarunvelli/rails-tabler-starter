@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class WelcomeController < ActionController::Base
+  include ConfigHelper
+
   layout 'plain'
   before_action :check_signed_in, only: [:index]
 
@@ -17,10 +19,6 @@ class WelcomeController < ActionController::Base
   end
 
   private
-
-  def show_landing_page?
-    Rails.application.config.show_landing_page
-  end
 
   def space
     @space ||= current_user&.spaces&.filter(&:active?)&.first
