@@ -61,31 +61,31 @@ bundle exec rails db:setup
 bin/dev
 ```
 
-## Config
+## AppSettings
 
-* `config.interface_layout`
-    * Sets the default layout of app
+* `AppSettings.interface_layout`
+    * Layout of app
     * values ["VERTICAL", "HORIZONTAL", "OVERLAP", "CONDENSED"]
 
-* `config.interface_mode`
-    * Sets the default mode of app
+* `AppSettings.interface_mode`
+    * Light/Dark mode of app
     * "SYSTEM" picks the mode from system preferences
     * Values ["LIGHT", "DARK", "SYSTEM"]
 
-* `config.interface_theme`
-    * Sets the default color theme of app
+* `AppSettings.interface_theme`
+    * Color theme of app
     * Values ["DEFAULT", "COOL"]
 
-* `config.login_layout` one of
-    * Sets the default layout of login screens
+* `AppSettings.login_layout` one of
+    * Layout of login screens
     * Values ["DEFAULT", "ILLUSTRATION", "COVER"]
 
-* `config.multi_tenant_mode`
+* `AppSettings.multi_tenant_mode`
     * When true allows users to sign up and create spaces
     * When false allows only admin to invite users and create spaces
     * Values [true, false]
 
-* `config.show_landing_page`
+* `AppSettings.show_landing_page`
     * When true root path renders landing page when user is not signed in
     * When false root path redirects to sign in page when user is not signed in
     * Values [true, false]

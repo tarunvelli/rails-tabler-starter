@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module ConfigHelper
+module SettingsHelper
   def login_layout
-    case Rails.application.config.login_layout
+    case AppSettings.login_layout
     when 'ILLUSTRATION'
       'body/login_illustration'
     when 'COVER'
@@ -13,7 +13,7 @@ module ConfigHelper
   end
 
   def interface_layout
-    case Rails.application.config.interface_layout
+    case AppSettings.interface_layout
     when 'VERTICAL'
       'body/vertical'
     when 'VERTICAL-TRANSPARENT'
@@ -28,7 +28,7 @@ module ConfigHelper
   end
 
   def interface_mode
-    case mode || Rails.application.config.interface_mode
+    case mode || AppSettings.interface_mode
     when 'DARK'
       'theme-dark'
     when 'LIGHT'
@@ -43,7 +43,7 @@ module ConfigHelper
   end
 
   def interface_theme
-    case theme || Rails.application.config.interface_theme
+    case theme || AppSettings.interface_theme
     when 'COOL'
       'application-cool'
     else
@@ -56,10 +56,10 @@ module ConfigHelper
   end
 
   def multi_tenant_mode?
-    Rails.application.config.multi_tenant_mode || current_user&.admin?
+    AppSettings.multi_tenant_mode || current_user&.admin?
   end
 
   def show_landing_page?
-    Rails.application.config.show_landing_page
+    AppSettings.show_landing_page
   end
 end

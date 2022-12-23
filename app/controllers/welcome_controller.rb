@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class WelcomeController < ActionController::Base
-  include ConfigHelper
+  include SettingsHelper
 
   layout 'plain'
   before_action :check_signed_in, only: [:index]

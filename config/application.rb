@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -25,21 +25,14 @@ module Portal
     # use sidekiq as background worker
     config.active_job.queue_adapter = :sidekiq
 
-    # layout ["VERTICAL", "VERTICAL-TRANSPARENT", "HORIZONTAL", "OVERLAP", "CONDENSED"]
-    config.interface_layout = 'HORIZONTAL'
-    # mode ["LIGHT", "DARK", "SYSTEM"]
-    config.interface_mode = 'SYSTEM'
-    # theme ["DEFAULT", "COOL"]
-    config.interface_theme = 'DEFAULT'
-    # layout ["DEFAULT", "ILLUSTRATION", "COVER"]
-    config.login_layout = 'DEFAULT'
-
-    # multi tenant mode [true, false]
-    # when true allows multiple spaces to be created
-    config.multi_tenant_mode = true
-
-    # show landing page [true, false]
-    # when true  root shows the landing page when user is signed out
-    config.show_landing_page = true
+    # redis cache
+    config.cache_store = :redis_store, {
+      host: ENV['REDIS_HOST'],
+      port: ENV['REDIS_PORT'],
+      db: ENV['REDIS_DB'],
+      password: ENV['REDIS_PASSWORD']
+    }, {
+      expires_in: 90.minutes
+    }
   end
 end

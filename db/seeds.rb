@@ -40,3 +40,36 @@ Role.create!(
     }
   ]
 )
+
+AppSettings.create!(
+  [
+    {
+      key: 'interface_layout',
+      value: 'HORIZONTAL'
+    },
+    {
+      key: 'interface_mode',
+      value: 'SYSTEM'
+    },
+    {
+      key: 'interface_theme',
+      value: 'COOL'
+    },
+    {
+      key: 'login_layout',
+      value: 'DEFAULT'
+    },
+    {
+      key: 'multi_tenant_mode',
+      value: 'true'
+    },
+    {
+      key: 'show_landing_page',
+      value: 'true'
+    },
+    {
+      key: 'setup_complete',
+      value: 'false'
+    }
+  ]
+)

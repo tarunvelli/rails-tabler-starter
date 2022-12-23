@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  include ConfigHelper
+  include SettingsHelper
 
   def nav_bar(&block)
     content_tag(:ul, class: 'navbar-nav', &block)
