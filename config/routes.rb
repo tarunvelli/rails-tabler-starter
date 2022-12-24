@@ -15,10 +15,13 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :users, only: %i[edit update destroy]
+
   resources :spaces do
     resources :users, only: %i[index new create edit update destroy], controller: 'spaces/users'
     resources :roles, controller: 'spaces/roles'
   end
+
+  resource :setup, only: %i[edit update]
 
   # Error pages
   %w[404 422 500].each do |code|

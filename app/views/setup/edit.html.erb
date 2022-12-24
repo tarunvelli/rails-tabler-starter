@@ -1,0 +1,30 @@
+<div class="page page-center">
+  <div class="container container-tight py-4">
+    <div class="card card-md">
+      <div class="card-body">
+        <%= form_with(url: setup_path, method: :PATCH) do |form| %>
+
+          <% @app_settings.each do |app_setting| %>
+
+            <div class="form-group mb-3 row">
+              <%= form.label app_setting.key, class: "form-label col-6 col-form-label", data: { turbo: false } %>
+              <div class="col">
+                <%= form.select "app_settings[#{app_setting.id}][value]", app_settings_values(app_setting.key).map { |key| [key, key] }, { selected: app_setting.value }, { class:"form-control", ariaDescribedby:"statusHelp" } %>
+              </div>
+            </div>
+
+          <% end %>
+
+          <div class="row align-items-center mt-3">
+            <div class="col">
+              <div class="btn-list justify-content-end">
+                <%= link_to "Back", root_path, class: "btn btn-link link-secondary" %>
+                <%= form.submit 'Submit', input_field_name: nil, class: "btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

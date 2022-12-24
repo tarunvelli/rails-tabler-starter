@@ -16,5 +16,5 @@
 # end
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.uncountable %w[app_settings]
+  inflect.uncountable %w[app_settings setup]
 end
