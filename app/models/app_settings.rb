@@ -48,7 +48,9 @@ class AppSettings < ApplicationRecord
     define_singleton_method(key) do
       return typecasetd_settings_value(key, SettingsCache.get(key)) if SettingsCache.exists?(key)
 
-      SettingsCache.set(key, find_by(key: key)&.value)
+      value = find_by(key: key)&.value
+      SettingsCache.set(key, value)
+      typecasetd_settings_value(key, value)
     end
   end
 

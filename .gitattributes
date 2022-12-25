@@ -7,3 +7,5 @@ db/schema.rb linguist-generated
 vendor/* linguist-vendored
 
 app/assets/**/** linguist-vendored
+
+app/views/**/*.erb linguist-language=ruby
