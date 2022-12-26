@@ -60,7 +60,7 @@ AppSettings.create!(
       value: 'DEFAULT'
     },
     {
-      key: 'multi_tenant_mode',
+      key: 'multi_space_mode',
       value: 'true'
     },
     {

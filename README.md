@@ -17,11 +17,11 @@ Rails starter boilerplate that you can clone and build on top of
     * Supports standard roles available across spaces and also creating custom roles per space
     * Supports fine grained permissions per role
 
-* Multi-tenant architeture
+* Multiple user groups support
 
-    * The `Space` model is used to represent a tenant i.e. can be a team, organization, group etc.
-    * Example use case for turning on multi-tenant mode is a saas application
-    * Example use case for turning off multi-tenant mode is an internal org tool
+    * The `Space` model is used to represent a group i.e. can be a team, organization, group etc.
+    * Example use case for turning on multi-space mode is a saas application
+    * Example use case for turning off multi-space mode is an internal org tool
 
 * Pre built UI layouts
 
@@ -44,6 +44,11 @@ Users familiar with rails should be able to build with this boilerplate without 
 
 ## Setup
 
+use asdf to install required dependencies, or setup the dependencies `.tool-versions` in another way
+```
+asdf install
+```
+
 requires postgres and redis to run on local
 
 ```
@@ -59,6 +64,12 @@ bundle install
 yarn install
 bundle exec rails db:setup
 bin/dev
+```
+
+Mark a user as admin from console to view admin features in the user dropdown
+```
+bundle exec rails c
+> User.first.update(admin: true)
 ```
 
 ## AppSettings
@@ -80,7 +91,7 @@ bin/dev
     * Layout of login screens
     * Values ["DEFAULT", "ILLUSTRATION", "COVER"]
 
-* `AppSettings.multi_tenant_mode`
+* `AppSettings.multi_space_mode`
     * When true allows users to sign up and create spaces
     * When false allows only admin to invite users and create spaces
     * Values [true, false]

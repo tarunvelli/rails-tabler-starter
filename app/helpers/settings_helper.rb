@@ -55,8 +55,8 @@ module SettingsHelper
     current_user&.pallete&.split('-')&.dig(1)
   end
 
-  def multi_tenant_mode?
-    AppSettings.multi_tenant_mode || current_user&.admin?
+  def multi_space_mode?
+    AppSettings.multi_space_mode || current_user&.admin?
   end
 
   def show_landing_page?

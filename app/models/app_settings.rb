@@ -11,7 +11,7 @@
 #  updated_at :datetime         not null
 #
 class AppSettings < ApplicationRecord
-  after_save :update_settings_cache
+  after_update :update_settings_cache
 
   AVAILABLE_SETTINGS = {
     'interface_layout' => {
@@ -30,7 +30,7 @@ class AppSettings < ApplicationRecord
       type: :string,
       values: %w[DEFAULT ILLUSTRATION COVER]
     },
-    'multi_tenant_mode' => {
+    'multi_space_mode' => {
       type: :boolean,
       values: [true, false]
     },

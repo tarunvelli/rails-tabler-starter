@@ -3,7 +3,7 @@
     Already have account? <%= link_to "Log in", new_session_path(resource_name) %>
   </div>
 <% end %>
-<%- if devise_mapping.registerable? && controller_name != 'registrations' && multi_tenant_mode? %>
+<%- if devise_mapping.registerable? && controller_name != 'registrations' && multi_space_mode? %>
   <div class="text-center text-muted mt-3">
     Don't have account yet? <%= link_to "Sign up", new_registration_path(resource_name) %>
   </div>
