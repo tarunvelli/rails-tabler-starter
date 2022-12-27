@@ -8,7 +8,7 @@
     "@tabler/core": "^1.0.0-beta16",
     "esbuild": "^0.16.10",
     "esbuild-sass-plugin": "^2.4.0",
-    "rails_admin": "3.1.0",
+    "rails_admin": "3.1.1",
     "sass": "^1.57.1"
   },
   "scripts": {

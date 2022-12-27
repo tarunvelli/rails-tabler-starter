@@ -45,3 +45,5 @@
 dump.rdb
 
 .env
+
+yarn-error.log
