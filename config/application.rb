@@ -25,14 +25,8 @@ module Portal
     # use sidekiq as background worker
     config.active_job.queue_adapter = :sidekiq
 
+    config.active_record.cache_versioning = false
     # redis cache
-    config.cache_store = :redis_store, {
-      host: ENV['REDIS_HOST'],
-      port: ENV['REDIS_PORT'],
-      db: ENV['REDIS_DB'],
-      password: ENV['REDIS_PASSWORD']
-    }, {
-      expires_in: 90.minutes
-    }
+    config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
   end
 end

@@ -1,20 +1,22 @@
 <div class="page page-center">
   <div class="container container-tight py-4">
+    <% if notice %>
+      <p class="alert alert-success alert-dismissible"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger alert-dismissible"><%= alert %></p>
+    <% end %>
     <div class="card card-md">
       <div class="card-body">
         <%= form_with(url: setup_path, method: :PATCH) do |form| %>
-
           <% @app_settings.each do |app_setting| %>
-
             <div class="form-group mb-3 row">
               <%= form.label app_setting.key, class: "form-label col-6 col-form-label", data: { turbo: false } %>
               <div class="col">
                 <%= form.select "app_settings[#{app_setting.id}][value]", app_settings_values(app_setting.key).map { |key| [key, key] }, { selected: app_setting.value }, { class:"form-control", ariaDescribedby:"statusHelp" } %>
               </div>
             </div>
-
           <% end %>
-
           <div class="row align-items-center mt-3">
             <div class="col">
               <div class="btn-list justify-content-end">

@@ -24,7 +24,7 @@
     <% end %>
     <% if current_user.admin? %>
       <div class="dropdown-divider"></div>
-      <%= link_to 'Setup', edit_setup_path, class: 'dropdown-item' %>
+      <%= link_to 'Setup', edit_setup_path, class: 'dropdown-item', target: '_blank' %>
       <%= link_to 'Admin', rails_admin_path, class: 'dropdown-item', target: '_blank' %>
       <%= link_to 'Sidekiq', sidekiq_web_path, class: 'dropdown-item', target: '_blank' %>
     <% end %>
