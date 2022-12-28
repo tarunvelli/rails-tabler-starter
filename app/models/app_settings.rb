@@ -37,10 +37,6 @@ class AppSettings < ApplicationRecord
     'show_landing_page' => {
       type: :boolean,
       values: [true, false]
-    },
-    'setup_complete' => {
-      type: :boolean,
-      values: [true, false]
     }
   }.freeze
 

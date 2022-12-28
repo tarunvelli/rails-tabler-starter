@@ -2,6 +2,8 @@
 
 Rails starter boilerplate that you can clone and build on top of
 
+[Click here](https://rails-tabler.fly.dev) to view demo application
+
 * User authentication & authorization
 
     * Authentication through [Devise](https://github.com/heartcombo/devise)

@@ -66,10 +66,6 @@ AppSettings.create!(
     {
       key: 'show_landing_page',
       value: 'true'
-    },
-    {
-      key: 'setup_complete',
-      value: 'false'
     }
   ]
 )

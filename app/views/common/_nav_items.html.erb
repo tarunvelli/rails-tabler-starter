@@ -3,10 +3,10 @@
     <%= nav_link @space do %>
       <span class="nav-link-icon d-md-none d-lg-inline-block">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-           <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
-           <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-           <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+          <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+          <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
         </svg>
       </span>
       <span class="nav-link-title">
@@ -41,15 +41,26 @@
         Settings
       </span>
     <% end %>
-    <li class="nav-item">
-      <a class="nav-link" href="https://preview.tabler.io/docs/index.html" target="_blank" >
-        <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/file-text -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" /><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" /><line x1="9" y1="9" x2="10" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="15" y2="17" /></svg>
+    <% if demo_mode? %>
+      <%= nav_link edit_setup_path do %>
+        <span class="nav-link-icon d-md-none d-lg-inline-block">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <circle cx="6" cy="10" r="2"></circle>
+            <line x1="6" y1="4" x2="6" y2="8"></line>
+            <line x1="6" y1="12" x2="6" y2="20"></line>
+            <circle cx="12" cy="16" r="2"></circle>
+            <line x1="12" y1="4" x2="12" y2="14"></line>
+            <line x1="12" y1="18" x2="12" y2="20"></line>
+            <circle cx="18" cy="7" r="2"></circle>
+            <line x1="18" y1="4" x2="18" y2="5"></line>
+            <line x1="18" y1="9" x2="18" y2="20"></line>
+          </svg>
         </span>
         <span class="nav-link-title">
-          Documentation
+          Demo Setup
         </span>
-      </a>
-    </li>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

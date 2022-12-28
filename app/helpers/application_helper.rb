@@ -34,4 +34,8 @@ module ApplicationHelper
   def abbrev_name(name)
     name.blank? ? '?' : name.split(' ').map(&:first).join('.')
   end
+
+  def demo_mode?
+    ENV['DEMO_MODE'] == 'true'
+  end
 end

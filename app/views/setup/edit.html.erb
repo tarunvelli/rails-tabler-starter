@@ -1,11 +1,5 @@
 <div class="page page-center">
   <div class="container container-tight py-4">
-    <% if notice %>
-      <p class="alert alert-success alert-dismissible"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger alert-dismissible"><%= alert %></p>
-    <% end %>
     <div class="card card-md">
       <div class="card-body">
         <%= form_with(url: setup_path, method: :PATCH) do |form| %>
