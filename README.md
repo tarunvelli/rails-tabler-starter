@@ -4,6 +4,8 @@ Rails starter boilerplate that you can clone and build on top of
 
 [Click here](https://rails-tabler.fly.dev) to view demo application
 
+## Overview
+
 * User authentication & authorization
 
     * Authentication through [Devise](https://github.com/heartcombo/devise)
@@ -12,7 +14,7 @@ Rails starter boilerplate that you can clone and build on top of
 
 * Background worker & scheduler
 
-    * Using sidekiq and sidekiq-scheduler
+    * Using [sidekiq](https://github.com/mperham/sidekiq/) and [sidekiq-scheduler](https://github.com/sidekiq-scheduler/sidekiq-scheduler)
 
 * Role management
 
@@ -46,25 +48,26 @@ Users familiar with rails should be able to build with this boilerplate without 
 
 ## Setup
 
-use asdf to install required dependencies, or setup the dependencies `.tool-versions` in another way
-```
-asdf install
-```
-
 requires postgres and redis to run on local
 
 ```
 brew install postgresql@12 redis
 ```
 
-clone and run the app
+clone the repo
 
 ```
 git clone https://github.com/tarunvelli/rails-tabler-starter.git
-cd rails-tabler-starter
-bundle install
-yarn install
-bundle exec rails db:setup
+```
+
+use asdf to install required dependencies, or setup the dependencies `.tool-versions` in another way
+```
+asdf install
+```
+
+setup and run dev server
+```
+bin/setup
 bin/dev
 ```
 
@@ -75,6 +78,8 @@ bundle exec rails c
 ```
 
 ## AppSettings
+
+Toggle app settigns at `/setup/edit`
 
 * `AppSettings.interface_layout`
     * Layout of app
@@ -99,8 +104,8 @@ bundle exec rails c
     * Values [true, false]
 
 * `AppSettings.show_landing_page`
-    * When true root path renders landing page when user is not signed in
-    * When false root path redirects to sign in page when user is not signed in
+    * When true root path renders landing page
+    * When false root path redirects to sign in page
     * Values [true, false]
 
 ## Deployment
