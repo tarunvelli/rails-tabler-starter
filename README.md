@@ -2,7 +2,7 @@
 
 Rails starter boilerplate that you can clone and build on top of
 
-[Click here](https://rails-tabler.fly.dev) to view demo application
+[Click here](https://rails-tabler.fly.dev) to view demo application. Check out the [Demo setup page](https://rails-tabler.fly.dev/setup/edit) to toggle application settings.
 
 ## Overview
 
