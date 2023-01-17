@@ -79,7 +79,7 @@ bundle exec rails c
 
 ## AppSettings
 
-Toggle app settigns at `/setup/edit`
+Toggle app settings at `/setup/edit`
 
 * `AppSettings.interface_layout`
     * Layout of app
