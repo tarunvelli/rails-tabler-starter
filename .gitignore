@@ -47,3 +47,6 @@ dump.rdb
 .env
 
 yarn-error.log
+
+doc/**
+.yardoc/**
