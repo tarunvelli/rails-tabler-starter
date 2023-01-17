@@ -9,7 +9,8 @@
     "esbuild": "^0.16.10",
     "esbuild-sass-plugin": "^2.4.0",
     "rails_admin": "3.1.1",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "jsvectormap": "1.5.1"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
