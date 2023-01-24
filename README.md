@@ -1,4 +1,14 @@
-# rails-tabler-starter
+<p align="center">
+    <img src="https://repository-images.githubusercontent.com/575705097/fef162b3-b1f8-417b-a62a-1ee817c96b97" alt="Banner" style="width: 100%; max-width: 800px;" />
+</p>
+
+<p align="center">
+    <a href="https://github.com/tarunvelli/rails-tabler-starter/blob/main/LICENSE.md"><img alt="Github license" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+    <a href="https://rubyonrails.org/"><img alt="Rails v7.0.x" src="https://img.shields.io/badge/Rails-v7.0.x-FF2D20?logo=ruby-on-rails"></a>
+    <a href="https://www.ruby-lang.org/en/"><img alt="Ruby 3.1.2" src="https://img.shields.io/badge/Ruby-3.1.2-FF2D20?logo=ruby"></a>
+</p>
+
+# Rails Tabler Starter
 
 Rails starter boilerplate that you can clone and build on top of
 
@@ -110,7 +120,8 @@ Toggle app settings at `/setup/edit`
 
 ## Deployment
 
-TODO: instructions to deploy on fly.io etc.
+* Deploy on [Fly.io](https://fly.io/docs/rails/getting-started/)
+* Deploy on [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails7)
 
 ## Contribution
 
