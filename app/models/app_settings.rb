@@ -11,7 +11,7 @@
 #  updated_at :datetime         not null
 #
 class AppSettings < ApplicationRecord
-  after_update :update_settings_cache
+  after_save :update_settings_cache
 
   AVAILABLE_SETTINGS = {
     'interface_layout' => {

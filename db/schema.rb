@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_23_065722) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_04_190401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_065722) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["key"], name: "index_app_settings_on_key", unique: true
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "crm_id"
+    t.float "price", null: false
+    t.string "currency", null: false
+    t.json "description"
+    t.string "duration", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade do |t|
@@ -41,6 +52,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_065722) do
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "plan_id", null: false
+    t.bigint "space_id", null: false
+    t.boolean "active", default: true, null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
+    t.index ["plan_id", "space_id"], name: "index_subscriptions_on_plan_id_and_space_id", unique: true
+    t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
+    t.index ["space_id"], name: "index_subscriptions_on_space_id"
   end
 
   create_table "user_roles", force: :cascade do |t|

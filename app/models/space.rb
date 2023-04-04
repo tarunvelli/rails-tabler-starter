@@ -17,6 +17,9 @@ class Space < ApplicationRecord
   has_many :user_roles
   has_many :users, through: :user_roles
 
+  has_many :subscriptions
+  has_many :plans, through: :subscriptions
+
   validates :name, presence: true
 
   enum status: %i[active archived]

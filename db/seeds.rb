@@ -69,3 +69,15 @@ AppSettings.create!(
     }
   ]
 )
+
+Plan.create!([
+  {
+    name: 'free',
+    price: 0,
+    currency: 'USD',
+    description: {
+      features: 'all'
+    },
+    duration: '1Y'
+  }
+])
