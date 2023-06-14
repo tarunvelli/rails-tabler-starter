@@ -30,11 +30,9 @@ module SettingsHelper
   def interface_mode
     case mode || AppSettings.interface_mode
     when 'DARK'
-      'theme-dark'
-    when 'LIGHT'
-      'theme-light'
+      'dark'
     else
-      'theme-dark-auto'
+      'light'
     end
   end
 
