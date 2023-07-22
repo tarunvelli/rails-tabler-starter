@@ -72,8 +72,35 @@ AppSettings.create!(
 
 Plan.create!([
   {
-    name: 'free',
+    name: 'Free',
     price: 0,
+    currency: 'USD',
+    description: {
+      features: 'all'
+    },
+    duration: '1Y'
+  },
+  {
+    name: 'Premium',
+    price: 9,
+    currency: 'USD',
+    description: {
+      features: 'all'
+    },
+    duration: '1Y'
+  },
+  {
+    name: 'Enterprise',
+    price: 19,
+    currency: 'USD',
+    description: {
+      features: 'all'
+    },
+    duration: '1Y'
+  },
+  {
+    name: 'Unlimited',
+    price: 29,
     currency: 'USD',
     description: {
       features: 'all'

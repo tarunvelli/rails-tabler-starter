@@ -3,8 +3,8 @@
 # Table name: subscriptions
 #
 #  id         :bigint           not null, primary key
-#  active     :boolean          default(TRUE), not null
-#  end_date   :datetime         not null
+#  end_date   :datetime
+#  seats      :integer
 #  start_date :datetime         not null
 #  plan_id    :bigint           not null
 #  space_id   :bigint           not null

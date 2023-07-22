@@ -1,0 +1,174 @@
+<% content_for :page_pretitle do %>
+  Space / Users
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+<div class="row row-cards">
+  <% if @active_subscription.present? %>
+    <div class="col-12">
+      <div class="card card-md">
+        <div class="ribbon bg-green">
+          Active
+        </div>
+        <div class="card-status-bottom bg-success"></div>
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <p class="m-0 text-secondary">Plan name</p>
+              <h2 class="h3"><%= @active_subscription.plan.name %></h2>
+            </div>
+            <div class="col-3">
+              <p class="m-0 text-secondary">Start date</p>
+              <h2 class="h3"><%= @active_subscription.start_date %></h2>
+            </div>
+            <div class="col-3">
+              <p class="m-0 text-secondary">End date</p>
+              <h2 class="h3"><%= @active_subscription.end_date || '-' %></h2>
+            </div>
+            <div class="col-3">
+              <p class="m-0 text-secondary">seats</p>
+              <h2 class="h3"><%= @active_subscription.seats || '-' %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-md">
+      <div class="card-body text-center">
+        <div class="text-uppercase text-secondary font-weight-medium">Free</div>
+        <div class="display-5 fw-bold my-3">$0</div>
+        <ul class="list-unstyled lh-lg">
+          <li><strong>3</strong> Users</li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Sharing Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Design Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Private Messages
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Twitter API
+          </li>
+        </ul>
+        <div class="text-center mt-4">
+          <a href="#" class="btn w-100">Choose plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-md">
+      <div class="card-body text-center">
+        <div class="text-uppercase text-secondary font-weight-medium">Premium</div>
+        <div class="display-5 fw-bold my-3">$49</div>
+        <ul class="list-unstyled lh-lg">
+          <li><strong>10</strong> Users</li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Sharing Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Design Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Private Messages
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Twitter API
+          </li>
+        </ul>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn w-100">Choose plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-md">
+      <div class="card-body text-center">
+        <div class="text-uppercase text-secondary font-weight-medium">Enterprise</div>
+        <div class="display-5 fw-bold my-3">$99</div>
+        <ul class="list-unstyled lh-lg">
+          <li><strong>100</strong> Users</li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Sharing Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Design Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Private Messages
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            Twitter API
+          </li>
+        </ul>
+        <div class="text-center mt-4">
+          <a href="#" class="btn w-100">Choose plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-md">
+      <div class="card-body text-center">
+        <div class="text-uppercase text-secondary font-weight-medium">Unlimited</div>
+        <div class="display-5 fw-bold my-3">$139</div>
+        <ul class="list-unstyled lh-lg">
+          <li><strong>Unlimited</strong> Users</li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Sharing Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Design Tools
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Private Messages
+          </li>
+          <li>
+            <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+            Twitter API
+          </li>
+        </ul>
+        <div class="text-center mt-4">
+          <a href="#" class="btn w-100">Choose plan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

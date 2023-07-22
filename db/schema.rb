@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_04_190401) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_29_121511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,10 +57,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_190401) do
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "plan_id", null: false
     t.bigint "space_id", null: false
-    t.boolean "active", default: true, null: false
     t.datetime "start_date", null: false
-    t.datetime "end_date", null: false
-    t.index ["plan_id", "space_id"], name: "index_subscriptions_on_plan_id_and_space_id", unique: true
+    t.datetime "end_date", precision: nil
+    t.integer "seats"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
     t.index ["space_id"], name: "index_subscriptions_on_space_id"
   end
