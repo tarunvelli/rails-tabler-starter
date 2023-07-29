@@ -1,0 +1,14 @@
+<% content_for :page_pretitle do %>
+  Space / Subscriptions
+<% end %>
+<% content_for :page_title do %>
+  <%= @space.name %>
+<% end %>
+
+<div class="row row-cards">
+  <% if @plan.present? %>
+    <%= render 'payment' %>
+  <% else %>
+    <%= render 'plans' %>
+  <% end %>
+</div>

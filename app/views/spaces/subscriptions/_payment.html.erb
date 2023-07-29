@@ -1,0 +1,150 @@
+<div class="col-6">
+  <form class="card">
+    <div class="card-body">
+      <h3 class="card-title">Billing Information</h3>
+      <div class="row row-cards">
+        <div class="col-12">
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="Company" value="Chet">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Address line 1</label>
+            <input type="text" class="form-control" placeholder="Home Address"
+									       value="Melbourne, Australia">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Address line 2</label>
+            <input type="text" class="form-control" placeholder="Home Address"
+									       value="Melbourne, Australia">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" placeholder="City" value="Melbourne">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label class="form-label">Postal Code</label>
+            <input type="test" class="form-control" placeholder="ZIP Code">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label">Country</label>
+            <select class="form-control form-select">
+              <option value="">Germany</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" placeholder="State">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="col-3">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Paymnet</h3>
+      <div class="row row-cards">
+        <div class="mb-3">
+          <label class="form-label">Plan name</label>
+          <p class="m-0 text-secondary"><%= @plan.name %></p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Amount</label>
+          <p class="m-0 text-secondary"><%= @plan.price %> <%= @plan.currency %></p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Payment method</label>
+          <div class="form-selectgroup form-selectgroup-boxes d-flex flex-column">
+            <label class="form-selectgroup-item flex-fill">
+              <input type="radio" name="form-payment" value="visa" class="form-selectgroup-input">
+              <div class="form-selectgroup-label d-flex align-items-center p-3">
+                <div class="me-3">
+                  <span class="form-selectgroup-check"></span>
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-visa" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M21 15l-1 -6l-2.5 6"></path>
+                    <path d="M9 15l1 -6"></path>
+                    <path d="M3 9h1v6h.5l2.5 -6"></path>
+                    <path d="M16 9.5a.5 .5 0 0 0 -.5 -.5h-.75c-.721 0 -1.337 .521 -1.455 1.233l-.09 .534a1.059 1.059 0 0 0 1.045 1.233a1.059 1.059 0 0 1 1.045 1.233l-.09 .534a1.476 1.476 0 0 1 -1.455 1.233h-.75a.5 .5 0 0 1 -.5 -.5"></path>
+                    <path d="M18 14h2.7"></path>
+                  </svg>
+                  <span class="payment payment-provider-visa payment-xs me-2"></span>
+                  ending in <strong>7998</strong>
+                </div>
+              </div>
+            </label>
+            <label class="form-selectgroup-item flex-fill">
+              <input type="radio" name="form-payment" value="mastercard" class="form-selectgroup-input" checked>
+              <div class="form-selectgroup-label d-flex align-items-center p-3">
+                <div class="me-3">
+                  <span class="form-selectgroup-check"></span>
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-mastercard" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M14 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                    <path d="M12 9.765a3 3 0 1 0 0 4.47"></path>
+                    <path d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
+                  </svg>
+                  <span class="payment payment-provider-mastercard payment-xs me-2"></span>
+                  ending in <strong>2807</strong>
+                </div>
+              </div>
+            </label>
+            <label class="form-selectgroup-item flex-fill">
+              <input type="radio" name="form-payment" value="paypal" class="form-selectgroup-input">
+              <div class="form-selectgroup-label d-flex align-items-center p-3">
+                <div class="me-3">
+                  <span class="form-selectgroup-check"></span>
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-paypal" width="40" height="40" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 13l2.5 0c2.5 0 5 -2.5 5 -5c0 -3 -1.9 -5 -5 -5h-5.5c-.5 0 -1 .5 -1 1l-2 14c0 .5 .5 1 1 1h2.8l1.2 -5c.1 -.6 .4 -1 1 -1zm7.5 -5.8c1.7 1 2.5 2.8 2.5 4.8c0 2.5 -2.5 4.5 -5 4.5h-2.6l-.6 3.6a1 1 0 0 1 -1 .8l-2.7 0a.5 .5 0 0 1 -.5 -.6l.2 -1.4"></path>
+                  </svg>
+                  <span class="payment payment-provider-paypal payment-xs me-2"></span>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= form_for @subscription, url: space_subscriptions_path(@space, @subscription), method: :post do |form| %>
+      <%= form.hidden_field :space_id, value: @space.id %>
+      <%= form.hidden_field :plan_id, value: @plan.id %>
+      <%= form.hidden_field :start_date, value: Date.today %>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    <% end %>
+  </div>
+</div>
