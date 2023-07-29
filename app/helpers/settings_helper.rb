@@ -3,54 +3,54 @@
 module SettingsHelper
   def login_layout
     case AppSettings.login_layout
-    when 'ILLUSTRATION'
-      'body/login_illustration'
-    when 'COVER'
-      'body/login_cover'
+    when "ILLUSTRATION"
+      "body/login_illustration"
+    when "COVER"
+      "body/login_cover"
     else
-      'body/login'
+      "body/login"
     end
   end
 
   def interface_layout
     case AppSettings.interface_layout
-    when 'VERTICAL'
-      'body/vertical'
-    when 'VERTICAL-TRANSPARENT'
-      'body/vertical_transparent'
-    when 'OVERLAP'
-      'body/overlap'
-    when 'CONDENSED'
-      'body/condensed'
+    when "VERTICAL"
+      "body/vertical"
+    when "VERTICAL-TRANSPARENT"
+      "body/vertical_transparent"
+    when "OVERLAP"
+      "body/overlap"
+    when "CONDENSED"
+      "body/condensed"
     else
-      'body/horizontal'
+      "body/horizontal"
     end
   end
 
   def interface_mode
     case mode || AppSettings.interface_mode
-    when 'DARK'
-      'dark'
+    when "DARK"
+      "dark"
     else
-      'light'
+      "light"
     end
   end
 
   def mode
-    current_user&.pallete&.split('-')&.dig(0)
+    current_user&.pallete&.split("-")&.dig(0)
   end
 
   def interface_theme
     case theme || AppSettings.interface_theme
-    when 'COOL'
-      'application-cool'
+    when "COOL"
+      "application-cool"
     else
-      'application'
+      "application"
     end
   end
 
   def theme
-    current_user&.pallete&.split('-')&.dig(1)
+    current_user&.pallete&.split("-")&.dig(1)
   end
 
   def multi_space_mode?

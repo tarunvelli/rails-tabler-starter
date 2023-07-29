@@ -25,7 +25,7 @@ class SpacesController < ApplicationController
   def create
     respond_to do |format|
       if @space.save
-        format.html { redirect_to space_url(@space), notice: 'Space was successfully created.' }
+        format.html { redirect_to space_url(@space), notice: "Space was successfully created." }
         format.json { render :show, status: :created, location: @space }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class SpacesController < ApplicationController
 
     respond_to do |format|
       if @space.update(space_params)
-        format.html { redirect_to edit_space_path(@space), notice: 'Space was successfully updated.' }
+        format.html { redirect_to edit_space_path(@space), notice: "Space was successfully updated." }
         format.json { render :show, status: :ok, location: @space }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class SpacesController < ApplicationController
 
     respond_to do |format|
       if @space.destroy
-        format.html { redirect_to spaces_url, notice: 'Space was successfully destroyed.' }
+        format.html { redirect_to spaces_url, notice: "Space was successfully destroyed." }
         format.json { head :no_content }
       else
         format.html { render :index, status: :unprocessable_entity }
@@ -66,12 +66,10 @@ class SpacesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_space
     @space = Space.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def space_params
     params.require(:space).permit(:name, :phone, :email, :status, :address)
   end

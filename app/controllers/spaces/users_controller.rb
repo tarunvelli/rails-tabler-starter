@@ -14,25 +14,27 @@ class Spaces::UsersController < ApplicationController
     @space_roles = @space.all_roles
   end
 
+  def edit
+    @space_roles = @space.all_roles
+  end
+
   def create
     authorize @space, policy_class: UserPolicy
 
     user = User.find_by(email: params[:email]) || User.invite!(email: params[:email])
-    user_role = UserRole.find_by(space: @space, user: user)
+    user_role = UserRole.find_by(space: @space, user:)
 
     respond_to do |format|
-      if !user_role.present? && UserRole.create(user_id: user.id, space_id: params[:space_id], role_id: params[:role_id])
-        format.html { redirect_to space_users_path(@space), notice: 'User was successfully invited.' }
+      if user_role.blank? && UserRole.create(
+        user_id: user.id, space_id: params[:space_id], role_id: params[:role_id],
+      )
+        format.html { redirect_to space_users_path(@space), notice: "User was successfully invited." }
         format.json { render :show, status: :ok }
       else
         format.html { redirect_to space_users_path(@space) }
-        format.json { render json: ['Failed to invite user'], status: :unprocessable_entity }
+        format.json { render json: ["Failed to invite user"], status: :unprocessable_entity }
       end
     end
-  end
-
-  def edit
-    @space_roles = @space.all_roles
   end
 
   def update
@@ -40,7 +42,7 @@ class Spaces::UsersController < ApplicationController
 
     respond_to do |format|
       if @user_role.update(user_role_params)
-        format.html { redirect_to edit_space_user_path(@space, @user), notice: 'User role was successfully updated.' }
+        format.html { redirect_to edit_space_user_path(@space, @user), notice: "User role was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +56,7 @@ class Spaces::UsersController < ApplicationController
 
     respond_to do |format|
       if @user_role.delete
-        format.html { redirect_to space_users_path(@space), notice: 'User role was successfully removed.' }
+        format.html { redirect_to space_users_path(@space), notice: "User role was successfully removed." }
         format.json { render :index, status: :ok }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,12 +67,10 @@ class Spaces::UsersController < ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
   def user_role_params
     params.require(:user_role).permit(:role_id)
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_space
     @space = Space.find(params[:space_id])
   end

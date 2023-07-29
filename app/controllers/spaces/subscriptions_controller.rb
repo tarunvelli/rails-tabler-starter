@@ -17,7 +17,7 @@ class Spaces::SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save!
-        format.html { redirect_to space_subscriptions_path(@space), notice: 'Subscription was successfully created.' }
+        format.html { redirect_to space_subscriptions_path(@space), notice: "Subscription was successfully created." }
         format.json { render :show, status: :created, location: @space }
       else
         format.html { render :new, status: :unprocessable_entity }

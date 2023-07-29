@@ -2,6 +2,6 @@
 
 module UsersHelper
   def user_name(name)
-    name.blank? ? 'User' : name
+    (name.presence || "User")
   end
 end

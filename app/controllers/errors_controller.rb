@@ -1,5 +1,5 @@
 class ErrorsController < ActionController::Base
-  layout 'plain'
+  layout "plain"
 
   def show
     status_code = params[:code] || 500

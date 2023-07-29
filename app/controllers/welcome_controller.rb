@@ -3,7 +3,7 @@
 class WelcomeController < ActionController::Base
   include SettingsHelper
 
-  layout 'plain'
+  layout "plain"
   before_action :check_signed_in, only: [:index]
 
   def index
@@ -15,7 +15,7 @@ class WelcomeController < ActionController::Base
   end
 
   def about
-    render 'about', status: :ok, cached: true
+    render "about", status: :ok, cached: true
   end
 
   private
