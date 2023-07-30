@@ -14,39 +14,38 @@ class AppSettings < ApplicationRecord
   after_save :update_settings_cache
 
   AVAILABLE_SETTINGS = {
-    'interface_layout' => {
+    "interface_layout" => {
       type: :string,
-      values: %w[VERTICAL VERTICAL-TRANSPARENT HORIZONTAL OVERLAP CONDENSED]
+      values: %w[VERTICAL VERTICAL-TRANSPARENT HORIZONTAL OVERLAP CONDENSED],
     },
-    'interface_mode' => {
+    "interface_mode" => {
       type: :string,
-      values: %w[LIGHT DARK SYSTEM]
+      values: %w[LIGHT DARK SYSTEM],
     },
-    'interface_theme' => {
+    "interface_theme" => {
       type: :string,
-      values: %w[DEFAULT COOL]
+      values: %w[DEFAULT COOL],
     },
-    'login_layout' => {
+    "login_layout" => {
       type: :string,
-      values: %w[DEFAULT ILLUSTRATION COVER]
+      values: %w[DEFAULT ILLUSTRATION COVER],
     },
-    'multi_space_mode' => {
+    "multi_space_mode" => {
       type: :boolean,
-      values: [true, false]
+      values: [true, false],
     },
-    'show_landing_page' => {
+    "show_landing_page" => {
       type: :boolean,
-      values: [true, false]
-    }
+      values: [true, false],
+    },
   }.freeze
 
   AVAILABLE_SETTINGS.each do |key, _schema|
     define_singleton_method(key) do
-      return typecasetd_settings_value(key, SettingsCache.get(key)) if SettingsCache.exists?(key)
+      return class_variable_get("@@#{key}") if class_variable_defined?("@@#{key}")
 
-      value = find_by(key: key)&.value
-      SettingsCache.set(key, value)
-      typecasetd_settings_value(key, value)
+      value = typecasetd_settings_value(key, find_by(key:)&.value)
+      class_variable_set("@@#{key}", value) && value
     end
   end
 
@@ -55,7 +54,7 @@ class AppSettings < ApplicationRecord
 
     case AVAILABLE_SETTINGS[key][:type]
     when :boolean
-      value == 'true'
+      value == "true"
     else
       value
     end
@@ -64,6 +63,8 @@ class AppSettings < ApplicationRecord
   private
 
   def update_settings_cache
-    SettingsCache.set(key, value)
+    self.class.class_variable_set(
+      "@@#{key}", self.class.typecasetd_settings_value(key, value)
+    )
   end
 end
