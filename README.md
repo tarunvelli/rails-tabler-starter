@@ -1,20 +1,31 @@
-<p align="center">
-    <img src="https://repository-images.githubusercontent.com/575705097/fef162b3-b1f8-417b-a62a-1ee817c96b97" alt="Banner" style="width: 100%; max-width: 800px;" />
-</p>
+<div align="center">
+  <br>
+  <h1>Rails Tabler Starter</h1>
+  <strong>Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in days.</strong>
+  <br>
+  <br>
 
-<p align="center">
-    <a href="https://github.com/tarunvelli/rails-tabler-starter/blob/main/LICENSE.md"><img alt="Github license" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-    <a href="https://rubyonrails.org/"><img alt="Rails v7.0.x" src="https://img.shields.io/badge/Rails-v7.0.x-FF2D20?logo=ruby-on-rails"></a>
-    <a href="https://www.ruby-lang.org/en/"><img alt="Ruby 3.1.2" src="https://img.shields.io/badge/Ruby-3.1.2-FF2D20?logo=ruby"></a>
-</p>
-
-# Rails Tabler Starter
-
-Rails starter boilerplate that you can clone and build on top of
+  ![](./app/assets/images/saas-example.gif)
+</div>
 
 [Click here](https://rails-tabler.fly.dev) to view demo application. Check out the [Demo setup page](https://rails-tabler.fly.dev/setup/edit) to toggle application settings.
 
+## Goals
+
+Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
+
+* No DSL
+* Avoid complex frontend functionality
+* Simplicity over efficiency
+
 ## Overview
+
+* Baked in with multiple models eg.
+
+    * Users
+    * Roles
+    * Plans
+    * Subscriptions
 
 * User authentication & authorization
 
@@ -47,14 +58,6 @@ Rails starter boilerplate that you can clone and build on top of
     * [Brakeman](https://github.com/presidentbeef/brakeman) - A static analysis security vulnerability scanner
     * [Byebug](https://github.com/deivid-rodriguez/byebug) - Simple debugger
     * [Dotenv](https://github.com/bkeepers/dotenv) - Load environment variables from `.env`
-
-## Goals
-
-Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
-
-* No DSL
-* Avoid complex frontend functionality
-* Simplicity over efficiency
 
 ## Setup
 
@@ -93,7 +96,7 @@ Toggle app settings at `/setup/edit`
 
 * `AppSettings.interface_layout`
     * Layout of app
-    * values ["VERTICAL", "HORIZONTAL", "OVERLAP", "CONDENSED"]
+    * values ["VERTICAL", "VERTICAL-TRANSPARENT", "HORIZONTAL", "OVERLAP", "CONDENSED"]
 
 * `AppSettings.interface_mode`
     * Light/Dark mode of app
@@ -117,6 +120,28 @@ Toggle app settings at `/setup/edit`
     * When true root path renders landing page
     * When false root path redirects to sign in page
     * Values [true, false]
+
+### sample AppSettings for Saas app
+
+```
+AppSettings.interface_layout = 'HORIZONTAL'
+AppSettings.interface_mode = 'LIGHT'
+AppSettings.interface_theme = 'DEFAULT'
+AppSettings.login_layout = 'ILLUSTRATION'
+AppSettings.multi_space_mode = true
+AppSettings.show_landing_page = true
+```
+
+### sample AppSettings for internal app
+
+```
+AppSettings.interface_layout = 'CONDENSED'
+AppSettings.interface_mode = 'LIGHT'
+AppSettings.interface_theme = 'DEFAULT'
+AppSettings.login_layout = 'DEFAULT'
+AppSettings.multi_space_mode = false
+AppSettings.show_landing_page = false
+```
 
 ## Deployment
 
