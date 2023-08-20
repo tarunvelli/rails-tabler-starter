@@ -49,11 +49,11 @@ AppSettings.create!(
     },
     {
       key: 'interface_mode',
-      value: 'SYSTEM'
+      value: 'LIGHT'
     },
     {
       key: 'interface_theme',
-      value: 'COOL'
+      value: 'DEFAULT'
     },
     {
       key: 'login_layout',
