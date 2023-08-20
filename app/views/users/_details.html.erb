@@ -40,6 +40,12 @@
       <%= form.select :status, User.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
     </div>
   </div>
+  <div class="form-group mb-3 row">
+    <%= form.label :avatar, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.file_field :avatar, class:"form-control", ariaDescribedby:"avatarHelp" %>
+    </div>
+  </div>
   <div class="form-footer">
     <%= form.submit "Save", class:"btn btn-primary" %>
   </div>

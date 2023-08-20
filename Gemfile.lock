@@ -122,6 +122,7 @@ GEM
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
+    ffi (1.15.5)
     foreman (0.87.2)
     fugit (1.8.0)
       et-orbi (~> 1, >= 1.2.7)
@@ -131,6 +132,9 @@ GEM
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     interception (0.5)
     io-console (0.6.0)
     irb (1.6.2)
@@ -173,6 +177,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
@@ -321,6 +326,8 @@ GEM
       rubocop (~> 1.33)
       rubocop-capybara
     ruby-progressbar (1.11.0)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     rufus-scheduler (3.8.2)
       fugit (~> 1.1, >= 1.1.6)
@@ -373,8 +380,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2023.3)
-      tzinfo (>= 1.0.0)
     unicode-display_width (2.3.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -415,6 +420,7 @@ DEPENDENCIES
   dotenv-rails
   foreman
   htmlbeautifier
+  image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
   kaminari

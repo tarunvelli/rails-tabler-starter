@@ -63,7 +63,9 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :email, :status, :pallete)
+    params.require(:user).permit(
+      :first_name, :last_name, :phone, :email, :status, :pallete, :avatar
+    )
   end
 
   def set_space
