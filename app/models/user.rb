@@ -6,6 +6,8 @@
 #
 #  id                     :bigint           not null, primary key
 #  admin                  :boolean          default(FALSE)
+#  color_mode             :string
+#  color_scheme           :string
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -20,7 +22,6 @@
 #  invitations_count      :integer          default(0)
 #  invited_by_type        :string
 #  last_name              :string
-#  pallete                :string
 #  phone                  :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime

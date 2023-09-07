@@ -28,7 +28,7 @@ module SettingsHelper
   end
 
   def interface_mode
-    case mode || AppSettings.interface_mode
+    case current_user&.color_mode || AppSettings.interface_mode
     when "DARK"
       "dark"
     else
@@ -36,21 +36,13 @@ module SettingsHelper
     end
   end
 
-  def mode
-    current_user&.pallete&.split("-")&.dig(0)
-  end
-
   def interface_theme
-    case theme || AppSettings.interface_theme
+    case  current_user&.color_scheme || AppSettings.interface_theme
     when "COOL"
       "application-cool"
     else
       "application"
     end
-  end
-
-  def theme
-    current_user&.pallete&.split("-")&.dig(1)
   end
 
   def multi_space_mode?
