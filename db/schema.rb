@@ -116,7 +116,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
     t.string "phone"
     t.integer "status", default: 0
     t.string "session_token"
-    t.string "pallete"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -126,6 +125,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.boolean "admin", default: false
+    t.string "color_scheme"
+    t.string "color_mode"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
