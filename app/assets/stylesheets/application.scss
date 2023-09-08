@@ -1,2 +1,10 @@
-@import '@tabler/core/src/scss/tabler';
-@import '@tabler/core/dist/css/tabler-vendors';
+@import "@tabler/core/src/scss/tabler";
+@import "@tabler/core/dist/css/tabler-vendors";
+
+.landing-navbar {
+  box-shadow: 0 0 0 0;
+}
+
+.landing-navbar.scrolled {
+  box-shadow: 5px -1px 12px -5px grey;
+}

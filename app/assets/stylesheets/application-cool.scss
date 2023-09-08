@@ -27,5 +27,4 @@ $cyan: #88c0d0 !default;
 
 $body-bg: $gray-50 !default;
 
-@import '@tabler/core/src/scss/tabler';
-@import '@tabler/core/dist/css/tabler-vendors';
+@import 'application'

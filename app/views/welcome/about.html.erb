@@ -1,7 +1,7 @@
 <body class="<%= interface_mode %>">
   <div class="wrapper">
-    <header class="bg-light navbar navbar-expand-md d-print-none fixed-top">
-      <div class="container col-xxl-8 px-4">
+    <header class="landing-navbar bg-light navbar navbar-expand-md d-print-none fixed-top">
+      <div class="container-xl px-4">
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
           <a href="/">
             <%= image_tag "logo.svg", width: "110", height: "32", alt: "Tabler", class: "navbar-brand-image" %>
@@ -28,14 +28,14 @@
               <%= link_to 'Login', new_user_session_path, data: { turbo: false }, class: 'btn btn-ghost-secondary' %>
             </li>
             <li class="nav-item mx-1">
-              <%= link_to 'Sign Up', new_user_registration_path, data: { turbo: false }, class: 'btn btn-primary btn-pill' %>
+              <%= link_to 'Sign Up', new_user_registration_path, data: { turbo: false }, class: 'btn btn-outline-primary' %>
             </li>
           </ul>
         </div>
       </div>
     </header>
 
-    <section>
+    <section class="bg-light pt-7">
       <div class="container col-xxl-8 px-4 pb-4 pt-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
@@ -43,20 +43,17 @@
               alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Landing Page</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut
-              labore et dolore magna aliqua. Amet consectetur adipiscing elit pellentesque. Imperdiet massa tincidunt
-              nunc pulvinar.</p>
+            <h1 class="display-5 fw-bold lh-1 mb-3">Sample Landing Page</h1>
+            <p class="lead">Free and open source Ruby on Rails starter kit built using Tabler UI</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <%= link_to 'Get Started', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-primary btn-lg btn-pill px-4 me-md-2' %>
+              <%= link_to 'Get Started', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-outline-primary btn-lg px-4 me-md-2' %>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features">
+    <section class="bg-light" id="features">
       <div class="container col-xxl-8 p-4">
         <div class="row g-4 p-4 row-cols-1 row-cols-lg-3 rounded-3 border shadow-md bg-light">
           <div class="col-12 col-md-4">
@@ -73,7 +70,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              Authentication & Autherization
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -93,7 +90,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              Role management
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -115,7 +112,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              Multi tenant
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -140,7 +137,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              UI layouts
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -159,7 +156,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              Developer focused
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -178,7 +175,7 @@
               </svg>
             </div>
             <h3>
-              Feature title
+              Free and open source
             </h3>
             <p class="text-muted mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -189,7 +186,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="bg-light">
       <div class="container col-xxl-8 p-4">
         <div class="row p-4 align-items-center rounded-3 border shadow-md">
           <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
@@ -198,24 +195,23 @@
           </div>
           <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <span class="display-4 fw-bold lh-1">About</span><span class="display-4 fw-light lh-1"> Us</span>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut
-              labore et dolore magna aliqua. Id interdum velit laoreet id donec ultrices tincidunt. Ut morbi tincidunt
-              augue interdum.</p>
+            <p class="lead">
+              Free and open-source MIT licensed project designed to streamline the development of web applications using the Ruby on Rails framework.
+              This starter kit provides a solid foundation for building modern, responsive, and feature-rich web applications by integrating the popular Tabler UI framework.
+            </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Learn more</button>
+              <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Learn more</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-
-    <section id="pricing">
+    <section class="bg-light" id="pricing">
       <div class="container col-xxl-8 p-4">
         <div class="row py-2">
           <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Pricing</h1>
+            <h1 class="display-4 fw-normal">Example pricing</h1>
             <p class="fs-5 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu facilisis sed odio morbi.
             </p>
@@ -238,7 +234,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Sharing Tools
+                    Lorem ipsum
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -249,7 +245,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Design Tools
+                    Dolor sit
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -260,7 +256,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Private Messages
+                    Amet consectetur
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -271,7 +267,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Twitter API
+                    Adipiscing elit
                   </li>
                 </ul>
                 <div class="text-center mt-4">
@@ -305,7 +301,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Sharing Tools
+                    Lorem ipsum
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -315,7 +311,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Design Tools
+                    Dolor sit
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -326,7 +322,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Private Messages
+                    Amet consectetur
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -337,7 +333,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Twitter API
+                    Adipiscing elit
                   </li>
                 </ul>
                 <div class="text-center mt-4">
@@ -361,7 +357,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Sharing Tools
+                    Lorem ipsum
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -371,7 +367,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Design Tools
+                    Dolor sit
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -381,7 +377,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Private Messages
+                    Amet consectetur
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -392,7 +388,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Twitter API
+                    Adipiscing elit
                   </li>
                 </ul>
                 <div class="text-center mt-4">
@@ -416,7 +412,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Sharing Tools
+                    Lorem ipsum
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -426,7 +422,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Design Tools
+                    Dolor sit
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -436,7 +432,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Private Messages
+                    Amet consectetur
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -446,7 +442,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Twitter API
+                    Adipiscing elit
                   </li>
                 </ul>
                 <div class="text-center mt-4">
@@ -459,14 +455,12 @@
       </div>
     </section>
 
-    <section>
+    <section class="bg-light pb-5">
       <div class="container col-xxl-8 p-4">
         <div class="text-center">
           <span class="display-4 fw-light lh-1">Get </span><span class="display-4 fw-bold lh-1">Started</span>
           <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Amet tellus cras adipiscing enim eu turpis egestas pretium.
-              Posuere ac ut consequat semper viverra nam libero justo. Mi ipsum faucibus vitae aliquet.</p>
+            <p class="lead mb-4">Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in days.</p>
             <div class="overflow-hidden">
               <div class="container px-5">
                 <img src="/undraw_maker_launch_re_rq81.svg" class="d-block mx-lg-auto img-fluid"
@@ -474,7 +468,7 @@
               </div>
             </div>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
-                <%= link_to 'Sign up!', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-primary btn-lg btn-pill px-4 me-sm-3' %>
+                <%= link_to 'Sign up!', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-lg btn-outline-primary px-4 me-sm-3' %>
             </div>
           </div>
 
@@ -482,7 +476,7 @@
       </div>
     </section>
 
-    <footer class="footer mt-5 bg-light">
+    <footer class="footer bg-light">
       <div class="container py-5">
         <div class="row">
           <div class="col-lg-3 mb-3">
@@ -547,4 +541,14 @@
       </div>
     </footer>
   </div>
+  <script>
+    const navbar = document.querySelector('.landing-navbar');
+    window.onscroll = () => {
+      if (window.scrollY > navbar.offsetHeight) {
+          navbar.classList.add('scrolled');
+      } else {
+          navbar.classList.remove('scrolled');
+      }
+    };
+  </script>
 </body>
