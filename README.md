@@ -12,15 +12,15 @@
 
 ## Goals
 
-Users familiar with rails should be able to build with this boilerplate without requiring extensive introduction.
+This starter is aimed at Rails developers familiar with the framework, aiming to facilitate seamless development with the following principles:
 
-* No DSL
-* Avoid complex frontend functionality
-* Simplicity over efficiency
+* No DSL: Avoid unnecessary Domain Specific Language (DSL) complexity.
+* Simplicity over Efficiency: Prioritize simplicity in implementation over excessive optimization.
+* Avoid Complex Frontend Functionality: Keep frontend functionality straightforward and manageable.
 
 ## Overview
 
-* Baked in with multiple models eg.
+* Pre-equipped with essential models such as
 
     * Users
     * Roles
@@ -29,22 +29,23 @@ Users familiar with rails should be able to build with this boilerplate without 
 
 * User authentication & authorization
 
-    * Authentication through [Devise](https://github.com/heartcombo/devise)
-    * Use [OmniAuth](https://github.com/heartcombo/devise/wiki/OmniAuth%3A-Overview) to extend authentication using providers
-    * Authorization thought [Pundit](https://github.com/varvet/pundit)
+    * Authentication via [Devise](https://github.com/heartcombo/devise)
+    * [OmniAuth](https://github.com/heartcombo/devise/wiki/OmniAuth%3A-Overview) integration to extend authentication using third-party providers
+    * Authorization through [Pundit](https://github.com/varvet/pundit)
 
 * Background worker & scheduler
 
-    * Using [sidekiq](https://github.com/mperham/sidekiq/) and [sidekiq-scheduler](https://github.com/sidekiq-scheduler/sidekiq-scheduler)
+    * Utilizes [sidekiq](https://github.com/mperham/sidekiq/) and [sidekiq-scheduler](https://github.com/sidekiq-scheduler/sidekiq-scheduler)
 
 * Role management
 
-    * Supports standard roles available across spaces and also creating custom roles per space
+    * Standard roles available across spaces
+    * Custom role creation per space
     * Supports fine grained permissions per role
 
 * Multiple user groups support
 
-    * The `Space` model is used to represent a group i.e. can be a team, organization, group etc.
+    * Utilizes the `Space` model to represent user groups (e.g., teams, organizations).
     * Example use case for turning on multi-space mode is a saas application
     * Example use case for turning off multi-space mode is an internal org tool
 
@@ -61,30 +62,30 @@ Users familiar with rails should be able to build with this boilerplate without 
 
 ## Setup
 
-requires postgres and redis to run on local
+To set up the project, ensure you have PostgreSQL and Redis installed locally. Use the following commands to install them:
 
 ```
 brew install postgresql@12 redis
 ```
 
-clone the repo
+Clone the repo
 
 ```
 git clone https://github.com/tarunvelli/rails-tabler-starter.git
 ```
 
-use asdf to install required dependencies, or setup the dependencies `.tool-versions` in another way
+Install the required dependencies using asdf or setup the dependencies `.tool-versions` in other preferred method:
 ```
 asdf install
 ```
 
-setup and run dev server
+Set up and run the development server:
 ```
 bin/setup
 bin/dev
 ```
 
-Mark a user as admin from console to view admin features in the user dropdown
+To grant administrative privileges to a user and access admin features, run the following in the Rails console:
 ```
 bundle exec rails c
 > User.first.update(admin: true)
@@ -145,9 +146,11 @@ AppSettings.show_landing_page = false
 
 ## Deployment
 
+Choose your preferred deployment platform:
+
 * Deploy on [Fly.io](https://fly.io/docs/rails/getting-started/)
 * Deploy on [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails7)
 
 ## Contribution
 
-Contribution is welcome!
+Contributions to enhance this starter are highly encouraged and welcomed! Feel free to submit pull requests and improve the project collaboratively.
