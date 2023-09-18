@@ -27,6 +27,12 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
     * Plans
     * Subscriptions
 
+<div align="center">
+  <strong>ERD</strong>
+
+  ![](./app/assets/images/template-erb.png)
+</div>
+
 * User authentication & authorization
 
     * Authentication via [Devise](https://github.com/heartcombo/devise)
@@ -43,9 +49,9 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
     * Custom role creation per space
     * Supports fine grained permissions per role
 
-* Multiple user groups support
+* Multiple user namespaces support
 
-    * Utilizes the `Space` model to represent user groups (e.g., teams, organizations).
+    * Utilizes the `Space` model to represent user namespaces (e.g., teams, organizations).
     * Example use case for turning on multi-space mode is a saas application
     * Example use case for turning off multi-space mode is an internal org tool
 
@@ -121,28 +127,6 @@ Toggle app settings at `/setup/edit`
     * When true root path renders landing page
     * When false root path redirects to sign in page
     * Values [true, false]
-
-### sample AppSettings for Saas app
-
-```
-AppSettings.interface_layout = 'HORIZONTAL'
-AppSettings.interface_mode = 'LIGHT'
-AppSettings.interface_theme = 'DEFAULT'
-AppSettings.login_layout = 'ILLUSTRATION'
-AppSettings.multi_space_mode = true
-AppSettings.show_landing_page = true
-```
-
-### sample AppSettings for internal app
-
-```
-AppSettings.interface_layout = 'CONDENSED'
-AppSettings.interface_mode = 'LIGHT'
-AppSettings.interface_theme = 'DEFAULT'
-AppSettings.login_layout = 'DEFAULT'
-AppSettings.multi_space_mode = false
-AppSettings.show_landing_page = false
-```
 
 ## Deployment
 
