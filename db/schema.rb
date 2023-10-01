@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
     t.bigint "plan_id", null: false
     t.bigint "space_id", null: false
     t.datetime "start_date", null: false
-    t.datetime "end_date", precision: nil
+    t.datetime "end_date"
     t.integer "seats"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
     t.index ["space_id"], name: "index_subscriptions_on_space_id"
@@ -116,6 +116,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
     t.string "phone"
     t.integer "status", default: 0
     t.string "session_token"
+    t.boolean "admin", default: false
+    t.string "color_scheme"
+    t.string "color_mode"
     t.string "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -124,9 +127,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
-    t.boolean "admin", default: false
-    t.string "color_scheme"
-    t.string "color_mode"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
