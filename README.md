@@ -1,7 +1,7 @@
 <div align="center">
   <br>
   <h1>Rails Tabler Starter</h1>
-  <strong>Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in days.</strong>
+  <strong>Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in hours.</strong>
   <br>
   <br>
 
