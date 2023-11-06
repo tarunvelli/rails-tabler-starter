@@ -7,5 +7,6 @@ production:
 :max_retries: 1
 
 :queues:
-  - default
-  - mailers
+  - ["critical", 4]
+  - ["default", 2]
+  - ["mailers", 1]

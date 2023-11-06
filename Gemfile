@@ -71,6 +71,7 @@ gem "kaminari"
 # background tasks
 gem "sidekiq"
 gem "sidekiq-scheduler"
+gem "sidekiq-statistic"
 
 # dependabot alerts
 gem "rack", ">= 2.2.6.4"
