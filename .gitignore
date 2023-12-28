@@ -50,3 +50,6 @@ yarn-error.log
 
 doc/**
 .yardoc/**
+
+# Local Database for dev environment
+.database

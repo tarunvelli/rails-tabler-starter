@@ -1,4 +1,5 @@
-nodejs 18.12.0
-ruby 3.1.2
-postgres 12.9
-yarn 1.22.17
+nodejs 18.19.0
+ruby 3.1.4
+postgres 14.10
+yarn 1.22.19
+redis 7.2.3
