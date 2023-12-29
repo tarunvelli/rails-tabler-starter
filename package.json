@@ -5,11 +5,11 @@
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
     "@popperjs/core": "^2.11.5",
-    "@tabler/core": "^1.0.0-beta19",
+    "@tabler/core": "^1.0.0-beta20",
     "esbuild": "^0.16.10",
     "esbuild-sass-plugin": "^2.4.0",
     "jsvectormap": "1.5.1",
-    "rails_admin": "3.1.1",
+    "rails_admin": "3.1.2",
     "sass": "^1.57.1"
   },
   "scripts": {
