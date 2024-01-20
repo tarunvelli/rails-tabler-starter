@@ -118,7 +118,7 @@ Toggle app settings at `/setup/edit`
     * Layout of login screens
     * Values ["DEFAULT", "ILLUSTRATION", "COVER"]
 
-* `AppSettings.multi_space_mode`
+* `AppSettings.multi_tenant_mode`
     * When true allows users to sign up and create spaces
     * When false allows only admin to invite users and create spaces
     * Values [true, false]

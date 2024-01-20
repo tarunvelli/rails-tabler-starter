@@ -45,8 +45,8 @@ module SettingsHelper
     end
   end
 
-  def multi_space_mode?
-    AppSettings.multi_space_mode || current_user&.admin?
+  def multi_tenant_mode?
+    AppSettings.multi_tenant_mode || current_user&.admin?
   end
 
   def show_landing_page?

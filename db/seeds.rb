@@ -41,34 +41,14 @@ Role.create!(
   ]
 )
 
-AppSettings.create!(
-  [
-    {
-      key: 'interface_layout',
-      value: 'HORIZONTAL'
-    },
-    {
-      key: 'interface_mode',
-      value: 'LIGHT'
-    },
-    {
-      key: 'interface_theme',
-      value: 'DEFAULT'
-    },
-    {
-      key: 'login_layout',
-      value: 'DEFAULT'
-    },
-    {
-      key: 'multi_space_mode',
-      value: 'true'
-    },
-    {
-      key: 'show_landing_page',
-      value: 'true'
-    }
-  ]
-)
+DefaultAppSettings = Rails.application.config.app_settings.map do |key, data|
+  {
+    key: key,
+    value: data['default']
+  }
+end
+
+AppSettings.create!(DefaultAppSettings)
 
 Plan.create!([
   {

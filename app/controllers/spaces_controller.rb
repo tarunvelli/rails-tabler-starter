@@ -2,7 +2,7 @@
 
 class SpacesController < ApplicationController
   before_action :set_space, only: %i[show edit update destroy]
-  before_action :check_multi_space_mode, only: %i[new index]
+  before_action :check_multi_tenant_mode, only: %i[new index]
   before_action :set_space_and_user_roles, only: %i[create]
 
   # GET /spaces or /spaces.json
@@ -74,8 +74,8 @@ class SpacesController < ApplicationController
     params.require(:space).permit(:name, :phone, :email, :status, :address)
   end
 
-  def check_multi_space_mode
-    return if multi_space_mode?
+  def check_multi_tenant_mode
+    return if multi_tenant_mode?
 
     redirect_back fallback_location: root_path
   end

@@ -23,7 +23,7 @@
   <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
     <%= link_to 'Profile', edit_user_path(current_user),  class: 'dropdown-item' %>
     <%= link_to 'Change password', edit_user_registration_path, class: 'dropdown-item' %>
-    <% if multi_space_mode? %>
+    <% if multi_tenant_mode? %>
       <%= link_to 'Spaces', spaces_path, class: 'dropdown-item' %>
     <% end %>
     <% if current_user.admin? %>

@@ -2,7 +2,7 @@ class SetupController < ApplicationController
   include SettingsHelper
 
   def edit
-    @app_settings = AppSettings.where(key: AppSettings::AVAILABLE_SETTINGS.keys).order(:key)
+    @app_settings = AppSettings.where(key: Rails.application.config.app_settings.keys).order(:key)
   end
 
   def update
