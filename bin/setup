@@ -1,5 +1,15 @@
 #!/usr/bin/env ruby
 require "fileutils"
+require 'yaml'
+require 'optparse'
+
+options = {}
+settings = YAML.load_file("config/app_settings.yml")
+OptionParser.new do |opt|
+  settings.each_key do |key|
+    opt.on("--#{key} VALUE") { |o| options[key.to_sym] = o }
+  end
+end.parse!
 
 # path to your application root.
 APP_ROOT = File.expand_path("..", __dir__)
@@ -29,6 +39,16 @@ FileUtils.chdir APP_ROOT do
   unless File.exist?(".env")
     FileUtils.cp ".env.sample", ".env"
   end
+
+  puts "\n== Copying app settings config =="
+
+  settings = settings.tap do |setting|
+    setting.each do |key, value|
+      value["default"] = options[key.to_sym] || value["default"]
+    end
+  end
+
+  File.write('config/app_settings.yml', settings.to_yaml)
 
   puts "\n== Preparing database =="
   system! "bin/rails db:prepare"

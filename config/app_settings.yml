@@ -1,24 +1,42 @@
+---
 interface_layout:
   type: string
-  available: [VERTICAL, VERTICAL-TRANSPARENT, HORIZONTAL, OVERLAP, CONDENSED]
+  available:
+  - VERTICAL
+  - VERTICAL-TRANSPARENT
+  - HORIZONTAL
+  - OVERLAP
+  - CONDENSED
   default: HORIZONTAL
 interface_mode:
   type: string
-  available: [LIGHT, DARK, SYSTEM]
+  available:
+  - LIGHT
+  - DARK
+  - SYSTEM
   default: LIGHT
 interface_theme:
   type: string
-  available: [DEFAULT, COOL]
+  available:
+  - DEFAULT
+  - COOL
   default: DEFAULT
 login_layout:
   type: string
-  available: [DEFAULT, ILLUSTRATION, COVER]
+  available:
+  - DEFAULT
+  - ILLUSTRATION
+  - COVER
   default: DEFAULT
 multi_tenant_mode:
   type: boolean
-  available: [true, false]
+  available:
+  - true
+  - false
   default: 'true'
 show_landing_page:
   type: boolean
-  available: [true, false]
+  available:
+  - true
+  - false
   default: 'true'

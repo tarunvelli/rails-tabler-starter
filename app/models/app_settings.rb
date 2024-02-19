@@ -19,8 +19,20 @@ class AppSettings < ApplicationRecord
     define_singleton_method(key) do
       return class_variable_get("@@#{key}") if class_variable_defined?("@@#{key}")
 
-      value = TypeCast::FUNCTION_MAPPER[schema["type"]].call(find_by(key:)&.value)
+      value = TypeCast::FUNCTION_MAPPER[schema["type"]].call(inferred_value(key))
       class_variable_set("@@#{key}", value) && value
+    end
+  end
+
+  class << self
+    private
+
+    def inferred_value(key)
+      if ENV["DEMO_MODE"] == "true"
+        find_by(key:)&.value
+      else
+        Rails.application.config.app_settings[key]["default"]
+      end
     end
   end
 
