@@ -9,13 +9,13 @@ services:
     volumes:
       - crdb_data:/cockroach/cockroach-data
 
-  redis:
-    image: redis:7.2.3
+  valkey:
+    image: valkey/valkey:7.2.5
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data
+      - valkey_data:/data
 
 volumes:
   crdb_data:
-  redis_data:
+  valkey_data:
