@@ -5,11 +5,11 @@
 # Table name: spaces
 #
 #  id         :bigint           not null, primary key
+#  address    :text
+#  email      :string
 #  name       :string
 #  phone      :string
-#  email      :string
-#  status     :integer
-#  address    :text
+#  status     :bigint
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

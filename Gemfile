@@ -9,8 +9,8 @@ gem "rails", ">= 7.0.8.1"
 # The new asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+# Use cockroachdb as the database for Active Record
+gem 'activerecord-cockroachdb-adapter', '~> 7.0.0'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 6.4.2"
