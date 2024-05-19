@@ -68,10 +68,10 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
 
 ## Setup
 
-To set up the project, ensure you have PostgreSQL and Redis installed locally. Use the following commands to install them:
+To set up the project, ensure you have Docker compose installed locally. Use the following commands to start them:
 
 ```
-brew install postgresql@12 redis
+docker compose up -d
 ```
 
 Clone the repo

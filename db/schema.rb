@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
-  create_schema "crdb_internal"
-
+ActiveRecord::Schema[7.0].define(version: 2023_08_20_052319) do
   create_table "active_storage_attachments", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -20,7 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.unique_constraint ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
   create_table "active_storage_blobs", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
@@ -32,15 +30,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
     t.bigint "byte_size", null: false
     t.string "checksum"
     t.datetime "created_at", null: false
-
-    t.unique_constraint ["key"], name: "index_active_storage_blobs_on_key"
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "active_storage_variant_records", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
-
-    t.unique_constraint ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness"
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "app_settings", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
@@ -48,8 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
     t.string "value", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
-    t.unique_constraint ["key"], name: "index_app_settings_on_key"
+    t.index ["key"], name: "index_app_settings_on_key", unique: true
   end
 
   create_table "plans", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
@@ -98,8 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
     t.bigint "user_id", null: false
     t.bigint "space_id", null: false
     t.bigint "role_id", null: false
-
-    t.unique_constraint ["user_id", "space_id"], name: "index_user_roles_on_user_id_and_space_id"
+    t.index ["user_id", "space_id"], name: "index_user_roles_on_user_id_and_space_id", unique: true
   end
 
   create_table "users", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
@@ -130,11 +124,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_08_20_052319) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.bigint "invitations_count", default: 0
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by"
-    t.unique_constraint ["email"], name: "index_users_on_email"
-    t.unique_constraint ["invitation_token"], name: "index_users_on_invitation_token"
-    t.unique_constraint ["reset_password_token"], name: "index_users_on_reset_password_token"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
