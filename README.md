@@ -68,7 +68,7 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
 
 ## Setup
 
-To set up the project, ensure you have Docker compose installed locally. Use the following commands to start them:
+To set up the project, ensure you have Docker Compose installed locally. Use the following commands to start them:
 
 ```
 docker compose up -d
