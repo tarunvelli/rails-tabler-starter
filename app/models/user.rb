@@ -16,10 +16,10 @@
 #  first_name             :string
 #  invitation_accepted_at :datetime
 #  invitation_created_at  :datetime
-#  invitation_limit       :integer
+#  invitation_limit       :bigint
 #  invitation_sent_at     :datetime
 #  invitation_token       :string
-#  invitations_count      :integer          default(0)
+#  invitations_count      :bigint           default(0)
 #  invited_by_type        :string
 #  last_name              :string
 #  phone                  :string
@@ -27,7 +27,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  session_token          :string
-#  status                 :integer          default("active")
+#  status                 :bigint           default("active")
 #  unconfirmed_email      :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null

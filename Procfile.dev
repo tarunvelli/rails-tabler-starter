@@ -1,5 +1,4 @@
 web: bin/rails server -p 3000
 js: yarn build --watch
 css: yarn build:css --watch
-redis: bundle exec redis-server
 worker: bundle exec sidekiq -C config/sidekiq.yml

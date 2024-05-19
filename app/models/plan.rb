@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  currency    :string           not null
-#  description :json
+#  description :jsonb
 #  duration    :string           not null
 #  name        :string           not null
 #  price       :float            not null

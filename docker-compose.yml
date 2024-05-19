@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  crdb:
+    image: cockroachdb/cockroach:v23.2.4
+    ports:
+      - "26257:26257"
+      - "8080:8080"
+    command: start-single-node --insecure
+    volumes:
+      - crdb_data:/cockroach/cockroach-data
+
+  redis:
+    image: redis:7.2.3
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  crdb_data:
+  redis_data:
