@@ -102,8 +102,6 @@ group :development do
   gem "rubocop-performance"
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem "solargraph"
-  gem "solargraph-rails"
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -113,6 +111,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :test do
