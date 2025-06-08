@@ -16,10 +16,10 @@
 class Role < ApplicationRecord
   self.store_full_sti_class = false
 
-  COMMON_TYPE = 'common'.freeze
-  CUSTOM_TYPE = 'custom'.freeze
-  AVAILABLE_TYPES = [COMMON_TYPE, CUSTOM_TYPE].freeze
-  AVAILABLE_PERMISSION_VALUES = ['true', 'false', nil].freeze
+  COMMON_TYPE = "common".freeze
+  CUSTOM_TYPE = "custom".freeze
+  AVAILABLE_TYPES = [ COMMON_TYPE, CUSTOM_TYPE ].freeze
+  AVAILABLE_PERMISSION_VALUES = [ "true", "false", nil ].freeze
   AVAILABLE_PERMISSIONS = %w[
     create_user
     read_user
@@ -39,7 +39,7 @@ class Role < ApplicationRecord
   end
 
   AVAILABLE_PERMISSIONS.each do |p|
-    define_method("can_#{p}?") { permissions[p] == 'true' }
+    define_method("can_#{p}?") { permissions[p] == "true" }
   end
 
   def common?

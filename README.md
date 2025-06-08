@@ -68,10 +68,10 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
 
 ## Setup
 
-To set up the project, ensure you have PostgreSQL and Redis installed locally. Use the following commands to install them:
+To set up the project, ensure you have SQLite installed locally. Use the following commands to install them:
 
 ```
-brew install postgresql@12 redis
+brew install sqlite3
 ```
 
 Clone the repo

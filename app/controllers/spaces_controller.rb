@@ -75,7 +75,7 @@ class SpacesController < ApplicationController
   end
 
   def check_multi_tenant_mode
-    return if multi_tenant_mode?
+    return if multi_tenant_mode? || current_user&.admin?
 
     redirect_back fallback_location: root_path
   end

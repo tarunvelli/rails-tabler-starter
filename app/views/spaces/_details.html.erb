@@ -17,27 +17,9 @@
     </div>
   </div>
   <div class="form-group mb-3 row">
-    <%= form.label :phone, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :phone, class:"form-control", ariaDescribedby:"phoneHelp", placeholder: "Enter phone" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :email, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_field :email, class:"form-control", ariaDescribedby:"emailHelp", placeholder: "Enter email" %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
     <%= form.label :status, class: "form-label col-3 col-form-label" %>
     <div class="col">
-      <%= form.select :status, Space.statuses.keys.map { |key| [key.humanize, key] }, {}, { class:"form-control", ariaDescribedby:"statusHelp" } %>
-    </div>
-  </div>
-  <div class="form-group mb-3 row">
-    <%= form.label :address, class: "form-label col-3 col-form-label" %>
-    <div class="col">
-      <%= form.text_area :address, class:"form-control", ariaDescribedby:"addressHelp", placeholder: "Enter address" %>
+      <%= form.text_field :status, class:"form-control", ariaDescribedby:"statusHelp", placeholder: "Enter status"%>
     </div>
   </div>
   <div class="form-footer">

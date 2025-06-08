@@ -46,7 +46,7 @@ module SettingsHelper
   end
 
   def multi_tenant_mode?
-    AppSettings.multi_tenant_mode || current_user&.admin?
+    AppSettings.multi_tenant_mode
   end
 
   def show_landing_page?

@@ -1,19 +1,15 @@
 <div class="nav-item dropdown">
   <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
     <span  class="avatar">
-      <% if current_user.avatar.attached? %>
-        <%= image_tag rails_storage_proxy_path(current_user.avatar), class: 'avatar' %>
-      <% else %>
-        <!-- Download SVG icon from http://tabler-icons.io/i/dashboard -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
-      width="48" height="48" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-      stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="10" r="3"></circle>
-          <path d="M6.168 18.849a4 4 0 0 1 3.832-2.849h4a4 4 0 0 1 3.834 2.855">
-          </path>
-        </svg>
-      <% end %>
+      <!-- Download SVG icon from http://tabler-icons.io/i/dashboard -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
+    width="48" height="48" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+    stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="10" r="3"></circle>
+        <path d="M6.168 18.849a4 4 0 0 1 3.832-2.849h4a4 4 0 0 1 3.834 2.855">
+        </path>
+      </svg>
     </span>
     <div class="d-none d-xl-block ps-2">
       <div><%= user_name(current_user.name) %></div>
@@ -30,7 +26,6 @@
       <div class="dropdown-divider"></div>
       <%= link_to 'Setup', edit_setup_path, class: 'dropdown-item', target: '_blank' %>
       <%= link_to 'Admin', rails_admin_path, class: 'dropdown-item', target: '_blank' %>
-      <%= link_to 'Sidekiq', sidekiq_web_path, class: 'dropdown-item', target: '_blank' %>
     <% end %>
     <div class="dropdown-divider"></div>
     <%= button_to "Logout", destroy_user_session_path, data: { turbo: false }, class: 'dropdown-item', method: :delete  %>

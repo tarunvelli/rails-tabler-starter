@@ -9,3 +9,6 @@ vendor/* linguist-vendored
 app/assets/**/** linguist-vendored
 
 app/views/**/*.erb linguist-language=ruby
+
+config/credentials/*.yml.enc diff=rails_credentials
+config/credentials.yml.enc diff=rails_credentials

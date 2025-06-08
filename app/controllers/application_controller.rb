@@ -1,21 +1,25 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   include SettingsHelper
-  include Pundit::Authorization
+  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
+  allow_browser versions: :modern
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  before_action :authenticate_user!, except: [ :landing ]
+  before_action :set_main_space, only: [ :landing ]
+  before_action :redirect_signed_in_user, only: [ :landing ]
 
-  before_action :authenticate_user!
+  layout "plain", only: [ :landing ]
+
+  def landing; end
 
   private
 
-  def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action."
-    redirect_back(fallback_location: root_path)
+  def redirect_signed_in_user
+    return unless user_signed_in?
+
+    redirect_to @main_space ? space_path(@main_space) : spaces_path
   end
 
-  def after_sign_out_path_for(_resource)
-    new_user_session_path
+  def set_main_space
+    @main_space = current_user&.spaces&.first
   end
 end

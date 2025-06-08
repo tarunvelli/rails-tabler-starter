@@ -34,18 +34,15 @@
 #  invited_by_id          :bigint
 #
 class User < ApplicationRecord
-  has_one_attached :avatar
-
   has_many :user_roles
   has_many :spaces, through: :user_roles
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  enum status: %i[active archived]
+  enum :status, active: 0, archived: 1
 
   alias_attribute :admin?, :admin
 
