@@ -32,7 +32,7 @@ class Spaces::UsersController < ApplicationController
         format.json { render :show, status: :ok }
       else
         format.html { redirect_to space_users_path(@space) }
-        format.json { render json: ["Failed to invite user"], status: :unprocessable_entity }
+        format.json { render json: [ "Failed to invite user" ], status: :unprocessable_entity }
       end
     end
   end

@@ -1,1 +1,1 @@
-json.partial! 'spaces/roles/role', role: @role
+json.partial! "spaces/roles/role", role: @role

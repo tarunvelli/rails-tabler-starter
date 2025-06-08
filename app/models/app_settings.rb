@@ -13,14 +13,9 @@
 class AppSettings < ApplicationRecord
   require "type_cast"
 
-  after_save :update_settings_cache
-
   Rails.application.config.app_settings.each do |key, schema|
     define_singleton_method(key) do
-      return class_variable_get("@@#{key}") if class_variable_defined?("@@#{key}")
-
-      value = TypeCast::FUNCTION_MAPPER[schema["type"]].call(inferred_value(key))
-      class_variable_set("@@#{key}", value) && value
+      TypeCast::FUNCTION_MAPPER[schema["type"]].call(inferred_value(key))
     end
   end
 
@@ -28,21 +23,11 @@ class AppSettings < ApplicationRecord
     private
 
     def inferred_value(key)
-      if ENV["DEMO_MODE"] == "true"
-        find_by(key:)&.value
-      else
-        Rails.application.config.app_settings[key]["default"]
-      end
+      find_by(key:)&.value || Rails.application.config.app_settings[key]["default"]
     end
   end
 
   private
-
-  def update_settings_cache
-    self.class.class_variable_set(
-      "@@#{key}", TypeCast::FUNCTION_MAPPER[type].call(value)
-    )
-  end
 
   def type
     Rails.application.config.app_settings[key]["type"]

@@ -1,0 +1,554 @@
+<body>
+  <div class="wrapper">
+    <header class="landing-navbar bg-light navbar navbar-expand-md d-print-none fixed-top">
+      <div class="container-xl px-4">
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+          <a href="/">
+            <%= image_tag "logo.svg", width: "110", height: "32", alt: "Tabler", class: "navbar-brand-image" %>
+          </a>
+        </h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item mx-1">
+              <a class="btn btn-ghost-secondary" href="#features">Features</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="btn btn-ghost-secondary" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="btn btn-ghost-secondary" href="#docs">Docs</a>
+            </li>
+            <li class="nav-item mx-1">
+              <a class="btn btn-ghost-secondary" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item mx-1">
+              <%= link_to 'Login', new_user_session_path, data: { turbo: false }, class: 'btn btn-ghost-secondary' %>
+            </li>
+            <li class="nav-item mx-1">
+              <%= link_to 'Sign Up', new_user_registration_path, data: { turbo: false }, class: 'btn btn-outline-primary' %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-light pt-7">
+      <div class="container col-xxl-8 px-4 pb-4 pt-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="/undraw_innovative_re_rr5i.svg" class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3">Sample Landing Page</h1>
+            <p class="lead">Free and open source Ruby on Rails starter kit built using Tabler UI</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <%= link_to 'Get Started', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-outline-primary btn-lg px-4 me-md-2' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light" id="features">
+      <div class="container col-xxl-8 p-4">
+        <div class="row g-4 p-4 row-cols-1 row-cols-lg-3 rounded-3 border shadow-md bg-light">
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" width="40" height="40"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                </path>
+                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                <circle cx="15" cy="9" r="1"></circle>
+              </svg>
+            </div>
+            <h3>
+              Authentication & Autherization
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Et leo duis ut diam.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="40"
+                height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
+                </path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3>
+              Role management
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Duis ut diam quam nulla porttitor massa id neque.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trophy" width="40" height="40"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <line x1="7" y1="4" x2="17" y2="4"></line>
+                <path d="M17 4v8a5 5 0 0 1 -10 0v-8"></path>
+                <circle cx="5" cy="9" r="2"></circle>
+                <circle cx="19" cy="9" r="2"></circle>
+              </svg>
+            </div>
+            <h3>
+              Multi tenant
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="6" cy="10" r="2"></circle>
+                <line x1="6" y1="4" x2="6" y2="8"></line>
+                <line x1="6" y1="12" x2="6" y2="20"></line>
+                <circle cx="12" cy="16" r="2"></circle>
+                <line x1="12" y1="4" x2="12" y2="14"></line>
+                <line x1="12" y1="18" x2="12" y2="20"></line>
+                <circle cx="18" cy="7" r="2"></circle>
+                <line x1="18" y1="4" x2="18" y2="5"></line>
+                <line x1="18" y1="9" x2="18" y2="20"></line>
+              </svg>
+            </div>
+            <h3>
+              UI layouts
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack-2" width="24"
+                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <polyline points="12 4 4 8 12 12 20 8 12 4"></polyline>
+                <polyline points="4 12 12 16 20 12"></polyline>
+                <polyline points="4 16 12 20 20 16"></polyline>
+              </svg>
+            </div>
+            <h3>
+              Developer focused
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Aliquet nibh praesent tristique magna sit amet purus gravida quis.
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="icon text-primary mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code" width="40" height="40"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <polyline points="7 8 3 12 7 16"></polyline>
+                <polyline points="17 8 21 12 17 16"></polyline>
+                <line x1="14" y1="4" x2="10" y2="20"></line>
+              </svg>
+            </div>
+            <h3>
+              Free and open source
+            </h3>
+            <p class="text-muted mb-0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light">
+      <div class="container col-xxl-8 p-4">
+        <div class="row p-4 align-items-center rounded-3 border shadow-md">
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
+            <img src="/undraw_team_spirit_re_yl1v.svg" class="d-block mx-lg-auto img-fluid"
+              alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <span class="display-4 fw-bold lh-1">About</span><span class="display-4 fw-light lh-1"> Us</span>
+            <p class="lead">
+              Free and open-source MIT licensed project designed to streamline the development of web applications using the Ruby on Rails framework.
+              This starter kit provides a solid foundation for building modern, responsive, and feature-rich web applications by integrating the popular Tabler UI framework.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+              <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2 fw-bold">Learn more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light" id="pricing">
+      <div class="container col-xxl-8 p-4">
+        <div class="row py-2">
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Example pricing</h1>
+            <p class="fs-5 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu facilisis sed odio morbi.
+            </p>
+          </div>
+        </div>
+
+        <div class="row pb-4">
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-md">
+              <div class="card-body text-center">
+                <div class="text-uppercase text-muted font-weight-medium">Free</div>
+                <div class="display-5 my-3">$0</div>
+                <ul class="list-unstyled lh-lg">
+                  <li><strong>3</strong> Users</li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Lorem ipsum
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Dolor sit
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Amet consectetur
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Adipiscing elit
+                  </li>
+                </ul>
+                <div class="text-center mt-4">
+                  <a href="#" class="btn w-100">Choose plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-md">
+              <div class="ribbon ribbon-top ribbon-bookmark bg-green">
+                <!-- Download SVG icon from http://tabler-icons.io/i/star -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-filled" width="24" height="24"
+                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                </svg>
+              </div>
+              <div class="card-body text-center">
+                <div class="text-uppercase text-muted font-weight-medium">Premium</div>
+                <div class="display-5 my-3">$49</div>
+                <ul class="list-unstyled lh-lg">
+                  <li><strong>10</strong> Users</li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Lorem ipsum
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Dolor sit
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Amet consectetur
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Adipiscing elit
+                  </li>
+                </ul>
+                <div class="text-center mt-4">
+                  <a href="#" class="btn btn-green w-100">Choose plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-md">
+              <div class="card-body text-center">
+                <div class="text-uppercase text-muted font-weight-medium">Enterprise</div>
+                <div class="display-5 my-3">$99</div>
+                <ul class="list-unstyled lh-lg">
+                  <li><strong>100</strong> Users</li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Lorem ipsum
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Dolor sit
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Amet consectetur
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    Adipiscing elit
+                  </li>
+                </ul>
+                <div class="text-center mt-4">
+                  <a href="#" class="btn w-100">Choose plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="card card-md">
+              <div class="card-body text-center">
+                <div class="text-uppercase text-muted font-weight-medium">Unlimited</div>
+                <div class="display-5 my-3">$139</div>
+                <ul class="list-unstyled lh-lg">
+                  <li><strong>Unlimited</strong> Users</li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Lorem ipsum
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Dolor sit
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Amet consectetur
+                  </li>
+                  <li>
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
+                      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                    Adipiscing elit
+                  </li>
+                </ul>
+                <div class="text-center mt-4">
+                  <a href="#" class="btn w-100">Choose plan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light pb-5">
+      <div class="container col-xxl-8 p-4">
+        <div class="text-center">
+          <span class="display-4 fw-light lh-1">Get </span><span class="display-4 fw-bold lh-1">Started</span>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in days.</p>
+            <div class="overflow-hidden">
+              <div class="container px-5">
+                <img src="/undraw_maker_launch_re_rq81.svg" class="d-block mx-lg-auto img-fluid"
+                  alt="Bootstrap Themes" width="350" height="250" loading="lazy">
+              </div>
+            </div>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+                <%= link_to 'Sign up!', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-lg btn-outline-primary px-4 me-sm-3' %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer bg-light">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="#"
+              aria-label="Bootstrap">
+              <%= image_tag "logo.svg", width: "110", height: "32", alt: "Tabler", class: "d-block me-2" %>
+            </a>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2">
+                Copyright &copy; 2022
+                <a href="https://tabler.io/" target="_blank">Tabler</a>.
+                All rights reserved.
+              </li>
+              <li class="mb-2">
+                <a href="#" class="link-secondary" rel="noopener">
+                  v1.3.2
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+            <h5>Product</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a class="text-muted" href="#">Why choose us?</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Pricing</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Features</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Releases</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Roadmap</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Docs</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a class="text-muted" href="#">Getting started</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">User guides</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Admin guide</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Developers</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Resources</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a class="text-muted" href="#">Blog</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Newsletter</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Status</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Contact Sales</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a class="text-muted" href="#">About</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Jobs</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Leadership</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Board of Directors</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Team</a></li>
+              <li class="mb-2"><a class="text-muted" href="#">Press</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const navbar = document.querySelector('.landing-navbar');
+    window.onscroll = () => {
+      if (window.scrollY > navbar.offsetHeight) {
+          navbar.classList.add('scrolled');
+      } else {
+          navbar.classList.remove('scrolled');
+      }
+    };
+  </script>
+</body>

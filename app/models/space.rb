@@ -22,25 +22,13 @@ class Space < ApplicationRecord
 
   validates :name, presence: true
 
-  after_create :create_subscription
-
-  enum status: %i[active archived]
+  enum :status, [ :active, :archived ]
 
   def all_roles
-    Role.where(space_id: [nil, id])
+    Role.where(space_id: [ nil, id ])
   end
 
   def active_subscription
-    subscriptions.last
-  end
-
-  private
-
-  def create_subscription
-    Subscription.create(
-      plan_id: 1,
-      space_id: id,
-      start_date: Time.zone.today,
-    )
+    subscriptions.active.last || Subscription.new(plan: Plan.free_plan)
   end
 end

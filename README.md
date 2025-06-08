@@ -68,10 +68,10 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
 
 ## Setup
 
-To set up the project, ensure you have PostgreSQL and Redis installed locally. Use the following commands to install them:
+To set up the project, ensure you have SQLite installed locally. Use the following commands to install them:
 
 ```
-brew install postgresql@12 redis
+brew install sqlite3
 ```
 
 Clone the repo
@@ -80,9 +80,9 @@ Clone the repo
 git clone https://github.com/tarunvelli/rails-tabler-starter.git
 ```
 
-Install the required dependencies using asdf or setup the dependencies `.tool-versions` in other preferred method:
+Install the required dependencies using mise or setup the dependencies `.tool-versions` in other preferred method:
 ```
-asdf install
+mise install
 ```
 
 Set up and run the development server:

@@ -12,4 +12,6 @@
 class Subscription < ApplicationRecord
   belongs_to :space
   belongs_to :plan
+
+  scope :active, -> { where(end_date: nil).or(where("end_date > ?", Date.current)) }
 end

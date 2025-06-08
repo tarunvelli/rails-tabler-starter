@@ -1,1 +1,1 @@
-json.partial! 'spaces/users/user', user: @user
+json.partial! "spaces/users/user", user: @user

@@ -22,6 +22,6 @@ class UserRole < ApplicationRecord
     return if role.common?
     return if role.space == space
 
-    errors.add(:base, 'invalid role for space')
+    errors.add(:base, "invalid role for space")
   end
 end

@@ -15,4 +15,8 @@
 class Plan < ApplicationRecord
   has_many :subscriptions
   has_many :spaces, through: :subscriptions
+
+  def self.free_plan
+    Plan.find_by(name: "Free")
+  end
 end
