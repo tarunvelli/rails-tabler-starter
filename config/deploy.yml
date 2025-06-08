@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: rails_tabler_8
+service: rails_tabler_starter
 
 # Name of the container image.
-image: your-user/rails_tabler_8
+image: your-user/rails_tabler_starter
 
 # Deploy to these servers.
 servers:
@@ -47,7 +47,7 @@ env:
     # WEB_CONCURRENCY: 2
 
     # Match this to any external database server to configure Active Record correctly
-    # Use rails_tabler_8-db for a db accessory server on same machine via local kamal docker network.
+    # Use rails_tabler_starter-db for a db accessory server on same machine via local kamal docker network.
     # DB_HOST: 192.168.0.2
 
     # Log everything from Rails
@@ -65,7 +65,7 @@ aliases:
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
-  - "rails_tabler_8_storage:/rails/storage"
+  - "rails_tabler_starter_storage:/rails/storage"
 
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
