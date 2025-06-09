@@ -43,7 +43,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Add authorization to your Rails application [https://github.com/varvet/pundit]
-gem "pundit", "~> 2.2"
+gem "pundit", "~> 2.5"
 
 # Add admin interface to your Rails application [https://github.com/sferik/rails_admin]
 gem "rails_admin", "~> 3.0"
