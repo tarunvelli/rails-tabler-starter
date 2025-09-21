@@ -53,6 +53,7 @@ gem "kaminari"
 
 # Add user authentication to your Rails application [https://github.com/heartcombo/devise]
 gem "devise", "~> 4.9"
+gem "devise_invitable", "~> 2.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

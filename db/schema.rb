@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_26_190401) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_21_114838) do
   create_table "app_settings", force: :cascade do |t|
     t.string "key", null: false
     t.string "value", null: false
@@ -81,7 +81,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_26_190401) do
     t.boolean "admin", default: false
     t.string "color_scheme"
     t.string "color_mode"
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.integer "invited_by_id"
+    t.string "invited_by_type"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

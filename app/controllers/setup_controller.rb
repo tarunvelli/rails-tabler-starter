@@ -18,7 +18,10 @@ class SetupController < ApplicationController
   private
 
   def setup_params
-    params.require(:app_settings).permit!
+    params.require(:app_settings).permit(
+      :interface_layout, :interface_mode, :interface_theme,
+      :login_layout, :multi_tenant_mode, :show_landing_page
+    )
   end
 
   def keys

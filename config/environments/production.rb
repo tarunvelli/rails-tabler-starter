@@ -19,7 +19,7 @@ Rails.application.configure do
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = ENV['ASSET_HOST']
+  config.asset_host = ENV["ASSET_HOST"]
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
@@ -58,16 +58,16 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: ENV['APP_URL'] }
+  config.action_mailer.default_url_options = { host: ENV["APP_URL"] }
   config.action_mailer.delivery_method = :smtp
 
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: "smtp.gmail.com",
     port: 587,
-    user_name: ENV['GMAIL_USER_NAME'],
-    password: ENV['GMAIL_PASSWORD'],
-    authentication: 'plain',
+    user_name: ENV["GMAIL_USER_NAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: "plain",
     enable_starttls_auto: true
   }
 

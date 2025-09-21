@@ -121,6 +121,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.11)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     diff-lcs (1.5.1)
     dotenv (3.1.4)
     drb (2.2.3)
@@ -141,7 +144,7 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.0.3)
+    importmap-rails (2.2.2)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -451,6 +454,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9)
+  devise_invitable (~> 2.0)
   factory_bot_rails
   importmap-rails
   jbuilder
