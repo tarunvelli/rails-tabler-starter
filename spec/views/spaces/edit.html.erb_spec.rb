@@ -4,7 +4,7 @@ RSpec.describe "spaces/edit", type: :view do
   let(:space) {
     Space.create!(
       name: "MyString",
-      status: "MyString"
+      status: "active"
     )
   }
 

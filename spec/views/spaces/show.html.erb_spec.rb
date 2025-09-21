@@ -4,7 +4,7 @@ RSpec.describe "spaces/show", type: :view do
   before(:each) do
     assign(:space, Space.create!(
       name: "Name",
-      status: "Status"
+      status: "active"
     ))
   end
 

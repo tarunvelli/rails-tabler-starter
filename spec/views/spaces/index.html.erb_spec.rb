@@ -5,11 +5,11 @@ RSpec.describe "spaces/index", type: :view do
     assign(:spaces, [
       Space.create!(
         name: "Name",
-        status: "Status"
+        status: "active"
       ),
       Space.create!(
         name: "Name",
-        status: "Status"
+        status: "active"
       )
     ])
   end
