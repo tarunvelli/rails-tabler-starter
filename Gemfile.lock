@@ -453,6 +453,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   devise_invitable (~> 2.0)
+  dotenv (~> 3.1)
   factory_bot_rails
   importmap-rails
   jbuilder
