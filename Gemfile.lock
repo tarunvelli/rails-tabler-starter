@@ -247,7 +247,7 @@ GEM
     public_suffix (6.0.1)
     puma (7.0.3)
       nio4r (~> 2.0)
-    pundit (2.5.1)
+    pundit (2.5.2)
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
@@ -462,7 +462,7 @@ DEPENDENCIES
   letter_opener
   propshaft
   puma (>= 5.0)
-  pundit (~> 2.2)
+  pundit (~> 2.5)
   rails (~> 8.0.0)
   rails_admin (~> 3.0)
   rspec-rails
