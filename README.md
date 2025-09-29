@@ -8,7 +8,7 @@
   ![](./app/assets/images/saas-example.gif)
 </div>
 
-[Click here](https://rails-tabler.fly.dev) to view demo application. Check out the [Demo setup page](https://rails-tabler.fly.dev/setup/edit) to toggle application settings.
+[Click here](https://rails-tabler.tarunvelli.site) to view demo application. Check out the [Demo setup page](https://rails-tabler.tarunvelli.site/setup/edit) to toggle application settings.
 
 ## Goals
 
@@ -129,6 +129,8 @@ Toggle app settings at `/setup/edit`
     * Values [true, false]
 
 ## Deployment
+
+The demo app has been deployed using [Kamal](https://kamal-deploy.org/) on [Hetzner](https://hetzner.cloud/?ref=FGg0y4EJJFLd)
 
 Choose your preferred deployment platform:
 
