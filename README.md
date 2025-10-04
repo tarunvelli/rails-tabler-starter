@@ -41,7 +41,7 @@ This starter is aimed at Rails developers familiar with the framework, aiming to
 
 * Background worker & scheduler
 
-    * Utilizes [sidekiq](https://github.com/mperham/sidekiq/) and [sidekiq-scheduler](https://github.com/sidekiq-scheduler/sidekiq-scheduler)
+    * Utilizes [solid_queue](https://github.com/rails/solid_queue/)
 
 * Role management
 
