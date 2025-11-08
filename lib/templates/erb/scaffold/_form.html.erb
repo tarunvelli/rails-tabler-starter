@@ -49,6 +49,14 @@
               <div class="col">
                 <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true, class:"form-control" %>
               </div>
+            <% elsif attribute.field_type == :checkbox -%>
+              <%%= form.label :<%= attribute.column_name %>, class: "form-check-label col-3" %>
+
+              <div class="col">
+                <div class="form-check">
+                  <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true, class:"form-check-input" %>
+                </div>
+              </div>
             <% else -%>
               <%%= form.label :<%= attribute.column_name %>, class: "form-label col-3 col-form-label" %>
               <div class="col">
