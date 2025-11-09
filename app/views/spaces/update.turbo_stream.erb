@@ -1,0 +1,5 @@
+<%= turbo_stream.update(@space) do %>
+  <%= render template: "spaces/edit", job_post: @space %>
+<% end %>
+
+<%= render_flash_stream %>

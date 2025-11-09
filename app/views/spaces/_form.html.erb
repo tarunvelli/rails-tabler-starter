@@ -1,32 +1,21 @@
-<div class="card border">
-  <div class="row g-0">
-    <div class="col-3 d-none d-md-block border-end">
-      <div class="card-body">
-        <h4 class="subheader">General</h4>
-        <div class="list-group list-group-transparent flex-column nav nav-space-settings" id="space-settings-tab" role="tablist" aria-orientation="vertical">
-          <% if @space.persisted? %>
-            <%= link_to edit_space_path(@space), class: "list-group-item list-group-item-action d-flex align-items-center nav-link active", id: "space-details-tab", type: "button", role:"tab", aria: { controls: "space-details", selected: "true" } do %>
-              Details
-              <small class="text-muted ms-auto">6</small>
-            <% end %>
-            <%= link_to space_roles_path(@space), class: "list-group-item list-group-item-action d-flex align-items-center nav-link", id: "space-roles-tab", type: "button", role:"tab", aria: { controls: "space-roles", selected: "false" } do %>
-              Roles
-            <% end %>
-          <% else %>
-            <%= link_to new_space_path(@space), class: "list-group-item list-group-item-action d-flex align-items-center nav-link active", id: "space-details-tab", type: "button", role:"tab", aria: { controls: "space-details", selected: "true" } do %>
-              Details
-              <small class="text-muted ms-auto">6</small>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
+<%= form_with(model: space) do |form| %>
+    <div class="form-group mb-3 row">
+      <%= form.label :name, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :name, class:"form-control" %>
     </div>
-    <div class="col d-flex flex-column">
-      <div class="card-body tab-content" id="space-settings-tabContent">
-        <div class="tab-pane show active" id="space-details" role="tabpanel" aria-labelledby="space-details-tab" tabindex="0">
-          <%= render "details", space: @space %>
-        </div>
-      </div>
-    </div>
+  
   </div>
-</div>
+    <div class="form-group mb-3 row">
+      <%= form.label :status, class: "form-label col-3 col-form-label" %>
+    <div class="col">
+      <%= form.text_field :status, class:"form-control" %>
+    </div>
+  
+  </div>
+  
+  <div class="form-footer">
+    <%= form.submit "Save", class:"btn btn-primary" %>
+    <%= link_to "Cancel", spaces_path, data: { turbo_frame: '_top'}, class: "btn" %>
+  </div>
+<% end %>       
