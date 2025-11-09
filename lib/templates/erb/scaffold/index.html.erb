@@ -2,7 +2,7 @@
 <%= plural_table_name.humanize %>
 <%% end %>
 <%% <%= "content_for :page_title" %> do %>
-<%% <%= "@space&.name || @current_user&.name || 'Index'" %> %>
+<%% <%= "'#{singular_table_name}' || 'Index'" %> %>
 <%% end %>
 
 <turbo-frame id="<%= singular_table_name %>_index">
