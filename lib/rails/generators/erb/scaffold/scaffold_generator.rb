@@ -19,9 +19,12 @@ module Erb # :nodoc:
           formats.push(:turbo_stream).each do |format|
             filename = filename_with_extensions(view, format)
             path = File.join("app/views", controller_file_path, filename)
-            if File.exist?(path)
+            
+            begin
               template filename, path
-            end 
+            rescue Thor::Error => e
+              # Catch any errors in file creation and skip the file
+            end
           end
         end
 
