@@ -2,7 +2,7 @@
 <%= plural_table_name.humanize %>
 <%% end %>
 <%% <%= "content_for :page_title" %> do %>
-<%% <%= "'#{singular_table_name}' || 'Index'" %> %>
+<%% <%= "'Index'" %> %>
 <%% end %>
 
 <turbo-frame id="<%= singular_table_name %>_index">
@@ -34,7 +34,7 @@
             </thead>
             <tbody>
               <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-              <tr>
+              <tr id='<%%= dom_id(<%= singular_table_name %>)%>'>
                 <% filtered_attributes.each do |attribute| %>
                   <td class="text-muted" data-label="<%= attribute.human_name %>">
                     <%%= <%= singular_name %>.<%= attribute.column_name %> %>
@@ -42,6 +42,7 @@
                 <% end %>
                 <td>
                   <div class="btn-list flex-nowrap">
+                    <%%= button_to "Destroy", <%= singular_table_name %>, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
                     <%%= link_to "Edit", <%= edit_helper("#{singular_table_name}", type: :path) %>, data: { turbo_frame: '_top' }, class: "btn" %>
                   </div>
                 </td>
