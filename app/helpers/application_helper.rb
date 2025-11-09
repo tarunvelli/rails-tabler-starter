@@ -3,6 +3,10 @@
 module ApplicationHelper
   include SettingsHelper
 
+  def render_flash_stream
+    turbo_stream.update "flash", partial: "common/flash"
+  end
+
   def nav_bar(&)
     content_tag(:ul, class: "navbar-nav", &)
   end

@@ -5,4 +5,6 @@
   <%%= @<%= singular_table_name %>&.id || "Edit" %>
 <%% end %>
 
-<%%= render "form", <%= singular_table_name %>: @<%= singular_table_name %> %>
+<%%= turbo_frame_tag(@<%= singular_table_name %>) do %>
+  <%%= render "form", <%= singular_table_name %>: @<%= singular_table_name %> %>
+<%% end %>

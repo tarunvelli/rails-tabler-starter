@@ -1,0 +1,5 @@
+<%%= turbo_stream.update(@<%= singular_table_name %>) do %>
+  <%%= render "form", job_post: @<%= singular_table_name %> %>
+<%% end %>
+
+<%%= render_flash_stream %>
