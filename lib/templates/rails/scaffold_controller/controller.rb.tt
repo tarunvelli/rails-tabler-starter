@@ -25,7 +25,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name, "#{singular_table_name}_params") %>
 
     if @<%= orm_instance.save %>
-      redirect_to <%= redirect_resource_name %>, notice: <%= %("#{human_name} was successfully created.") %>
+      redirect_to <%= index_helper %>_path, notice: <%= %("#{human_name} was successfully created.") %>
     else
       render :new, status: :unprocessable_entity
     end
