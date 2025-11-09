@@ -53,7 +53,8 @@
           </table>
         </div>
         <div class="card-footer d-flex align-items-center">
-          "footy"
+          <p class="m-0 text-muted"><%%= page_entries_info @<%= plural_table_name %> %></p>
+          <%%= paginate @<%= plural_table_name %> %>
         </div>
       </div>
     </div>
