@@ -57,6 +57,7 @@
             <% end %>
             <div class="form-footer">
               <%%= form.submit "Save", class:"btn btn-primary" %>
+              <%%= link_to "Cancel", <%= index_helper(type: :path) %>, data: { turbo_frame: '_top'}, class: "btn" %>
             </div>
           <%% end %>
         </div>
