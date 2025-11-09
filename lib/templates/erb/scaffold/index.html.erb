@@ -43,6 +43,7 @@
                 <td>
                   <div class="btn-list flex-nowrap">
                     <%%= button_to "Destroy", <%= singular_table_name %>, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
+                    <%%= link_to "Show", <%= show_helper("#{singular_table_name}", type: :path) %>, data: { turbo_frame: '_top' }, class: "btn btn-primary" %>
                     <%%= link_to "Edit", <%= edit_helper("#{singular_table_name}", type: :path) %>, data: { turbo_frame: '_top' }, class: "btn" %>
                   </div>
                 </td>
