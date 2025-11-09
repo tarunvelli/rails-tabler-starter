@@ -62,7 +62,7 @@
         </div>
         <div class="tab-pane" id="<%= singular_table_name %>-restricted" role="tabpanel" aria-labelledby="<%= singular_table_name %>-restricted-tab" tabindex="0">
           <h2 class="mb-4">Restricted</h2>
-            <%%= button_to "Destroy this <%= human_name.downcase %>", <%= model_resource_name(prefix: "@") %>, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
+            <%%= button_to "Destroy this <%= human_name.downcase %>", <%= model_resource_name(prefix: "@") %>, method: :delete, form: {data: {confirm: 'Are you sure?', turbo: false}}, class: "btn btn-danger" %>
         </div>
       </div>
     </div>

@@ -43,7 +43,11 @@ class <%= controller_class_name %>Controller < ApplicationController
   # DELETE <%= route_url %>/1
   def destroy
     @<%= orm_instance.destroy %>
-    redirect_to <%= index_helper %>_path, notice: <%= %("#{human_name} was successfully destroyed.") %>, status: :see_other
+    
+    respond_to do |format|
+      format.turbo_stream { flash.now[:notice] = <%= %("#{human_name} was successfully destroyed.") %> }
+      format.html { redirect_to <%= index_helper %>_path, notice: <%= %("#{human_name} was successfully destroyed.") %>, status: :see_other }
+    end
   end
 
   private
