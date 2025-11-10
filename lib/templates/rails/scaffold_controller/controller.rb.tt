@@ -13,7 +13,6 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
   end
 
-  # GET <%= route_url %>/1/edit
   def edit
   end
 
@@ -45,12 +44,10 @@ class <%= controller_class_name %>Controller < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_<%= singular_table_name %>
       @<%= singular_table_name %> = <%= orm_class.find(class_name, "params.expect(:id)") %>
     end
 
-    # Only allow a list of trusted parameters through.
     def <%= "#{singular_table_name}_params" %>
       <%- if attributes_names.empty? -%>
       params.fetch(:<%= singular_table_name %>, {})
