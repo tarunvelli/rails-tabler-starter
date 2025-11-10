@@ -1,5 +1,5 @@
 <%%= turbo_stream.update(@<%= singular_table_name %>) do %>
-  <%%= render template: "<%= plural_table_name %>/edit", job_post: @<%= singular_table_name %> %>
+  <%%= render template: "<%= plural_table_name %>/edit", <%= singular_table_name %>: @<%= singular_table_name %> %>
 <%% end %>
 
 <%%= render_flash_stream %>
