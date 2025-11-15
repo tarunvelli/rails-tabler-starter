@@ -1,0 +1,12 @@
+default: &default
+  app:
+    demo_mode: <%= ENV.fetch("DEMO_MODE") { true } %>
+
+test:
+  <<: *default
+
+development:
+  <<: *default
+
+production:
+  <<: *default

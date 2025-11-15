@@ -40,6 +40,6 @@ module ApplicationHelper
   end
 
   def demo_mode?
-    ENV["DEMO_MODE"] == "true"
+    App::Config.app.demo_mode
   end
 end
