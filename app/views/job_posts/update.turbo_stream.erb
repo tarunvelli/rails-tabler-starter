@@ -1,0 +1,5 @@
+<%= turbo_stream.update(@job_post) do %>
+  <%= render "form", job_post: @job_post %>
+<% end %>
+
+<%= render_flash_stream %>
