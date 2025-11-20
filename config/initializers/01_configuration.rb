@@ -1,4 +1,4 @@
-require "#{Rails.root}/lib/app/config_loader"
+require "#{Rails.root}/lib/config_loader"
 
 module App
   Config = ConfigLoader.load_config("configuration")
