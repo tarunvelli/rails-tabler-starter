@@ -8,16 +8,18 @@ class SpacesController < ApplicationController
     @spaces = current_user.spaces.page params[:page]
   end
 
-  def show
-  end
+  # GET /spaces/1
+  def show; end
 
+  # GET /spaces/new
   def new
     @space = Space.new
   end
 
-  def edit
-  end
+  # GET /spaces/1/edit
+  def edit; end
 
+  # POST /spaces
   def create
     @space = Space.new(space_params)
     @space.users.push(current_user)
@@ -30,6 +32,7 @@ class SpacesController < ApplicationController
     end
   end
 
+  # PATCH/PUT /spaces/1
   def update
     if @space.update(space_params)
       flash.now[:notice] = "Space was successfully updated."
@@ -38,6 +41,7 @@ class SpacesController < ApplicationController
     end
   end
 
+  # DELETE /spaces/1
   def destroy
     @space.destroy!
     
