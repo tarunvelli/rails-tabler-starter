@@ -44,7 +44,7 @@ class SpacesController < ApplicationController
   # DELETE /spaces/1
   def destroy
     @space.destroy!
-    
+
     respond_to do |format|
       format.turbo_stream { flash.now[:notice] = "Space was successfully destroyed." }
       format.html { redirect_to spaces_path, notice: "Space was successfully destroyed.", status: :see_other }

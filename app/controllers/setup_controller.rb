@@ -18,7 +18,11 @@ class SetupController < ApplicationController
   private
 
   def setup_params
-    params.require(:app_settings).permit!
+    params.require(:app_settings).permit(
+      params[:app_settings].keys.map do |key|
+        { key => [ :value ] }
+      end
+    )
   end
 
   def keys
