@@ -13,6 +13,7 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/spaces", type: :request do
+  
   # This should return the minimal set of attributes required to create a valid
   # Space. As you add validations to Space, be sure to
   # adjust the attributes here as well.
@@ -78,7 +79,7 @@ RSpec.describe "/spaces", type: :request do
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post spaces_url, params: { space: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end
@@ -108,7 +109,7 @@ RSpec.describe "/spaces", type: :request do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         space = Space.create! valid_attributes
         patch space_url(space), params: { space: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end

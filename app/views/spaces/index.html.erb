@@ -1,67 +1,68 @@
 <% content_for :page_pretitle do %>
-  User / spaces
+Spaces
 <% end %>
 <% content_for :page_title do %>
-  <%= current_user.name %>
+<% 'Index' %>
 <% end %>
-<div class="row row-cards">
-  <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Spaces</h3>
-        <div class="card-actions">
-          <%= link_to new_space_path, class: "btn btn-primary"  do %>
+
+<turbo-frame id="space_index">
+  <div class="row row-cards">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Spaces</h3>
+          <div class="card-actions">
+            <%= link_to new_space_path, data: { turbo_frame: '_top' }, class: "btn btn-primary" do %>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
-                  stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <line x1="12" y1="5" x2="12" y2="19" />
               <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
             New space
-          <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="table-responsive">
-        <table class="table table-vcenter table-mobile-md card-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Created at</th>
-              <th>Status</th>
+        <div class="table-responsive">
+          
+          <table class="table table-vcenter table-mobile-md card-table">
+            <thead>
+              
+                <th>Name</th>
+              
+                <th>Status</th>
+              
               <th class="w-1"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @spaces.each do |space| %>
-              <tr>
-                <td data-label="Name" >
-                  <div class="d-flex py-1 align-items-center">
-                    <span class="avatar me-2"><%= abbrev_name(space.name) %></span>
-                    <div class="flex-fill">
-                      <div class="font-weight-medium"><%= link_to space.name, space %></div>
-                    </div>
-                  </div>
-                </td>
-                <td class="text-muted" data-label="Created at" >
-                  <%= space.created_at %>
-                </td>
-                <td class="text-muted" data-label="Status" >
-                  <%= space.status&.capitalize %>
-                </td>
+            </thead>
+            <tbody>
+              <% @spaces.each do |space| %>
+              <tr id='<%= dom_id(space)%>'>
+                
+                  <td class="text-muted" data-label="Name">
+                    <%= space.name %>
+                  </td>
+                
+                  <td class="text-muted" data-label="Status">
+                    <%= space.status %>
+                  </td>
+                
                 <td>
                   <div class="btn-list flex-nowrap">
-                    <%=link_to "Edit", edit_space_path(space), class: "btn" %>
+                    <%= button_to "Destroy", space, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
+                    <%= link_to "Show", space_path(space), data: { turbo_frame: '_top' }, class: "btn btn-primary" %>
+                    <%= link_to "Edit", edit_space_path(space), data: { turbo_frame: '_top' }, class: "btn" %>
                   </div>
                 </td>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-      <div class="card-footer d-flex align-items-center">
-        <p class="m-0 text-muted"><%= page_entries_info @spaces %></p>
-        <%= paginate @spaces %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <p class="m-0 text-muted"><%= page_entries_info @spaces %></p>
+          <%= paginate @spaces %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</turbo-frame>

@@ -2,7 +2,43 @@
   Space / settings
 <% end %>
 <% content_for :page_title do %>
-  <%= @space.name %>
+  <%= @space&.id || "Edit" %>
 <% end %>
-<%= render "form", space: @space %>
 
+<%= turbo_frame_tag(@space) do %>
+  <div class="card border">
+    <div class="row g-0">
+      <div class="col-3 d-none d-md-block border-end">
+        <div class="card-body">
+          <h4 class="subheader">General</h4>
+          <div class="list-group list-group-transparent flex-column nav nav-space-settings" id="space-settings-tab" role="tablist" aria-orientation="vertical">
+            <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+            id="space-details-tab" data-bs-toggle="tab" data-bs-target="#space-details" type="button" role="tab" aria-controls="space-details" aria-selected="true">
+              Details
+              <small class="text-muted ms-auto">2</small>
+            </button>
+            <%= link_to space_roles_path(@space), data: { turbo_frame: '_top' }, class: "list-group-item list-group-item-action d-flex align-items-center nav-link", id: "space-roles-tab", type: "button", role:"tab", aria: { controls: "space-roles", selected: "false" } do %>
+              Roles
+            <% end %>
+            <button class="list-group-item list-group-item-action d-flex align-items-center nav-link"
+            id="space-restricted-tab" data-bs-toggle="tab" data-bs-target="#space-restricted" type="button" role="tab" aria-controls="space-restricted" aria-selected="false">
+              Restricted
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex flex-column">
+        <div class="card-body tab-content" id="space-settings-tabContent">
+          <div class="tab-pane show active" id="space-details" role="tabpanel" aria-labelledby="space-details-tab" tabindex="0">
+            <h2 class="mb-4">Details</h2>
+            <%= render "form", space: @space %>
+          </div>
+        <div class="tab-pane" id="space-restricted" role="tabpanel" aria-labelledby="space-restricted-tab" tabindex="0">
+          <h2 class="mb-4">Restricted</h2>
+            <%= button_to "Destroy this space", @space, method: :delete, form: {data: {confirm: 'Are you sure?', turbo: false}}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

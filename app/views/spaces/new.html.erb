@@ -4,4 +4,28 @@
 <% content_for :page_title do %>
   New
 <% end %>
-<%= render "form", space: @space %>
+
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-space-settings" id="space-settings-tab" role="tablist" aria-orientation="vertical">
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+					id="space-details-tab" data-bs-toggle="tab" data-bs-target="#space-details" type="button" role="tab" aria-controls="space-details" aria-selected="true">
+            Details
+            <small class="text-muted ms-auto">2</small>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="space-settings-tabContent">
+        <div class="tab-pane show active" id="space-details" role="tabpanel" aria-labelledby="space-details-tab" tabindex="0">
+          <h2 class="mb-4">Details</h2>
+          <%= render "form", space: @space %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
