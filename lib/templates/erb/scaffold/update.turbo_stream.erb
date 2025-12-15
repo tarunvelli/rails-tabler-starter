@@ -1,0 +1,5 @@
+<%%= turbo_stream.update(@<%= singular_table_name %>) do %>
+  <%%= render template: "<%= plural_table_name %>/edit" %>
+<%% end %>
+
+<%%= render_flash_stream %>

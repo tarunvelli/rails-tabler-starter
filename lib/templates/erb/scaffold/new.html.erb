@@ -1,0 +1,31 @@
+<%% <%= "content_for :page_pretitle" %> do %>
+  <%= "#{singular_table_name.humanize} / settings" %>
+<%% end %>
+<%% <%= "content_for :page_title" %> do %>
+  New
+<%% end %>
+
+<div class="card border">
+  <div class="row g-0">
+    <div class="col-3 d-none d-md-block border-end">
+      <div class="card-body">
+        <h4 class="subheader">General</h4>
+        <div class="list-group list-group-transparent flex-column nav nav-<%= singular_table_name %>-settings" id="<%= singular_table_name %>-settings-tab" role="tablist" aria-orientation="vertical">
+          <button class="list-group-item list-group-item-action d-flex align-items-center nav-link active"
+					id="<%= singular_table_name %>-details-tab" data-bs-toggle="tab" data-bs-target="#<%= singular_table_name %>-details" type="button" role="tab" aria-controls="<%= singular_table_name %>-details" aria-selected="true">
+            Details
+            <small class="text-muted ms-auto"><%= attributes.count %></small>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col d-flex flex-column">
+      <div class="card-body tab-content" id="<%= singular_table_name %>-settings-tabContent">
+        <div class="tab-pane show active" id="<%= singular_table_name %>-details" role="tabpanel" aria-labelledby="<%= singular_table_name %>-details-tab" tabindex="0">
+          <h2 class="mb-4">Details</h2>
+          <%%= render "form", <%= singular_table_name %>: @<%= singular_table_name %> %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

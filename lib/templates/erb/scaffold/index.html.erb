@@ -1,0 +1,62 @@
+<%% <%= "content_for :page_pretitle" %> do %>
+<%= plural_table_name.humanize %>
+<%% end %>
+<%% <%= "content_for :page_title" %> do %>
+<%% <%= "'Index'" %> %>
+<%% end %>
+
+<turbo-frame id="<%= singular_table_name %>_index">
+  <div class="row row-cards">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><%= plural_table_name.humanize %></h3>
+          <div class="card-actions">
+            <%%= link_to <%= new_helper(type: :path) %>, data: { turbo_frame: '_top' }, class: "btn btn-primary" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            New <%= human_name.downcase %>
+            <%% end %>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <% filtered_attributes = attributes.reject(&:password_digest?) %>
+          <table class="table table-vcenter table-mobile-md card-table">
+            <thead>
+              <% filtered_attributes.each do |attribute| %>
+                <th><%= attribute.human_name %></th>
+              <% end %>
+              <th class="w-1"></th>
+            </thead>
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+              <tr id='<%%= dom_id(<%= singular_table_name %>)%>'>
+                <% filtered_attributes.each do |attribute| %>
+                  <td class="text-muted" data-label="<%= attribute.human_name %>">
+                    <%%= <%= singular_name %>.<%= attribute.column_name %> %>
+                  </td>
+                <% end %>
+                <td>
+                  <div class="btn-list flex-nowrap">
+                    <%%= button_to "Destroy", <%= singular_table_name %>, method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class: "btn btn-danger" %>
+                    <%%= link_to "Show", <%= show_helper("#{singular_table_name}", type: :path) %>, data: { turbo_frame: '_top' }, class: "btn btn-primary" %>
+                    <%%= link_to "Edit", <%= edit_helper("#{singular_table_name}", type: :path) %>, data: { turbo_frame: '_top' }, class: "btn" %>
+                  </div>
+                </td>
+              </tr>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer d-flex align-items-center">
+          <p class="m-0 text-muted"><%%= page_entries_info @<%= plural_table_name %> %></p>
+          <%%= paginate @<%= plural_table_name %> %>
+        </div>
+      </div>
+    </div>
+  </div>
+</turbo-frame>
