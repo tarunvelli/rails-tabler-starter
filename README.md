@@ -1,142 +1,123 @@
-<div align="center">
-  <br>
-  <h1>Rails Tabler Starter</h1>
-  <strong>Rails starter boilerplate that you can use to build and prototype quickly. Get from idea to implementation in hours.</strong>
-  <br>
-  <br>
-
-  ![](./app/assets/images/saas-example.gif)
-</div>
-
-[Click here](https://rails-tabler.tarunvelli.site) to view demo application. Check out the [Demo setup page](https://rails-tabler.tarunvelli.site/setup/edit) to toggle application settings.
-
-## Goals
-
-This starter is aimed at Rails developers familiar with the framework, aiming to facilitate seamless development with the following principles:
-
-* No DSL: Avoid unnecessary Domain Specific Language (DSL) complexity.
-* Simplicity over Efficiency: Prioritize simplicity in implementation over excessive optimization.
-* Avoid Complex Frontend Functionality: Keep frontend functionality straightforward and manageable.
-
-## Overview
-
-* Pre-equipped with essential models such as
-
-    * Users
-    * Roles
-    * Plans
-    * Subscriptions
+# Rails Tabler Starter
 
 <div align="center">
-  <strong>ERD</strong>
+<p><strong>A high-velocity Rails boilerplate to get from idea to implementation in hours.</strong></p>
 
-  ![](./app/assets/images/template-erb.png)
+<br />
+
+<img src="./app/assets/images/saas-example.gif" alt="Rails Tabler Preview" width="800px" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+
+<br />
+<br />
+
+**[Live Demo](https://rails-tabler.tarunvelli.site)** • **[Tweak Settings](https://rails-tabler.tarunvelli.site/setup/edit)**
+
 </div>
 
-* User authentication & authorization
+---
 
-    * Authentication via [Devise](https://github.com/heartcombo/devise)
-    * [OmniAuth](https://github.com/heartcombo/devise/wiki/OmniAuth%3A-Overview) integration to extend authentication using third-party providers
-    * Authorization through [Pundit](https://github.com/varvet/pundit)
+## 🎯 Goals
 
-* Background worker & scheduler
+This starter is designed for Rails developers who want a clean slate without the "magic" bloat.
 
-    * Utilizes [solid_queue](https://github.com/rails/solid_queue/)
+* **No DSL:** No complex Domain Specific Languages to learn. It's just Vanilla Rails.
+* **Simplicity > Efficiency:** Prioritizing readable, maintainable code over micro-optimization.
+* **Lean Frontend:** High-quality UI components via [Tabler](https://tabler.io/) (Bootstrap 5) without the headache of complex JS frameworks.
 
-* Role management
+---
 
-    * Standard roles available across spaces
-    * Custom role creation per space
-    * Supports fine grained permissions per role
+## 🚀 Feature Highlights
 
-* Multiple user namespaces support
+### 🛠️ Architecture & Core
 
-    * Utilizes the `Space` model to represent user namespaces (e.g., teams, organizations).
-    * Example use case for turning on multi-space mode is a saas application
-    * Example use case for turning off multi-space mode is an internal org tool
+* **Authentication:** [Devise](https://github.com/heartcombo/devise) + [OmniAuth](https://github.com/heartcombo/devise/wiki/OmniAuth%3A-Overview) for social logins.
+* **Authorization:** [Pundit](https://github.com/varvet/pundit) for policy-based access control.
+* **Background Jobs:** Modern queuing via [solid_queue](https://github.com/rails/solid_queue/).
+* **Multi-Tenancy:** Built-in `Space` model for teams/organizations. Toggle between a Public SaaS or a Private Internal Tool with one setting.
 
-* Pre built UI layouts
+### 🛡️ Role Management
 
-    * High quality UI elements and layouts from [Tabler](https://tabler.io/)
+* Standard roles across all spaces.
+* Custom role creation per-space with fine-grained permissions.
 
-* Development focussed
+### 💎 UI & Developer Experience
 
-    * [Annotate](https://github.com/ctran/annotate_models) - Annotate Rails classes with schema and routes info
-    * [Brakeman](https://github.com/presidentbeef/brakeman) - A static analysis security vulnerability scanner
-    * [Byebug](https://github.com/deivid-rodriguez/byebug) - Simple debugger
-    * [Dotenv](https://github.com/bkeepers/dotenv) - Load environment variables from `.env`
+* **Beautiful UI:** Full integration with Tabler's dashboard layouts.
+* **Auto-Documentation:** [Annotate](https://github.com/ctran/annotate_models) for schema/route visibility.
+* **Security First:** [Brakeman](https://github.com/presidentbeef/brakeman) vulnerability scanning included.
 
-## Setup
+---
 
-To set up the project, ensure you have SQLite installed locally. Use the following commands to install them:
+## 📊 Database Schema (ERD)
 
-```
+<div align="center">
+<img src="./app/assets/images/template-erb.png" alt="ERD Diagram" width="600px" />
+</div>
+
+---
+
+## ⚡ Quick Start
+
+### 1. Install Prerequisites
+
+Ensure you have `sqlite3` and `ruby 3.3+` (we recommend [mise](https://mise.jdx.dev/)).
+
+```bash
 brew install sqlite3
-```
-
-Clone the repo
 
 ```
+
+### 2. Setup Application
+
+```bash
 git clone https://github.com/tarunvelli/rails-tabler-starter.git
-```
-
-Install the required dependencies using mise or setup the dependencies `.tool-versions` in other preferred method:
-```
-mise install
-```
-
-Set up and run the development server:
-```
+cd rails-tabler-starter
+mise install  # Or your preferred ruby manager
 bin/setup
 bin/dev
+
 ```
 
-To grant administrative privileges to a user and access admin features, run the following in the Rails console:
+### 3. Grant Admin Privileges
+
+```ruby
+# bundle exec rails c
+User.first.update(admin: true)
+
 ```
-bundle exec rails c
-> User.first.update(admin: true)
-```
 
-## AppSettings
+---
 
-Toggle app settings at `/setup/edit`
+## ⚙️ AppSettings
 
-* `AppSettings.interface_layout`
-    * Layout of app
-    * values ["VERTICAL", "VERTICAL-TRANSPARENT", "HORIZONTAL", "OVERLAP", "CONDENSED"]
+Fine-tune your application behavior at `/setup/edit`.
 
-* `AppSettings.interface_mode`
-    * Light/Dark mode of app
-    * "SYSTEM" picks the mode from system preferences
-    * Values ["LIGHT", "DARK", "SYSTEM"]
+| Setting | Description | Options |
+| --- | --- | --- |
+| `interface_layout` | Change the primary nav style | `VERTICAL`, `HORIZONTAL`, `OVERLAP`, `CONDENSED` |
+| `interface_mode` | Theme preference | `LIGHT`, `DARK`, `SYSTEM` |
+| `interface_theme` | Color theme of app | `DEFAULT`, `COOL` |
+| `login_layout` | Layout of login screens | `DEFAULT`, `ILLUSTRATION`, `COVER` |
+| `multi_tenant_mode` | Toggle SaaS vs Internal Tool | `true` (Public Signups), `false` (Invite Only) |
+| `show_landing_page` | Root path behavior | `true` (Landing Page), `false` (Redirect to Login) |
 
-* `AppSettings.interface_theme`
-    * Color theme of app
-    * Values ["DEFAULT", "COOL"]
+---
 
-* `AppSettings.login_layout` one of
-    * Layout of login screens
-    * Values ["DEFAULT", "ILLUSTRATION", "COVER"]
+## 🚢 Deployment
 
-* `AppSettings.multi_tenant_mode`
-    * When true allows users to sign up and create spaces
-    * When false allows only admin to invite users and create spaces
-    * Values [true, false]
+The demo is running on **Hetzner** using [Kamal](https://kamal-deploy.org/).
 
-* `AppSettings.show_landing_page`
-    * When true root path renders landing page
-    * When false root path redirects to sign in page
-    * Values [true, false]
+* **Fly.io:** [Deployment Guide](https://fly.io/docs/rails/getting-started/)
+* **Heroku:** [Deployment Guide](https://devcenter.heroku.com/articles/getting-started-with-rails7)
 
-## Deployment
+---
 
-The demo app has been deployed using [Kamal](https://kamal-deploy.org/) on [Hetzner](https://hetzner.cloud/?ref=FGg0y4EJJFLd)
+## 🤝 Contribution
 
-Choose your preferred deployment platform:
+Contributions make the open-source community a better place. Whether it's a bug fix or a new component, PRs are welcome.
 
-* Deploy on [Fly.io](https://fly.io/docs/rails/getting-started/)
-* Deploy on [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails7)
-
-## Contribution
-
-Contributions to enhance this starter are highly encouraged and welcomed! Feel free to submit pull requests and improve the project collaboratively.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
