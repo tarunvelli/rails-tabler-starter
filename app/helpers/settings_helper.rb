@@ -37,12 +37,7 @@ module SettingsHelper
   end
 
   def interface_theme
-    case  current_user&.color_scheme || AppSettings.interface_theme
-    when "COOL"
-      "application-cool"
-    else
-      "application"
-    end
+    (current_user&.color_scheme || AppSettings.interface_theme).downcase
   end
 
   def multi_tenant_mode?

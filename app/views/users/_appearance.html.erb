@@ -12,51 +12,24 @@
   <% end %>
 
   <div class="mb-3">
-    <label class="form-label">Color scheme</label>
-    <br/>
     <div class="row g-2">
-      <div class="col-6 col-sm-4">
-        <label class="form-imagecheck mb-2">
-          <%=  form.radio_button :color_scheme, 'DEFAULT', class: "form-imagecheck-input" %>
-          <span class="form-imagecheck-figure">
-            <img src="/<%= interface_mode %>-default.png" alt="Default" class="form-imagecheck-image">
-          </span>
-          <br/>
-          Default
-        </label>
-      </div>
-      <div class="col-6 col-sm-4">
-        <label class="form-imagecheck mb-2">
-          <%=  form.radio_button :color_scheme, 'COOL', class: "form-imagecheck-input" %>
-          <span class="form-imagecheck-figure">
-            <img src="/<%= interface_mode %>-cool.png" alt="Cool" class="form-imagecheck-image">
-          </span>
-          <br/>
-          Cool
-        </label>
-      </div>
+      <label class="form-label">Color scheme</label>
+      <% Rails.application.config.app_settings['interface_theme']['available'].each do |theme| %>
+        <div class="col-6 col-sm-4">
+          <label class="mb-2">
+            <%=  form.radio_button :color_scheme, theme, class: "form-input" %> <%= theme.capitalize %>
+          </label>
+        </div>
+      <% end %>
+
       <label class="form-label">Mode</label>
-      <br/>
-      <div class="col-6 col-sm-4">
-        <label class="form-imagecheck mb-2">
-          <%=  form.radio_button :color_mode, 'DARK', class: "form-imagecheck-input" %>
-          <span class="form-imagecheck-figure">
-            <img src="/dark-default.png" alt="Dark" class="form-imagecheck-image">
-          </span>
-          <br/>
-          Dark
-        </label>
-      </div>
-      <div class="col-6 col-sm-4">
-        <label class="form-imagecheck mb-2">
-          <%=  form.radio_button :color_mode, 'LIGHT', class: "form-imagecheck-input" %>
-          <span class="form-imagecheck-figure">
-            <img src="/light-default.png" alt="Light" class="form-imagecheck-image">
-          </span>
-          <br/>
-          Light
-        </label>
-      </div>
+      <% Rails.application.config.app_settings['interface_mode']['available'].each do |mode| %>
+        <div class="col-6 col-sm-4">
+          <label class="mb-2">
+            <%=  form.radio_button :color_mode, mode, class: "form-input" %> <%= mode.capitalize %>
+          </label>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -13,14 +13,17 @@ interface_mode:
   available:
   - LIGHT
   - DARK
-  - SYSTEM
   default: LIGHT
 interface_theme:
   type: string
   available:
-  - DEFAULT
-  - COOL
-  default: DEFAULT
+  - NEUTRAL
+  - SLATE
+  - ZINC
+  - GRAY
+  - STONE
+  - PINK
+  default: NEUTRAL
 login_layout:
   type: string
   available:
