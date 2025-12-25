@@ -16,6 +16,8 @@
 class Role < ApplicationRecord
   self.store_full_sti_class = false
 
+  attribute :permissions, :json, default: {}
+
   COMMON_TYPE = "common".freeze
   CUSTOM_TYPE = "custom".freeze
   AVAILABLE_TYPES = [ COMMON_TYPE, CUSTOM_TYPE ].freeze

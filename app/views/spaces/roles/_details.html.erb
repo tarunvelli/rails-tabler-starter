@@ -28,8 +28,13 @@
     <div>
       <% Role::AVAILABLE_PERMISSIONS.each do |permission| %>
         <label class="form-check">
-          <%= form.check_box "permissions[#{permission}]", { class: 'form-check-input', checked: has?(permission) }, "true", "false" %>
-          <span class="form-check-label"> <%= permission %> </span>
+          <%= form.check_box :permissions, { 
+            multiple: false,
+            name: "role[permissions][#{permission}]", 
+            class: 'form-check-input',
+            checked: ActiveModel::Type::Boolean.new.cast(role.permissions&.dig(permission)) 
+          }, "true", "false" %>
+          <span class="form-check-label"> <%= permission.humanize %> </span>
         </label>
       <% end %>
     </div>
