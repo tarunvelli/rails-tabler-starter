@@ -87,6 +87,12 @@ group :development do
   gem "web-console"
 
   gem "ruby-lsp-rspec", require: false
+
+  # Profiling tools
+  gem "rack-mini-profiler", require: false
+  gem "memory_profiler"
+  gem "stackprof"
+  gem "bullet"
 end
 
 group :test do
