@@ -80,6 +80,9 @@ group :development, :test do
 
   # Debugging tool [https://github.com/deivid-rodriguez/byebug]
   gem "byebug"
+
+  # N+1 query detection [https://github.com/flyerhzm/bullet]
+  gem "bullet"
 end
 
 group :development do
@@ -92,7 +95,6 @@ group :development do
   gem "rack-mini-profiler", require: false
   gem "memory_profiler"
   gem "stackprof"
-  gem "bullet"
 end
 
 group :test do
