@@ -23,20 +23,14 @@
       </div>
     </header>
     <div class="page-wrapper">
-      <div class="container-xl">
-        <!-- Page title -->
-        <div class="page-header d-print-none ">
+      <!-- Page title -->
+      <div class="page-header d-print-none ">
+        <div class="container-xl">
           <div class="row g-2 align-items-center">
             <!-- Page title actions -->
-            <div class="navbar-expand-md">
-              <div class="navbar">
-                <div class="text-white">
-                  <%= render 'common/section_title' %>
-                </div>
-                <div class="col-12 col-md-auto ms-auto d-print-none">
-                  <%= render 'common/space_selector' %>
-                </div>
-              </div>
+            <%= render 'common/section_title' %>
+            <div class="col-12 col-md-auto ms-auto d-print-none">
+              <%= render 'common/space_selector' %>
             </div>
           </div>
         </div>
