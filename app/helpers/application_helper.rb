@@ -42,4 +42,14 @@ module ApplicationHelper
   def demo_mode?
     ENV["DEMO_MODE"] == "true"
   end
+
+  def inline_svg(path, options = {})
+    file = File.read(Rails.root.join("app", "assets", "images", path))
+    doc = Nokogiri::HTML::DocumentFragment.parse(file)
+    svg = doc.at_css "svg"
+
+    options.each { |key, value| svg[key.to_s] = value } if options.present?
+
+    doc.to_html.html_safe
+  end
 end

@@ -5,31 +5,38 @@
 # Table name: app_settings
 #
 #  id         :bigint           not null, primary key
-#  key        :string           not null
-#  value      :string           not null
+#  settings   :jsonb            not null, default({})
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class AppSettings < ApplicationRecord
   require "type_cast"
 
+  after_save :clear_memoization
+
   Rails.application.config.app_settings.each do |key, schema|
     define_singleton_method(key) do
-      TypeCast::FUNCTION_MAPPER[schema["type"]].call(inferred_value(key))
+      raw_value = global_settings[key] || schema["default"]
+
+      TypeCast::FUNCTION_MAPPER[schema["type"]].call(raw_value)
     end
   end
 
   class << self
+    def clear_memoization
+      @global_settings = nil
+    end
+
     private
 
-    def inferred_value(key)
-      find_by(key:)&.value || Rails.application.config.app_settings[key]["default"]
+    def global_settings
+      @global_settings ||= (first&.settings || {})
     end
   end
 
   private
 
-  def type
-    Rails.application.config.app_settings[key]["type"]
+  def clear_memoization
+    self.class.clear_memoization
   end
 end

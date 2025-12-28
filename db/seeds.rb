@@ -43,14 +43,13 @@ Role.create!(
   ]
 )
 
-DefaultAppSettings = Rails.application.config.app_settings.map do |key, data|
-  {
-    key: key,
-    value: data['default']
-  }
+settings_hash = Rails.application.config.app_settings.each_with_object({}) do |(key, data), hash|
+  hash[key] = data['default']
 end
 
-AppSettings.create!(DefaultAppSettings)
+app_setting = AppSetting.first_or_initialize
+app_setting.settings = settings_hash
+app_setting.save!
 
 Plan.create!([
   {

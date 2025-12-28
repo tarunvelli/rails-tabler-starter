@@ -8,22 +8,6 @@ interface_layout:
   - OVERLAP
   - CONDENSED
   default: HORIZONTAL
-interface_mode:
-  type: string
-  available:
-  - LIGHT
-  - DARK
-  default: LIGHT
-interface_theme:
-  type: string
-  available:
-  - NEUTRAL
-  - SLATE
-  - ZINC
-  - GRAY
-  - STONE
-  - PINK
-  default: NEUTRAL
 login_layout:
   type: string
   available:
@@ -43,3 +27,52 @@ show_landing_page:
   - true
   - false
   default: 'true'
+color_mode:
+  type: string
+  available:
+  - LIGHT
+  - DARK
+  default: LIGHT
+color_scheme:
+  type: string
+  available:
+  - BLUE
+  - AZURE
+  - INDIGO
+  - PURPLE
+  - PINK
+  - RED
+  - ORANGE
+  - YELLOW
+  - LIME
+  - GREEN
+  - TEAL
+  - CYAN
+  default: BLUE
+theme_base:
+  type: string
+  available:
+  - NEUTRAL
+  - SLATE
+  - ZINC
+  - GRAY
+  - STONE
+  - PINK
+  default: NEUTRAL
+font_family:
+  type: string
+  available:
+  - SANS-SERIF
+  - SERIF
+  - MONOSPACE
+  - COMIC
+  default: MONOSPACE
+corner_radius:
+  type: string
+  available:
+  - 0
+  - 0.5
+  - 1
+  - 1.5
+  - 2
+  default: 1

@@ -27,8 +27,8 @@ module SettingsHelper
     end
   end
 
-  def interface_mode
-    case current_user&.color_mode || AppSettings.interface_mode
+  def color_mode
+    case AppSettings.color_mode
     when "DARK"
       "dark"
     else
@@ -36,8 +36,20 @@ module SettingsHelper
     end
   end
 
-  def interface_theme
-    (current_user&.color_scheme || AppSettings.interface_theme).downcase
+  def theme_base
+    AppSettings.theme_base.downcase
+  end
+
+  def theme_font
+    AppSettings.font_family.downcase
+  end
+
+  def primary_color
+    AppSettings.color_scheme.downcase
+  end
+
+  def corner_radius
+    AppSettings.corner_radius.downcase
   end
 
   def multi_tenant_mode?

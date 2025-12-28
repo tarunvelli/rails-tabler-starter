@@ -95,8 +95,8 @@ Fine-tune your application behavior at `/setup/edit`.
 | Setting | Description | Options |
 | --- | --- | --- |
 | `interface_layout` | Change the primary nav style | `VERTICAL`, `HORIZONTAL`, `OVERLAP`, `CONDENSED` |
-| `interface_mode` | Theme preference | `LIGHT`, `DARK`, `SYSTEM` |
-| `interface_theme` | Color theme of app | `DEFAULT`, `COOL` |
+| `color_mode` | Theme preference | `LIGHT`, `DARK`, `SYSTEM` |
+| `theme_base` | Color theme of app | `DEFAULT`, `COOL` |
 | `login_layout` | Layout of login screens | `DEFAULT`, `ILLUSTRATION`, `COVER` |
 | `multi_tenant_mode` | Toggle SaaS vs Internal Tool | `true` (Public Signups), `false` (Invite Only) |
 | `show_landing_page` | Root path behavior | `true` (Landing Page), `false` (Redirect to Login) |

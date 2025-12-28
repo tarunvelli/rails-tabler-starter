@@ -2,20 +2,26 @@
   <div class="container container-tight py-4">
     <div class="card card-md">
       <div class="card-body">
-        <%= form_with(url: setup_path, method: :PATCH) do |form| %>
-          <% @app_settings.each do |app_setting| %>
-            <div class="form-group mb-3 row">
-              <%= form.label app_setting.key, class: "form-label col-6 col-form-label", data: { turbo: false } %>
-              <div class="col">
-                <%= form.select "app_settings[#{app_setting.id}][value]", app_settings_values(app_setting.key).map { |key| [key, key] }, { selected: app_setting.value }, { class:"form-control", ariaDescribedby:"statusHelp" } %>
+        <%= form_with(model: @app_setting, url: setup_path, method: :patch) do |form| %>
+          <%= form.fields_for :settings do |sf| %>
+            <% Rails.application.config.app_settings.each do |key, schema| %>
+              <div class="form-group mb-3 row">
+                <%= form.label key, class: "form-label col-6 col-form-label" %>
+                <div class="col">
+                  <%= sf.select key, 
+                      app_settings_values(key).map { |v| [v, v] }, 
+                      { selected: @app_setting.settings[key] || schema['default'] }, 
+                      { class: "form-select", aria_describedby: "statusHelp" } %>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
+
           <div class="row align-items-center mt-3">
             <div class="col">
               <div class="btn-list justify-content-end">
                 <%= link_to "Back", root_path, class: "btn btn-link link-secondary" %>
-                <%= form.submit 'Submit', input_field_name: nil, class: "btn btn-primary" %>
+                <%= form.submit 'Submit', class: "btn btn-primary" %>
               </div>
             </div>
           </div>

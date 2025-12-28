@@ -14,7 +14,7 @@
   <div class="mb-3">
     <div class="row g-2">
       <label class="form-label">Color scheme</label>
-      <% Rails.application.config.app_settings['interface_theme']['available'].each do |theme| %>
+      <% Rails.application.config.app_settings['theme_base']['available'].each do |theme| %>
         <div class="col-6 col-sm-4">
           <label class="mb-2">
             <%=  form.radio_button :color_scheme, theme, class: "form-input" %> <%= theme.capitalize %>
@@ -23,7 +23,7 @@
       <% end %>
 
       <label class="form-label">Mode</label>
-      <% Rails.application.config.app_settings['interface_mode']['available'].each do |mode| %>
+      <% Rails.application.config.app_settings['color_mode']['available'].each do |mode| %>
         <div class="col-6 col-sm-4">
           <label class="mb-2">
             <%=  form.radio_button :color_mode, mode, class: "form-input" %> <%= mode.capitalize %>
