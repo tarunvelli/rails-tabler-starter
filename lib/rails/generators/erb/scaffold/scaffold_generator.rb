@@ -19,7 +19,7 @@ module Erb # :nodoc:
           formats.push(:turbo_stream).each do |format|
             filename = filename_with_extensions(view, format)
             path = File.join("app/views", controller_file_path, filename)
-            
+
             begin
               template filename, path
             rescue Thor::Error => e
@@ -33,7 +33,7 @@ module Erb # :nodoc:
 
     private
       def available_views
-        %w(index edit show new update destroy _form)
+        %w[index edit show new update destroy _form]
       end
     end
   end
