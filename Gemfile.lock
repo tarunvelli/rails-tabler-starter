@@ -88,7 +88,6 @@ GEM
     base64 (0.3.0)
     bcrypt (3.1.21)
     bcrypt_pbkdf (1.1.2)
-    bcrypt_pbkdf (1.1.2-arm64-darwin)
     bigdecimal (4.0.1)
     bindex (0.8.1)
     bootsnap (1.23.0)
@@ -504,4 +503,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   2.5.16
+  4.0.6

@@ -253,9 +253,9 @@ browserslist@^4.23.3:
     update-browserslist-db "^1.1.1"
 
 caniuse-lite@^1.0.30001646, caniuse-lite@^1.0.30001669:
-  version "1.0.30001687"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001687.tgz"
-  integrity sha512-0S/FDhf4ZiqrTUiQ39dKeUjYRjkv7lOZU1Dgif2rIqrTzX/1wV2hfKu9TOm1IHkdSijfLswxTFzl/cvir+SLSQ==
+  version "1.0.30001769"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001769.tgz"
+  integrity sha512-BCfFL1sHijQlBGWBMuJyhZUhzo7wer5sVj9hqekB/7xn0Ypy+pER/edCYQm4exbXj4WiySGp40P8UuTh6w1srg==
 
 chokidar@^3.3.0, chokidar@^3.5.2:
   version "3.6.0"
