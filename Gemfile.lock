@@ -463,7 +463,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bcrypt (~> 3.1.7)
+  bcrypt (~> 3.1.21)
   bootsnap
   brakeman
   bullet
@@ -485,7 +485,7 @@ DEPENDENCIES
   puma (>= 5.0)
   pundit (~> 2.2)
   rack-mini-profiler
-  rails (~> 8.1.0)
+  rails (~> 8.1.2)
   rails_admin (~> 3.0)
   rspec-rails
   rubocop-rails-omakase
