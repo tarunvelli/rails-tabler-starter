@@ -20,7 +20,11 @@ module Erb # :nodoc:
             filename = filename_with_extensions(view, format)
             path = File.join("app/views", controller_file_path, filename)
 
-            template filename, path
+            begin
+              template filename, path
+            rescue Thor::Error => e
+              # Catch any errors in file creation and skip the file
+            end
           end
         end
 

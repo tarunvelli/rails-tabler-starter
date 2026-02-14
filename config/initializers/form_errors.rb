@@ -5,7 +5,6 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
     html_tag
   else
     html_tag.gsub!("form-control", "form-control is-invalid")
-
     %(<div class="field-with-errors">
         #{html_tag}
         <span class="invalid-feedback">
