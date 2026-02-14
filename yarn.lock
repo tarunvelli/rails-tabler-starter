@@ -165,6 +165,11 @@
     "@popperjs/core" "^2.11.8"
     bootstrap "5.3.7"
 
+"@yr/monotone-cubic-spline@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@yr/monotone-cubic-spline/-/monotone-cubic-spline-1.0.3.tgz"
+  integrity sha512-FQXkOta0XBSUPHndIKON2Y9JeQz5ZeMqLYZVVK93FliNBFm7LNMIZmY6FrMEB9XPcDbE2bekMbZD6kzDkxwYjA==
+
 ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz"
@@ -184,6 +189,13 @@ anymatch@~3.1.2:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
+
+apexcharts@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-5.4.0.tgz#b9fdd6c62c0d057f27bb9164f490e3562025f178"
+  integrity sha512-qyEypKc1nixORUHdwO30izyyCqH9A4NsxQZ6Xrlq+ABEamOED1AoSg3eHaJMPRGT+wfE09wucLqwvk8oSr3tdA==
+  dependencies:
+    "@yr/monotone-cubic-spline" "^1.0.3"
 
 autoprefixer@^10.4.20:
   version "10.4.20"

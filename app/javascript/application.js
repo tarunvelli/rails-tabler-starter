@@ -5,5 +5,7 @@ import * as tabler from "tabler"
 import * as jsVectorMap from "jsvectormap"
 import * as world from "world"
 import * as bootstrap from "bootstrap"
+import ApexCharts from "apexcharts"
+window.ApexCharts = ApexCharts
 
 Turbo.session.drive = false
