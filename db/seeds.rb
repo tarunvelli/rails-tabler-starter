@@ -47,7 +47,7 @@ settings_hash = Rails.application.config.app_settings.each_with_object({}) do |(
   hash[key] = data['default']
 end
 
-app_setting = AppSetting.first_or_initialize
+app_setting = AppSettings.first_or_initialize
 app_setting.settings = settings_hash
 app_setting.save!
 
