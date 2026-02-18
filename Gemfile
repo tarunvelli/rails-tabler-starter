@@ -52,7 +52,7 @@ gem "rails_admin", "~> 3.0"
 gem "kaminari"
 
 # Add user authentication to your Rails application [https://github.com/heartcombo/devise]
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 gem "devise_invitable", "~> 2.0"
 
 gem "dotenv", "~> 3.1"
