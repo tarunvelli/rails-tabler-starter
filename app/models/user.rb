@@ -34,18 +34,34 @@
 #  invited_by_id          :bigint
 #
 class User < ApplicationRecord
+  has_one_attached :avatar
   has_many :user_roles
-  has_many :spaces, through: :user_roles
+  has_many :sites, through: :user_roles
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :invitable
+  devise :database_authenticatable,
+         :invitable,
+         :lockable,
+         :omniauthable,
+         :recoverable,
+         :registerable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         omniauth_providers: [ :google_oauth2 ]
 
   enum :status, active: 0, archived: 1
 
   alias_attribute :admin?, :admin
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
+      user.confirmed_at = Time.current
+    end
+  end
 
   def name
     "#{first_name} #{last_name}"
@@ -59,8 +75,12 @@ class User < ApplicationRecord
     update_attribute(:session_token, SecureRandom.hex)
   end
 
-  def get_role_in_space(space)
-    user_roles.find_by(space: space).role
+  def get_role_in_site(site)
+    user_roles.find_by(site: site)&.role
+  end
+
+  def get_role_in_space(site)
+    get_role_in_site(site)
   end
 
   def send_devise_notification(notification, *args)

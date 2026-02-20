@@ -44,6 +44,6 @@ class Spaces::SubscriptionsController < ApplicationController
   end
 
   def subscription_params
-    params.require(:subscription).permit(:space_id, :plan_id, :start_date)
+    params.require(:subscription).permit(:site_id, :plan_id, :start_date)
   end
 end

@@ -17,6 +17,7 @@ class Role < ApplicationRecord
   self.store_full_sti_class = false
 
   attribute :permissions, :json, default: {}
+  belongs_to :site, optional: true
 
   COMMON_TYPE = "common".freeze
   CUSTOM_TYPE = "custom".freeze
@@ -31,6 +32,10 @@ class Role < ApplicationRecord
     read_space
     update_space
     delete_space
+    create_site
+    read_site
+    update_site
+    delete_site
   ].freeze
 
   validates_inclusion_of :type, in: AVAILABLE_TYPES

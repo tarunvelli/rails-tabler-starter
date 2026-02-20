@@ -23,7 +23,7 @@ class Spaces::RolesController < ApplicationController
   # POST /roles or /roles.json
   def create
     @role = Roles::Custom.new(create_role_params)
-    @role.space = @space
+    @role.site = @space
 
     respond_to do |format|
       if @role.save

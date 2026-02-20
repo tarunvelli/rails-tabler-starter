@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :authenticate_user!, except: [ :landing ]
-  before_action :set_main_space, only: [ :landing ]
+  before_action :set_main_site, only: [ :landing ]
   before_action :redirect_signed_in_user, only: [ :landing ]
 
   layout "plain", only: [ :landing ]
@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
   def redirect_signed_in_user
     return unless user_signed_in?
 
-    redirect_to @main_space ? space_path(@main_space) : spaces_path
+    redirect_to @main_site ? space_path(@main_site) : spaces_path
   end
 
-  def set_main_space
-    @main_space = current_user&.spaces&.first
+  def set_main_site
+    @main_site = current_user&.sites&.first
   end
 end

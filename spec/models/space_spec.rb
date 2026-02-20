@@ -1,5 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Space, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "uses the sites table through compatibility alias" do
+    expect(described_class.table_name).to eq("sites")
+  end
+
+  it "can be created" do
+    expect(build(:space)).to be_valid
+  end
 end

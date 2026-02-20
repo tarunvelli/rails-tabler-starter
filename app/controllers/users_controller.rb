@@ -69,6 +69,6 @@ class UsersController < ApplicationController
   end
 
   def set_space
-    @space = Space.find(params[:space_id])
+    @space = Site.find(params[:space_id])
   end
 end

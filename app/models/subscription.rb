@@ -10,7 +10,7 @@
 #  space_id   :bigint           not null
 #
 class Subscription < ApplicationRecord
-  belongs_to :space
+  belongs_to :site
   belongs_to :plan
 
   scope :active, -> { where(end_date: nil).or(where("end_date > ?", Date.current)) }

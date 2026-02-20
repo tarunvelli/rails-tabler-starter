@@ -11,17 +11,17 @@
 #
 class UserRole < ApplicationRecord
   belongs_to :user
-  belongs_to :space
+  belongs_to :site
   belongs_to :role
 
-  validate :role_belongs_to_space
+  validate :role_belongs_to_site
 
   private
 
-  def role_belongs_to_space
+  def role_belongs_to_site
     return if role.common?
-    return if role.space == space
+    return if role.site == site
 
-    errors.add(:base, "invalid role for space")
+    errors.add(:base, "invalid role for site")
   end
 end

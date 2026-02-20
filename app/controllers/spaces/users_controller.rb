@@ -22,11 +22,11 @@ class Spaces::UsersController < ApplicationController
     authorize @space, policy_class: UserPolicy
 
     user = User.find_by(email: params[:email]) || User.invite!(email: params[:email])
-    user_role = UserRole.find_by(space: @space, user:)
+    user_role = UserRole.find_by(site: @space, user:)
 
     respond_to do |format|
       if user_role.blank? && UserRole.create(
-        user_id: user.id, space_id: params[:space_id], role_id: params[:role_id],
+        user_id: user.id, site_id: @space.id, role_id: params[:role_id],
       )
         format.html { redirect_to space_users_path(@space), notice: "User was successfully invited." }
         format.json { render :show, status: :ok }
@@ -80,6 +80,6 @@ class Spaces::UsersController < ApplicationController
   end
 
   def set_user_role
-    @user_role = UserRole.find_by(space: @space, user: @user)
+    @user_role = UserRole.find_by(site: @space, user: @user)
   end
 end
