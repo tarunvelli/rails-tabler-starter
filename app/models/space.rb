@@ -14,10 +14,10 @@
 #  updated_at :datetime         not null
 #
 class Space < ApplicationRecord
-  has_many :user_roles
+  has_many :user_roles, -> { includes(:role) }
   has_many :users, through: :user_roles
 
-  has_many :subscriptions
+  has_many :subscriptions, -> { includes(:plan) }
   has_many :plans, through: :subscriptions
 
   validates :name, presence: true

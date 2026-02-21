@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_28_031745) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_21_095423) do
   create_table "app_settings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.json "settings", default: {}, null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_28_031745) do
     t.integer "seats"
     t.integer "space_id", null: false
     t.datetime "start_date", null: false
+    t.index ["end_date"], name: "index_subscriptions_on_end_date"
     t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
     t.index ["space_id"], name: "index_subscriptions_on_space_id"
   end
@@ -61,6 +62,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_28_031745) do
     t.integer "role_id", null: false
     t.integer "space_id", null: false
     t.integer "user_id", null: false
+    t.index ["role_id"], name: "index_user_roles_on_role_id"
     t.index ["user_id", "space_id"], name: "index_user_roles_on_user_id_and_space_id", unique: true
   end
 
