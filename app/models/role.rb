@@ -18,6 +18,8 @@ class Role < ApplicationRecord
 
   attribute :permissions, :json, default: {}
 
+  belongs_to :space, optional: true
+
   COMMON_TYPE = "common".freeze
   CUSTOM_TYPE = "custom".freeze
   AVAILABLE_TYPES = [ COMMON_TYPE, CUSTOM_TYPE ].freeze
