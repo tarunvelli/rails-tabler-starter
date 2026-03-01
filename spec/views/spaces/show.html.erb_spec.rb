@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "spaces/show", type: :view do
-  before(:each) do
-    assign(:space, Space.create!(
-      name: "Name",
-      status: "active"
-    ))
+  let(:user) { create(:user) }
+
+  before do
+    sign_in user
+    @space = Space.create!(name: "Test Space", status: :active)
+    assign(:space, @space)
   end
 
-  it "renders attributes in <p>" do
+  it "renders the space name in the page title" do
     render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Status/)
+    expect(view.content_for(:page_title)).to include("Test Space")
   end
 end

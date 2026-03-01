@@ -2,9 +2,14 @@
 interface_layout:
   type: string
   available:
+  - HORIZONTAL
   - VERTICAL
   - VERTICAL-TRANSPARENT
-  - HORIZONTAL
+  - VERTICAL-RIGHT
+  - FLUID-VERTICAL
+  - COMBO
+  - FLUID
+  - STICKY
   - OVERLAP
   - CONDENSED
   default: HORIZONTAL
