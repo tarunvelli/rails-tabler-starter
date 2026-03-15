@@ -19,10 +19,7 @@
               <a class="btn btn-ghost-secondary" href="#pricing">Pricing</a>
             </li>
             <li class="nav-item mx-1">
-              <a class="btn btn-ghost-secondary" href="#docs">Docs</a>
-            </li>
-            <li class="nav-item mx-1">
-              <a class="btn btn-ghost-secondary" href="#blog">Blog</a>
+              <a class="btn btn-ghost-secondary" href="/blog">Blog</a>
             </li>
             <li class="nav-item mx-1">
               <%= link_to 'Login', new_user_session_path, data: { turbo: false }, class: 'btn btn-ghost-secondary' %>
@@ -43,8 +40,8 @@
               alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Sample Landing Page</h1>
-            <p class="lead">Free and open source Ruby on Rails starter kit built using Tabler UI</p>
+            <h1 class="display-5 fw-bold lh-1 mb-3">Rails Tabler Starter</h1>
+            <p class="lead">A production-ready Rails starter kit with Tabler dashboard, Devise auth, Blog engine, and multi-tenancy support.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <%= link_to 'Get Started', new_user_session_path, data: { turbo: false }, type: 'button', class: 'btn btn-outline-primary btn-lg px-4 me-md-2' %>
             </div>
@@ -70,11 +67,10 @@
               </svg>
             </div>
             <h3>
-              Authentication & Autherization
+              Authentication & Authorization
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Et leo duis ut diam.
+              Secure user management with Devise. Sign up, login, password reset, and role-based access control out of the box.
             </p>
           </div>
           <div class="col-12 col-md-4">
@@ -90,11 +86,10 @@
               </svg>
             </div>
             <h3>
-              Role management
+              Role Management
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Duis ut diam quam nulla porttitor massa id neque.
+              Fine-grained permissions with predefined roles. Control what users can see and do in your application.
             </p>
           </div>
           <div class="col-12 col-md-4">
@@ -112,11 +107,10 @@
               </svg>
             </div>
             <h3>
-              Multi tenant
+              Multi-Tenancy
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Imperdiet proin fermentum leo vel orci porta.
+              Built-in support for multiple organizations. Each space has its own users, data, and subscription.
             </p>
           </div>
           <div class="col-12 col-md-4">
@@ -137,11 +131,10 @@
               </svg>
             </div>
             <h3>
-              UI layouts
+              Tabler Dashboard
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras.
+              Beautiful admin dashboard with 50+ components. Built with Bootstrap 5 and fully responsive.
             </p>
           </div>
           <div class="col-12 col-md-4">
@@ -156,11 +149,10 @@
               </svg>
             </div>
             <h3>
-              Developer focused
+              Blog Engine
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Aliquet nibh praesent tristique magna sit amet purus gravida quis.
+              File-based markdown blog with categories, RSS feed, SEO meta tags, and HTTP caching.
             </p>
           </div>
           <div class="col-12 col-md-4">
@@ -175,11 +167,10 @@
               </svg>
             </div>
             <h3>
-              Free and open source
+              Free and Open Source
             </h3>
             <p class="text-muted mb-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis.
+              MIT licensed. Full source code included. Use it for any project, commercial or personal.
             </p>
           </div>
         </div>
@@ -188,7 +179,7 @@
 
     <section class="bg-light">
       <div class="container col-xxl-8 p-4">
-        <div class="row p-4 align-items-center rounded-3 border shadow-md">
+        <div class="row p-4 align-items-center rounded-3 shadow-md">
           <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden">
             <img src="/undraw_team_spirit_re_yl1v.svg" class="d-block mx-lg-auto img-fluid"
               alt="Bootstrap Themes" width="700" height="500" loading="lazy">
@@ -211,9 +202,8 @@
       <div class="container col-xxl-8 p-4">
         <div class="row py-2">
           <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal">Example pricing</h1>
-            <p class="fs-5 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Urna molestie at elementum eu facilisis sed odio morbi.
+            <h1 class="display-4 fw-normal">Simple, Transparent Pricing</h1>
+            <p class="fs-5 text-muted">Rails Tabler Starter is free and open source. Use it for any project with no hidden costs.
             </p>
           </div>
         </div>
@@ -234,40 +224,37 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Lorem ipsum
+                    Full source code
                   </li>
                   <li>
-                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
                       viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                       stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
+                      <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Dolor sit
+                    MIT License
                   </li>
                   <li>
-                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
                       viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                       stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
+                      <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Amet consectetur
+                    Community support
                   </li>
                   <li>
-                    <!-- Download SVG icon from http://tabler-icons.io/i/x -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-danger" width="24" height="24"
+                    <!-- Download SVG icon from http://tabler-icons.io/i/check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
                       viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                       stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <line x1="18" y1="6" x2="6" y2="18" />
-                      <line x1="6" y1="6" x2="18" y2="18" />
+                      <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Adipiscing elit
+                    Free updates
                   </li>
                 </ul>
                 <div class="text-center mt-4">
@@ -301,7 +288,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Lorem ipsum
+                    Everything in Free
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -311,7 +298,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Dolor sit
+                    Priority support
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -322,7 +309,7 @@
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
-                    Amet consectetur
+                    Custom development
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -348,7 +335,7 @@
                 <div class="text-uppercase text-muted font-weight-medium">Enterprise</div>
                 <div class="display-5 my-3">$99</div>
                 <ul class="list-unstyled lh-lg">
-                  <li><strong>100</strong> Users</li>
+                  <li><strong>Unlimited</strong> Users</li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon me-1 text-success" width="24" height="24"
@@ -357,7 +344,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Lorem ipsum
+                    Everything in Premium
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -367,7 +354,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Dolor sit
+                    Custom development
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -377,7 +364,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Amet consectetur
+                    Dedicated support
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/x -->
@@ -400,8 +387,8 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card card-md">
               <div class="card-body text-center">
-                <div class="text-uppercase text-muted font-weight-medium">Unlimited</div>
-                <div class="display-5 my-3">$139</div>
+                <div class="text-uppercase text-muted font-weight-medium">Starfleet</div>
+                <div class="display-5 my-3">$999</div>
                 <ul class="list-unstyled lh-lg">
                   <li><strong>Unlimited</strong> Users</li>
                   <li>
@@ -412,7 +399,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Lorem ipsum
+                    Everything in Enterprise
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -422,7 +409,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Dolor sit
+                    Intergalactic support
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -432,7 +419,7 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Amet consectetur
+                    Warpdrive debugging
                   </li>
                   <li>
                     <!-- Download SVG icon from http://tabler-icons.io/i/check -->
@@ -442,11 +429,11 @@
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 12l5 5l10 -10" />
                     </svg>
-                    Adipiscing elit
+                    Nuclear refeuling
                   </li>
                 </ul>
                 <div class="text-center mt-4">
-                  <a href="#" class="btn w-100">Choose plan</a>
+                  <a href="#" class="btn btn-green w-100">Contact us</a>
                 </div>
               </div>
             </div>

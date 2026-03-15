@@ -1,0 +1,33 @@
+<% content_for :title, "#{@post.title} - The Blog" %>
+<% content_for :description, @post.summary || @post.content.to_s.truncate(160) %>
+
+<div class="page-body">
+  <article class="blog-article">
+    <header class="blog-article-header">
+      <% if @post.category %>
+        <span class="blog-category"><%= @post.category %></span>
+      <% end %>
+      <h1 class="blog-article-title"><%= @post.title %></h1>
+      <div class="blog-article-meta">
+        <% if @post.author %>By <strong><%= @post.author %></strong><% end %>
+        <% if @post.date %>
+          <% if @post.author %> · <% end %>
+          <%= formatted_date(@post.date) %> · <%= reading_time(@post.content) %>
+        <% end %>
+      </div>
+      <%= link_to "← Back to Blog", blog_path, class: "blog-back" %>
+    </header>
+
+    <div class="blog-article-body">
+      <%= @post.rendered_content %>
+    </div>
+
+    <div class="blog-share">
+      <h5>Enjoyed this post?</h5>
+      <p>Share it with your network or subscribe for more.</p>
+      <button class="btn btn-outline-primary">Share</button>
+    </div>
+
+    <%= link_to "← Back to Blog", blog_path, class: "blog-back" %>
+  </article>
+</div>

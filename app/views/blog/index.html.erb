@@ -1,0 +1,58 @@
+<% content_for :title, "Blog - Rails Tabler Starter" %>
+
+<div class="page-body">
+  <div class="container-xl">
+    <header class="blog-header">
+      <h1 class="blog-title">The Blog</h1>
+      <p class="blog-subtitle">News, Updates and SEO</p>
+    </header>
+
+    <% if @posts.empty? %>
+      <div class="text-center py-5">
+        <p class="text-muted">No blog posts yet. Check back soon!</p>
+      </div>
+    <% else %>
+      <% @posts.each do |post| %>
+        <article class="blog-post">
+          <% if post.date || post.author %>
+            <div class="blog-post-meta">
+              <% if post.date %><%= formatted_date(post.date) %><% end %>
+              <% if post.date && post.author %> · <% end %>
+              <% if post.author %><%= post.author %><% end %>
+            </div>
+          <% end %>
+          <h2 class="blog-post-title">
+            <%= link_to post.title, blog_path(post) %>
+          </h2>
+          <% if post.summary %>
+            <p class="blog-post-summary"><%= post.summary %></p>
+          <% end %>
+        </article>
+      <% end %>
+    <% end %>
+
+    <% if @total_pages > 1 %>
+      <nav class="d-flex justify-content-center">
+        <ul class="pagination">
+          <% if @current_page > 1 %>
+            <li class="page-item">
+              <%= link_to "← Previous", blog_path(nil, page: @current_page - 1), class: "page-link" %>
+            </li>
+          <% end %>
+          
+          <% 1.upto(@total_pages) do |page| %>
+            <li class="page-item <%= page == @current_page ? 'active' : '' %>">
+              <%= link_to page, blog_path(nil, page: page), class: "page-link" %>
+            </li>
+          <% end %>
+          
+          <% if @current_page < @total_pages %>
+            <li class="page-item">
+              <%= link_to "Next →", blog_path(nil, page: @current_page + 1), class: "page-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    <% end %>
+  </div>
+</div>

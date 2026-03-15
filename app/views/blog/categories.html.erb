@@ -1,0 +1,26 @@
+<% content_for :title, "Categories - The Blog" %>
+
+<div class="page-body">
+  <div class="container-xl">
+    <header class="blog-categories-header">
+      <h1 class="blog-categories-title">Categories</h1>
+      <p class="blog-categories-subtitle">Browse posts by topic</p>
+      <%= link_to "← Back to Blog", blog_path, class: "text-muted" %>
+    </header>
+    
+    <% if @categories.empty? %>
+      <div class="text-center py-5">
+        <p class="text-muted">No categories yet.</p>
+      </div>
+    <% else %>
+      <div class="row justify-content-center">
+        <% @categories.each do |category| %>
+          <%= link_to blog_category_path(category), class: "blog-category-card col-md-4 col-lg-3" do %>
+            <div class="blog-category-name"><%= category %></div>
+            <div class="blog-category-count"><%= BlogPost.by_category(category).size %> post<%= "s" if BlogPost.by_category(category).size != 1 %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

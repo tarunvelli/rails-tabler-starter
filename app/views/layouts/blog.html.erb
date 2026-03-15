@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= content_for(:title) || "Blog" %></title>
+    <meta name="description" content="<%= content_for(:description) || "News, Updates and SEO from Rails Tabler Starter" %>">
+    <meta property="og:title" content="<%= content_for(:title) || "Blog" %>">
+    <meta property="og:description" content="<%= content_for(:description) || "News, Updates and SEO from Rails Tabler Starter" %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.url %>">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= content_for(:title) || "Blog" %>">
+    <meta name="twitter:description" content="<%= content_for(:description) || "News, Updates and SEO from Rails Tabler Starter" %>">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="<%= blog_feed_url %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "blog", "data-turbo-track": "reload" %>
+  </head>
+  <body>
+    <div class="blog-layout">
+      <header class="navbar navbar-expand-md d-print-none">
+      <div class="container-xl">
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.svg", width: 110, height: 32, alt: "Tabler", class: "navbar-brand-image" %>
+          <% end %>
+        </h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <%= link_to "Blog", blog_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Categories", blog_categories_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Feed", blog_feed_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer class="footer bg-light">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-3 mb-3">
+            <%= link_to root_path, class: "d-inline-flex align-items-center mb-2 link-dark text-decoration-none" do %>
+              <%= image_tag "logo.svg", width: 110, height: 32, alt: "Tabler", class: "d-block me-2" %>
+            <% end %>
+            <ul class="list-unstyled small text-muted">
+              <li class="mb-2">
+                Copyright &copy; <%= Date.current.year %>
+                <a href="https://tabler.io/" target="_blank">Tabler</a>.
+                All rights reserved.
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+            <h5>Product</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><%= link_to "Features", "#", class: "text-muted" %></li>
+              <li class="mb-2"><%= link_to "Pricing", "#", class: "text-muted" %></li>
+              <li class="mb-2"><%= link_to "Docs", "#", class: "text-muted" %></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><%= link_to "About", "#", class: "text-muted" %></li>
+              <li class="mb-2"><%= link_to "Blog", blog_path, class: "text-muted" %></li>
+              <li class="mb-2"><%= link_to "Contact", "#", class: "text-muted" %></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2 mb-3">
+            <h5>Legal</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><%= link_to "Privacy", "#", class: "text-muted" %></li>
+              <li class="mb-2"><%= link_to "Terms", "#", class: "text-muted" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </body>
+</html>

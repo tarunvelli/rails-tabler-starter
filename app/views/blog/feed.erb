@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Blog - Rails Tabler Starter</title>
+    <description>News, Updates and SEO</description>
+    <link><%= blog_url %></link>
+    <atom:link href="<%= blog_feed_url %>" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate><%= @posts.first&.date&.httpdate || Time.current.httpdate %></lastBuildDate>
+    <% @posts.each do |post| %>
+      <item>
+        <title><%= post.title %></title>
+        <description><%= post.summary || post.content.to_s.truncate(200) %></description>
+        <link><%= blog_post_url(post.slug) %></link>
+        <guid isPermaLink="true"><%= blog_post_url(post.slug) %></guid>
+        <pubDate><%= post.date.httpdate if post.date %></pubDate>
+        <author><%= post.author %></author>
+        <% if post.category %>
+          <category><%= post.category %></category>
+        <% end %>
+      </item>
+    <% end %>
+  </channel>
+</rss>

@@ -12,3 +12,4 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules/jsvectorm
 Rails.application.config.assets.paths << Rails.root.join("node_modules/apexcharts/dist")
 Rails.application.config.assets.paths << Rails.root.join("node_modules/@tabler/core/dist/js")
 Rails.application.config.assets.precompile << "bootstrap.bundle.min.js"
+Rails.application.config.assets.precompile << "blog.css"

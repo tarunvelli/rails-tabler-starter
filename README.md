@@ -15,7 +15,7 @@
 
 1. **Pure Rails:** No proprietary DSLs or "magic". If you know Rails, you know this starter.
 2. **Readability > Cleverness:** Standard patterns over complex abstractions.
-3. **Batteries Included:** Authentication, Multi-tenancy, and UI components are pre-configured.
+3. **Batteries Included:** Authentication, Multi-tenancy, Blog, and UI components are pre-configured.
 
 ## Why this starter?
 
@@ -60,6 +60,34 @@ Overhaul the UI via the `AppSettings` singleton. No CSS hunting required. All se
 | --- | --- | --- |
 | `multi_tenant_mode` | `true` | Toggle SaaS-style "Spaces" vs. a single-user app. |
 | `show_landing_page` | `true` | Toggle the public marketing page. |
+
+---
+
+## Blog Engine
+
+A file-based markdown blog is included out of the box. Posts live in `content/blog/` as `.md` files with frontmatter:
+
+```yaml
+---
+title: My Post
+summary: A brief description
+date: 2024-01-15
+author: Author Name
+category: Tutorial
+published: true
+---
+
+# My Post
+
+Your content here...
+```
+
+**Features:**
+- Markdown rendering with syntax highlighting for code blocks
+- Categories and pagination
+- RSS feed at `/blog/feed`
+- SEO meta tags (Open Graph, Twitter Cards)
+- HTTP caching for fast page loads
 
 ---
 
