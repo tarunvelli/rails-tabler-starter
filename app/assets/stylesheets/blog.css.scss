@@ -72,7 +72,7 @@
   max-width: 500px;
   margin: 3rem auto;
   padding: 2rem;
-  background: var(--tblr-light);
+  background: var(--tblr-bg-surface);
   border-radius: 8px;
   text-align: center;
 }
@@ -154,8 +154,8 @@
 }
 
 .blog-article-body pre {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
+  background: var(--tblr-bg-surface-secondary);
+  border: 1px solid var(--tblr-border-color);
   border-radius: 8px;
   padding: 1rem;
   overflow-x: auto;
@@ -172,10 +172,10 @@
 .blog-article-body code {
   font-family: var(--tblr-font-monospace);
   font-size: 0.9em;
-  background: #f6f8fa;
+  background: var(--tblr-bg-surface-secondary);
   padding: 0.125rem 0.25rem;
   border-radius: 4px;
-  color: #24292f;
+  color: var(--tblr-body-color);
 }
 
 .blog-article-body blockquote {
@@ -190,7 +190,7 @@
   max-width: 680px;
   margin: 3rem auto;
   padding: 1.5rem;
-  background: var(--tblr-light);
+  background: var(--tblr-bg-surface);
   border-radius: 8px;
   text-align: center;
 }
